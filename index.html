@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Analizi - İş Süreçleri</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Netflix'in başarılı iş süreçlerini analiz eden modern, profesyonel web sunumu. Veri analizi, müşteri deneyimi ve operasyonel süreçler.">
+    <meta name="keywords" content="Netflix, iş süreçleri, analiz, veri analizi, müşteri deneyimi, operasyonel süreçler">
+    <meta name="author" content="Netflix Analytics Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Netflix İş Süreçleri Analizi">
+    <meta property="og:description" content="Netflix'in başarılı iş süreçlerini analiz eden modern web sunumu">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netflix-analytics.com">
+    <meta property="og:image" content="https://netflix-analytics.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Netflix İş Süreçleri Analizi">
+    <meta name="twitter:description" content="Netflix'in başarılı iş süreçlerini analiz eden modern web sunumu">
+    <meta name="twitter:image" content="https://netflix-analytics.com/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#E50914">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Audio for intro sound -->
+    <audio id="introAudio" preload="auto">
+        <source src="audio/videoplayback.mp4" type="audio/mp4">
+        <source src="audio/intro-sound.mp3" type="audio/mpeg">
+        <source src="audio/intro-sound.wav" type="audio/wav">
+        <source src="audio/intro-sound.ogg" type="audio/ogg">
+        Tarayıcınız ses dosyasını desteklemiyor.
+    </audio>
+    
+    <!-- Mobile Toggle Button -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3 class="sidebar-title">
+                    <i class="fab fa-netflix"></i>
+                    <span>Hızlı Menü</span>
+                </h3>
+            </div>
+            <nav class="sidebar-menu">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="#home" class="menu-link active" data-section="home">
+                            <i class="fas fa-home"></i>
+                            <span>Ana Sayfa</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#team" class="menu-link" data-section="team">
+                            <i class="fas fa-users"></i>
+                            <span>Ekip Tanıtımı</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#company" class="menu-link" data-section="company">
+                            <i class="fas fa-building"></i>
+                            <span>Şirket Tanıtımı</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#vision-mission" class="menu-link" data-section="vision-mission">
+                            <i class="fas fa-eye" style="display: block !important;"></i>
+                            <span>Vizyon & Misyon</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#why-we-are-here" class="menu-link" data-section="why-we-are-here">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Neden Buradayız?</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#goals" class="menu-link" data-section="goals">
+                            <i class="fas fa-bullseye"></i>
+                            <span>Hedeflerimiz</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#swot" class="menu-link" data-section="swot">
+                            <i class="fas fa-table"></i>
+                            <span>SWOT Analizi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#tows" class="menu-link" data-section="tows">
+                            <i class="fas fa-th"></i>
+                            <span>TOWS Matrisi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#moscow" class="menu-link" data-section="moscow">
+                            <i class="fas fa-tasks"></i>
+                            <span>MoSCoW</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#analysis" class="menu-link" data-section="analysis">
+                            <i class="fas fa-chart-line"></i>
+                            <span>İş Süreçleri Analizi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#processes" class="menu-link" data-section="processes">
+                            <i class="fas fa-cogs"></i>
+                            <span>Ana Süreçler</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#insights" class="menu-link" data-section="insights">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>İçgörüler</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#contact" class="menu-link" data-section="contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>İletişim</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="images/netflix-logo-1068x580.jpg" alt="Netflix Logo" class="netflix-logo">
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Netflix İş Süreçleri Analizi</span>
+            </h1>
+            <p class="hero-subtitle">
+                Dijital dönüşümün öncüsü Netflix'in iş süreçlerini derinlemesine analiz ediyoruz
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('company').scrollIntoView({behavior: 'smooth', block: 'start'})">
+                    <i class="fas fa-building"></i>
+                    Şirketi Tanıyalım
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-arrow-down"></i>
+                    Detaylara İn
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ekip Tanıtımı</h2>
+                <p class="section-subtitle">
+                    Bu analiz çalışmasını gerçekleştiren ekip
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/sueda.jpg" alt="Sueda">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Ayşe Sueda Alkoç</h3>
+                        <p class="member-title">İş Analisti</p>
+                        <div class="member-socials">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/yunus1.PNG" alt="Yunus">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Yunus Eren Bilici</h3>
+                        <p class="member-title">İş Analisti</p>
+                        <div class="member-socials">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="company" class="company-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bg1.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Şirket Tanıtımı</h2>
+                <p class="section-subtitle">
+                    Netflix hakkında temel bilgiler ve durum analizi
+                </p>
+            </div>
+            
+                <div class="company-intro">
+                    <p><strong>Sektör:</strong> Dijital eğlence, medya teknolojileri ve çevrim içi yayıncılık (Over-The-Top – OTT)</p>
+                    <p><strong>Kuruluş Yılı:</strong> 1997</p>
+                    <p><strong>Merkez:</strong> Los Gatos, Kaliforniya, ABD</p>
+                </div>
+            
+            <div class="company-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>190+ Ülke</h4>
+                        <p>Faaliyet Alanı</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>302 Milyon</h4>
+                        <p>Abone Sayısı</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="company-content">
+                <p>Netflix, dünya genelinde 190'dan fazla ülkede faaliyet gösteren lider bir dijital yayın platformudur. Şirket, abonelik temelli video akış modeliyle kullanıcılarına film, dizi, belgesel ve interaktif içerikler sunar.</p>
+                
+                <p>Küresel ölçekte <strong>302 milyon abone</strong>ye ulaşan Netflix, <strong>yapay zekâ destekli öneri algoritmaları</strong>, <strong>veri analitiği</strong> ve <strong>içerik üretimindeki yenilikçi stratejileri</strong> sayesinde pazar liderliğini korumaktadır.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision-mission" class="vision-mission-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Vizyon & Misyon</h2>
+                <p class="section-subtitle">
+                    Netflix'in gelecek hedefleri ve temel değerleri
+                </p>
+            </div>
+            
+            <div class="vision-mission-grid">
+                <div class="vision-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="card-title">Vizyon</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Netflix'in vizyonu, <strong>küresel ölçekte en yenilikçi, erişilebilir ve etkileşim odaklı dijital eğlence platformu</strong> olmaktır.</p>
+                        
+                        <p>Şirket, yapay zekâ, veri analitiği ve sürdürülebilir üretim stratejilerini kullanarak, her kullanıcıya <strong>kişisel, kültürel ve duygusal olarak anlamlı</strong> içerik deneyimleri sunmayı hedeflemektedir.</p>
+                        
+                        <p>Bu vizyon, Netflix'in yalnızca bir yayın platformu değil; kullanıcı davranışlarını anlayan, onlara özgü deneyimler tasarlayan ve küresel kültürel etkileşimi destekleyen bir <strong>dijital ekosistem lideri</strong> olma amacını yansıtmaktadır.</p>
+                    </div>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="card-title">Misyon</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Netflix'in misyonu, <strong>teknoloji, yaratıcılık ve veri gücünü bir araya getirerek sürdürülebilir, kişiselleştirilmiş ve etkileşim temelli bir dijital eğlence deneyimi sunmak</strong>tır.</p>
+                        
+                        <p>Şirket, küresel ölçekteki milyonlarca kullanıcısına yalnızca içerik izletmeyi değil, onların platformla duygusal bağ kurmalarını ve uzun vadeli bir deneyim sadakati geliştirmelerini hedefler.</p>
+                        
+                        <div class="mission-points">
+                            <div class="mission-point">
+                                <i class="fas fa-brain"></i>
+                                <span><strong>Yapay zekâ destekli öneri sistemleriyle</strong> kullanıcı tercihlerini anlamlandırır ve kişiselleştirilmiş içerik akışları oluşturur.</span>
+                            </div>
+                            <div class="mission-point">
+                                <i class="fas fa-heart"></i>
+                                <span><strong>Kullanıcı etkileşimini ve bağlılığını güçlendiren süreçleri</strong> sürekli olarak geliştirir.</span>
+                            </div>
+                            <div class="mission-point">
+                                <i class="fas fa-shield-alt"></i>
+                                <span><strong>Veri gizliliği, etik AI kullanımı ve sürdürülebilir üretim ilkeleriyle</strong> sorumlu bir dijital liderlik sergiler.</span>
+                            </div>
+                            <div class="mission-point">
+                                <i class="fas fa-globe-americas"></i>
+                                <span><strong>Yerel ve küresel içerik çeşitliliğini</strong> destekleyerek kültürel kapsayıcılığı artırır.</span>
+                            </div>
+                        </div>
+                        
+                        <p class="mission-conclusion">Netflix'in temel misyonu, her kullanıcıya özgü, anlamlı ve kalıcı bir dijital eğlence deneyimi sunarak platforma olan bağlılığı güçlendirmek ve rekabet avantajını sürdürülebilir kılmaktır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We Are Here Section -->
+    <section id="why-we-are-here" class="why-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bg2.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Neden Buradayız?</h2>
+                <p class="section-subtitle">
+                    Projenin amacı ve analiz yaklaşımımız
+                </p>
+            </div>
+            
+            <div class="why-content">
+                <p>Netflix, dijital yayıncılık sektöründe yüksek kaliteli içerik üretimi ve yapay zekâ destekli öneri algoritmalarıyla kişiselleştirilmiş deneyimler sunan küresel bir platformdur. Filmlerden belgesellere, dizilerden interaktif içeriklere kadar geniş bir yelpazede hizmet sunan Netflix, kullanıcılarına zengin bir içerik ekosistemi sağlamaktadır. Ancak son yıllarda yapılan pazar analizleri, abonelik iptallerinde artış ve kullanıcı bağlılığında azalma eğiliminin güçlendiğini göstermektedir.</p>
+
+                <p>Bu durum, kullanıcıların platformla etkileşim sıklığının azalması ve izleme deneyimini daha kısa vadeli bir tüketime dönüştürmesiyle ilişkilidir. Dijital dünyada sosyal paylaşım ve topluluk kültürü hızla gelişirken, Netflix'in bireysel izleme temelli yapısı kullanıcıların platformla duygusal bağ kurmasını zorlaştırmaktadır.</p>
+
+                <p>Tam da bu noktada, Kullanıcı Etkileşimini Artırma Süreci devreye girmektedir. Bu süreç, kullanıcıların platformda daha uzun süre kalmasını, izleme deneyimlerini paylaşabilmesini ve sosyal etkileşim yoluyla Netflix'e yeniden bağlanmasını hedeflemektedir. Öneri sistemine entegre edilecek sosyal bileşenler, kullanıcıların birbirini takip edebilmesi, içerik önerilerinde bulunabilmesi ve favori listelerini paylaşabilmesi gibi özelliklerle desteklenmektedir.</p>
+
+                <p>Böylece Netflix, yalnızca içerik izlenen bir platform olmaktan çıkarak, topluluk temelli bir izleme deneyimi sunan dijital ekosistem haline gelir. Bu dönüşüm, hem kullanıcı memnuniyetini hem de uzun vadeli abonelik sürdürülebilirliğini güçlendirir.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="goals-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bg2.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hedeflerimiz</h2>
+                <p class="section-subtitle">
+                    Netflix için stratejik hedefler ve odak noktaları
+                </p>
+            </div>
+            
+            <div class="goals-grid">
+                <div class="goal-item">
+                    <div class="goal-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="goal-title">Churn Oranının Azaltılması</h3>
+                    <p class="goal-description">Netflix'in 2024 itibarıyla küresel abonelik iptali oranı yaklaşık %3,5 seviyesindedir. Etkileşimi artıran süreçlerin tasarımı, iptal oranlarını anlamlı ölçüde azaltma potansiyeline sahiptir.</p>
+                </div>
+                
+                <div class="goal-item">
+                    <div class="goal-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="goal-title">Kullanıcı Etkileşiminin Güçlendirilmesi</h3>
+                    <p class="goal-description">Platform içi sosyal özelliklerin (örneğin birlikte izleme, arkadaş listeleri, öneri paylaşımı) geliştirilmesi kullanıcıları aktif katılımcı konumuna taşır.</p>
+                </div>
+                
+                <div class="goal-item">
+                    <div class="goal-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="goal-title">Rekabet Avantajı Yaratma İhtiyacı</h3>
+                    <p class="goal-description">Kullanıcı etkileşimini artıran adımlar, markayı yeniden "yenilikçi ve kullanıcı merkezli" bir konuma taşıyacaktır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWOT Analysis Section -->
+    <section id="swot" class="swot-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SWOT Analizi</h2>
+                <p class="section-subtitle">
+                    Netflix'in stratejik güçlü yönleri, zayıflıkları, fırsatları ve tehditleri
+                </p>
+            </div>
+            
+            <div class="swot-grid">
+                <!-- Strengths -->
+                <div class="swot-card swot-strengths">
+                    <div class="swot-letter">S</div>
+                    <div class="swot-category">STRENGTHS</div>
+                    <div class="swot-items">
+                        <div class="swot-item">
+                            <p><strong>Küresel Abone Tabanı ve Marka Liderliği</strong> – 190'dan fazla ülkede 302 milyon ücretli aboneyle pazar lideridir; ölçek ekonomisi ve veri temelli strateji avantajına sahiptir.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Güçlü Finansal Performans ve Sermaye Dayanıklılığı</strong> – 2025'te gelir %16, işletme kârı %45 artmıştır; bu istikrar inovasyon yatırımlarını desteklemektedir.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Yapay Zekâ ve Veri Analitiği Yetkinliği</strong> – Öneri motorları izlenme davranışlarının %80'ini yönlendirmekte, kişiselleştirilmiş deneyim sunmaktadır.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Orijinal İçerik Üretim Gücü ve Kültürel Çeşitlilik</strong> – "Netflix Originals" stratejisiyle yerel ve global yapımlar üretmekte, kültürel kapsayıcılığı güçlendirmektedir.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Weaknesses -->
+                <div class="swot-card swot-weaknesses">
+                    <div class="swot-letter">W</div>
+                    <div class="swot-category">WEAKNESSES</div>
+                    <div class="swot-items">
+                        <div class="swot-item">
+                            <p><strong>Kullanıcı Etkileşiminin Sınırlı Olması</strong> – Platformda sosyal etkileşim unsurları (yorum, paylaşım, birlikte izleme vb.) yetersizdir; bu durum kullanıcı bağlılığını zayıflatmaktadır.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Yüksek İçerik Üretim ve Lisanslama Maliyetleri</strong> – 21,8 milyar $ içerik taahhüdü, operasyonel esnekliği sınırlandırmakta ve kâr marjını daraltmaktadır.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Bulut Altyapısına (AWS) Aşırı Bağımlılık</strong> – Tüm operasyonların AWS üzerinde yürütülmesi, siber saldırı ve kesinti risklerinde hizmet sürekliliğini tehdit etmektedir.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Algoritmik Şeffaflık ve Etik Endişeler</strong> – AI öneri sistemleri tam şeffaflık sağlamamakta; veri gizliliği ve güven sorunlarına yol açabilmektedir.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Opportunities -->
+                <div class="swot-card swot-opportunities">
+                    <div class="swot-letter">O</div>
+                    <div class="swot-category">OPPORTUNITIES</div>
+                    <div class="swot-items">
+                        <div class="swot-item">
+                            <p><strong>Kullanıcıların Etkileşimli ve Topluluk Odaklı Platformlara Yönelmesi</strong> – Sosyal bağ kurmaya yönelik eğilim, Netflix için yeni etkileşim özellikleri geliştirme fırsatı yaratmaktadır.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Yapay Zekâ ve Doğal Dil Teknolojilerindeki Gelişmeler</strong> – NLP ve duygusal analiz teknolojileri, öneri sistemlerini daha insancıl ve sezgisel hale getirme olanağı sunmaktadır.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Reklam Destekli Abonelik Modelinin Büyümesi</strong> – Yeni kullanıcıların %40'ı reklam destekli planı tercih etmektedir; gelir çeşitliliği ve segment genişlemesi sağlar.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Sürdürülebilirlik ve ESG Odaklı Yatırımların Artışı</strong> – Net sıfır emisyon hedefleri ve çevresel duyarlılık, kurumsal itibarı ve kullanıcı sadakatini desteklemektedir.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Threats -->
+                <div class="swot-card swot-threats">
+                    <div class="swot-letter">T</div>
+                    <div class="swot-category">THREATS</div>
+                    <div class="swot-items">
+                        <div class="swot-item">
+                            <p><strong>Yoğun Rekabet ve Pazar Doygunluğu</strong> – Disney+, Prime Video ve bölgesel platformlar agresif yatırımlarla pazar payını tehdit etmektedir.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Kısa Video Platformlarının Yükselişi</strong> – TikTok ve Reels gibi platformlar kullanıcıların dikkat süresini bölmekte, uzun formatlı içeriklere ilgiyi azaltmaktadır.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Siber Güvenlik ve Veri Gizliliği Riskleri</strong> – Bulut bağımlılığı nedeniyle oluşabilecek veri ihlalleri, itibar ve kullanıcı güveni açısından tehdit oluşturmaktadır.</p>
+                        </div>
+                        <div class="swot-item">
+                            <p><strong>Düzenleyici ve Hukuki Baskılar</strong> – Yerel içerik kotaları, vergi düzenlemeleri ve veri koruma yasaları maliyetleri artırmakta ve operasyonel esnekliği sınırlamaktadır.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOWS Matrix Section -->
+    <section id="tows" class="tows-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">TOWS Matrisi</h2>
+                <p class="section-subtitle">
+                    Stratejik hedef belirleme ve karar alma matrisi
+                </p>
+            </div>
+            
+            <div class="tows-matrix">
+                <!-- Header Row -->
+                <div class="tows-row tows-header">
+                    <div class="tows-cell tows-empty"></div>
+                    <div class="tows-cell tows-header-cell tows-opportunities">
+                        <div class="tows-header-title">Fırsatlar (O)</div>
+                        <div class="tows-header-subtitle">Dış çevredeki olumlu gelişmeler</div>
+                    </div>
+                    <div class="tows-cell tows-header-cell tows-threats">
+                        <div class="tows-header-title">Tehditler (T)</div>
+                        <div class="tows-header-subtitle">Dış çevredeki olumsuz unsurlar</div>
+                    </div>
+                </div>
+                
+                <!-- Strengths Row -->
+                <div class="tows-row">
+                    <div class="tows-cell tows-side-header tows-strengths">
+                        <div class="tows-side-title">Güçlü Yönler (S)</div>
+                        <div class="tows-side-subtitle">Şirketin içsel avantajları</div>
+                    </div>
+                    
+                    <!-- SO Strategies -->
+                    <div class="tows-cell tows-content tows-so">
+                        <h4 class="tows-strategy-title">SO Stratejileri</h4>
+                        <p class="tows-strategy-desc">Güçlü yönleri fırsatlara dönüştürme</p>
+                        <div class="tows-strategies">
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Veri analitiği ve yapay zekâ gücüyle kullanıcıların sosyal etkileşim beklentisine yanıt verecek yeni deneyimler geliştirmek.</span>
+                            </div>
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Reklam destekli model sayesinde güçlü finansal yapıyı yeni pazarlara açılımda kullanmak.</span>
+                            </div>
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Orijinal içerik üretim kabiliyetini sürdürülebilirlik temalı yerel yapımlarla güçlendirmek.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ST Strategies -->
+                    <div class="tows-cell tows-content tows-st">
+                        <h4 class="tows-strategy-title">ST Stratejileri</h4>
+                        <p class="tows-strategy-desc">Güçlü yönleri kullanarak tehditleri azaltma</p>
+                        <div class="tows-strategies">
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Yapay zekâ altyapısını kullanarak kısa video trendlerine uygun içerik formatları geliştirmek.</span>
+                            </div>
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Finansal gücü siber güvenlik ve veri koruma yatırımlarına yönlendirmek.</span>
+                            </div>
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Küresel marka bilinirliğini kullanarak rekabetin yoğun olduğu pazarlarda marka sadakatini güçlendirmek.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Weaknesses Row -->
+                <div class="tows-row">
+                    <div class="tows-cell tows-side-header tows-weaknesses">
+                        <div class="tows-side-title">Zayıf Yönler (W)</div>
+                        <div class="tows-side-subtitle">Şirketin içsel zayıflıkları</div>
+                    </div>
+                    
+                    <!-- WO Strategies -->
+                    <div class="tows-cell tows-content tows-wo">
+                        <h4 class="tows-strategy-title">WO Stratejileri</h4>
+                        <p class="tows-strategy-desc">Zayıf yönleri fırsatlarla iyileştirme</p>
+                        <div class="tows-strategies">
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-tools"></i>
+                                <span>Kullanıcı etkileşimi eksikliğini, dijital dünyadaki topluluk odaklı eğilimlerle gidermek.</span>
+                            </div>
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-tools"></i>
+                                <span>Bulut bağımlılığını hibrit ve edge teknolojileriyle azaltmak.</span>
+                            </div>
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-tools"></i>
+                                <span>Yüksek içerik maliyetlerini, reklam destekli abonelik gelirleriyle dengelemek.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- WT Strategies -->
+                    <div class="tows-cell tows-content tows-wt">
+                        <h4 class="tows-strategy-title">WT Stratejileri</h4>
+                        <p class="tows-strategy-desc">Zayıflıkları ve tehditleri birlikte azaltma</p>
+                        <div class="tows-strategies">
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Etik yapay zekâ politikaları geliştirerek veri gizliliği ve algoritmik önyargı risklerini önlemek.</span>
+                            </div>
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Çoklu bulut sistemi kurarak AWS bağımlılığı ve kesinti risklerini azaltmak.</span>
+                            </div>
+                            <div class="tows-strategy-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Yapay zekâ destekli prodüksiyon planlamasıyla içerik maliyetlerini düşürmek ve verimliliği artırmak.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MoSCoW Prioritization Section -->
+    <section id="moscow" class="moscow-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">MoSCoW Önceliklendirme</h2>
+                <p class="section-subtitle">
+                    Proje özelliklerinin stratejik önceliklendirmesi
+                </p>
+            </div>
+            
+            <div class="moscow-grid">
+                <!-- Must Have -->
+                <div class="moscow-category moscow-must">
+                    <div class="moscow-header">
+                        <div class="moscow-icon">M</div>
+                        <div class="moscow-title">
+                            <h3>Must Have</h3>
+                            <span class="moscow-subtitle">Olmazsa Olmaz</span>
+                        </div>
+                    </div>
+                    <div class="moscow-content">
+                        <div class="moscow-item">
+                            <h4 class="moscow-item-title">
+                                <i class="fas fa-users"></i>
+                                Kullanıcılar Arası Etkileşim
+                            </h4>
+                            <p class="moscow-item-desc">Takipleşme, öneri paylaşımı, favori liste oluşturma</p>
+                            <p class="moscow-item-detail">Netflix kullanıcılarının birbirini takip edebilmesi, beğendiği içerikleri önerebilmesi ve kendi "favori listelerini" oluşturarak takipçileriyle paylaşabilmesi sağlanmalıdır. Bu sistem, tıpkı Spotify'daki sosyal dinleme modelinde olduğu gibi, kullanıcılar arasında etkileşimi güçlendirir. Böylece izleme deneyimi bireysellikten çıkıp topluluk temelli hale gelir; kullanıcılar platformda daha uzun süre kalır, abonelik iptali riski azalır.</p>
+                        </div>
+                        
+                        <div class="moscow-item">
+                            <h4 class="moscow-item-title">
+                                <i class="fas fa-robot"></i>
+                                Yapay Zekâ Tabanlı İçerik Öneri Chatbotu
+                            </h4>
+                            <p class="moscow-item-desc">Doğal dil işleme ile kişisel asistan</p>
+                            <p class="moscow-item-detail">Kullanıcıların doğal dilde ("akşam moduma uygun film öner") gibi ifadelerle içerik talep edebilmesini sağlar. Bu sistem, kullanıcıya kişisel asistan deneyimi sunar ve içerik keşfini kolaylaştırarak platform etkileşimini sürekli canlı tutar.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Should Have -->
+                <div class="moscow-category moscow-should">
+                    <div class="moscow-header">
+                        <div class="moscow-icon">S</div>
+                        <div class="moscow-title">
+                            <h3>Should Have</h3>
+                            <span class="moscow-subtitle">Olmalı</span>
+                        </div>
+                    </div>
+                    <div class="moscow-content">
+                        <div class="moscow-item">
+                            <h4 class="moscow-item-title">
+                                <i class="fas fa-heart"></i>
+                                AI Temelli Duygu Analizi
+                            </h4>
+                            <p class="moscow-item-desc">Emotional tagging ile kişiselleştirilmiş öneriler</p>
+                            <p class="moscow-item-detail">Kullanıcının duygusal durumuna göre içerik önerileri yaparak (ör. "rahatlatıcı dizi", "heyecanlı belgesel") kişisel bağ kurma oranını artırır. Bu özellik, bağlılık ve memnuniyet düzeyini yükseltir.</p>
+                        </div>
+                        
+                        <div class="moscow-item">
+                            <h4 class="moscow-item-title">
+                                <i class="fas fa-trophy"></i>
+                                Sadakat ve Aktivite Rozetleri
+                            </h4>
+                            <p class="moscow-item-desc">Loyalty Gamification</p>
+                            <p class="moscow-item-detail">Kullanıcılara izleme süresi, öneri paylaşımı veya takipçi sayısına göre dijital rozetler ve başarı puanları kazandırır. Oyunlaştırma yaklaşımı, kullanıcıların platformda kalma motivasyonunu artırır.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Could Have -->
+                <div class="moscow-category moscow-could">
+                    <div class="moscow-header">
+                        <div class="moscow-icon">C</div>
+                        <div class="moscow-title">
+                            <h3>Could Have</h3>
+                            <span class="moscow-subtitle">Olabilir</span>
+                        </div>
+                    </div>
+                    <div class="moscow-content">
+                        <div class="moscow-item">
+                            <h4 class="moscow-item-title">
+                                <i class="fas fa-film"></i>
+                                Haftalık Kısa İçerik Akışı
+                            </h4>
+                            <p class="moscow-item-desc">Reels benzeri yapı</p>
+                            <p class="moscow-item-detail">Kullanıcıların ilgisini korumak için haftalık kısa içerik veya "trend özetleri" sunar. Pasif kullanıcıları yeniden platforma çeker; ancak temel bağlılık faktörü olmadığı için zorunlu değildir.</p>
+                        </div>
+                        
+                        <div class="moscow-item">
+                            <h4 class="moscow-item-title">
+                                <i class="fas fa-user-cog"></i>
+                                Kullanıcı Profili Özelleştirmesi
+                            </h4>
+                            <p class="moscow-item-desc">Tema, görünüm, etkileşim geçmişi</p>
+                            <p class="moscow-item-detail">Kullanıcıların kendi profillerini özelleştirerek platformda kişisel alan hissi kazanmalarını sağlar. Etkileşimi destekler, ancak temel öncelik değildir.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Won't Have -->
+                <div class="moscow-category moscow-wont">
+                    <div class="moscow-header">
+                        <div class="moscow-icon">W</div>
+                        <div class="moscow-title">
+                            <h3>Won't Have</h3>
+                            <span class="moscow-subtitle">Şimdilik Olmayacak</span>
+                        </div>
+                    </div>
+                    <div class="moscow-content">
+                        <div class="moscow-item">
+                            <h4 class="moscow-item-title">
+                                <i class="fas fa-ban"></i>
+                                Kullanıcılar Arası Mesajlaşma
+                            </h4>
+                            <p class="moscow-item-desc">Özel sohbet sistemi</p>
+                            <p class="moscow-item-detail">Veri gizliliği, moderasyon ve güvenlik riskleri nedeniyle kısa vadede uygulanması planlanmamıştır. Sosyal etkileşim altyapısı (takipleşme, öneri paylaşımı) bu ihtiyacı dolaylı olarak karşılar.</p>
+                        </div>
+                        
+                        <div class="moscow-item">
+                            <h4 class="moscow-item-title">
+                                <i class="fas fa-ban"></i>
+                                Kullanıcıların Kendi İçeriğini Üretmesi
+                            </h4>
+                            <p class="moscow-item-desc">User Generated Content</p>
+                            <p class="moscow-item-detail">Netflix'in mevcut marka yapısı ve yayın politikasıyla uyumlu değildir. Platform kimliğini zayıflatabileceği için proje kapsamı dışında tutulmuştur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Section -->
+    <section id="analysis" class="analysis-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">İş Süreçleri Analizi</h2>
+                <p class="section-subtitle">
+                    Netflix'in başarısının arkasındaki stratejik iş süreçlerini keşfedin
+                </p>
+            </div>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Veri Analizi</h3>
+                    <p>Kullanıcı davranışlarını analiz ederek içerik stratejileri geliştirme</p>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">200M+</span>
+                            <span class="stat-label">Kullanıcı</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Müşteri Deneyimi</h3>
+                    <p>Kişiselleştirilmiş öneriler ve kullanıcı arayüzü optimizasyonu</p>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-number">75%</span>
+                            <span class="stat-label">Kişiselleştirme</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.8★</span>
+                            <span class="stat-label">Memnuniyet</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Operasyonel Süreçler</h3>
+                    <p>İçerik üretimi, dağıtımı ve platform yönetimi süreçleri</p>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-number">190+</span>
+                            <span class="stat-label">Ülke</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Destek</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processes Section -->
+    <section id="processes" class="processes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ana Süreçler</h2>
+                <p class="section-subtitle">
+                    Netflix'in temel iş süreçlerini detaylı olarak inceleyin
+                </p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>İçerik Keşfi</h3>
+                        <p>Algoritma tabanlı öneri sistemi ve kullanıcı tercihleri analizi</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>İçerik Üretimi</h3>
+                        <p>Veri odaklı içerik stratejileri ve yapım süreçleri</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Dağıtım ve Yayın</h3>
+                        <p>Global platform yönetimi ve teknik altyapı</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights" class="insights-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Anahtar İçgörüler</h2>
+                <p class="section-subtitle">
+                    Netflix'in başarısından çıkarılan önemli dersler
+                </p>
+            </div>
+            
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-number">01</div>
+                    <h3>Veri Odaklı Karar Verme</h3>
+                    <p>Her kararın arkasında güçlü veri analizi ve kullanıcı davranışları</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-number">02</div>
+                    <h3>Sürekli İnovasyon</h3>
+                    <p>Teknoloji ve süreçlerde sürekli gelişim ve adaptasyon</p>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-number">03</div>
+                    <h3>Müşteri Merkezli Yaklaşım</h3>
+                    <p>Kullanıcı deneyimini her şeyin üstünde tutan strateji</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">İletişim</h2>
+                <p class="section-subtitle">
+                    Proje hakkında daha fazla bilgi almak için bizimle iletişime geçin
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@netflixanalytics.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+90 555 123 4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>İstanbul, Türkiye</span>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fab fa-netflix"></i>
+                    <span>Netflix Analiz</span>
+                </div>
+                <p class="footer-text">
+                    İş Süreçleri Analizi Dersi Projesi - 2024
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
