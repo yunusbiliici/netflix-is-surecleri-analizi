@@ -3325,29 +3325,129 @@ section {
 
 /* Footer */
 .footer {
-    background: var(--netflix-dark-gray);
-    padding: var(--spacing-xl) 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #000000 0%, #141414 100%);
+    padding: var(--spacing-xxl) 0 var(--spacing-xl);
+    border-top: 3px solid var(--netflix-red);
 }
 
 .footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxl);
+    align-items: start;
+}
+
+.footer-video {
     text-align: center;
+}
+
+.footer-video h3 {
+    color: var(--netflix-white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-video-player {
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
 }
 
 .footer-logo {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-    font-size: 1.2rem;
-    font-weight: var(--font-weight-bold);
-    color: var(--netflix-red);
+    gap: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
 }
 
-.footer-text {
+.footer-netflix-logo {
+    width: 40px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.footer-logo h3 {
+    color: var(--netflix-white);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.footer-info p {
     color: var(--netflix-text-gray);
     font-size: 0.9rem;
+    margin: 2px 0;
+}
+
+.footer-year {
+    font-weight: 600 !important;
+    color: var(--netflix-text-light) !important;
+    margin-top: var(--spacing-xs);
+}
+
+.footer-details {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-details p {
+    font-size: 0.85rem;
+    color: var(--netflix-text-gray);
+    margin: 5px 0;
+}
+
+.footer-details strong {
+    color: var(--netflix-text-light);
+    font-weight: 600;
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .footer-video-player {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-xl) 0 var(--spacing-lg);
+    }
+    
+    .footer-info {
+        text-align: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-logo h3 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-video h3 {
+        font-size: 1.1rem;
+    }
 }
 
 /* Animations */
@@ -3635,6 +3735,419 @@ section {
 /* Dark mode support (already dark by default) */
 @media (prefers-color-scheme: light) {
     /* Keep dark theme as it's Netflix brand */
+}
+
+/* BPMN Section */
+.bpmn-section {
+    padding: var(--spacing-md) 0;
+    background: #000000;
+}
+
+.bpmn-image-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: center;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+}
+
+.bpmn-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    transition: transform 0.3s ease;
+    cursor: grab;
+    transform-origin: center center;
+    user-select: none;
+}
+
+.bpmn-image:active {
+    cursor: grabbing;
+}
+
+.bpmn-image.zoomed {
+    cursor: grab;
+}
+
+.bpmn-section .section-header {
+    margin-bottom: var(--spacing-sm);
+}
+
+.bpmn-info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-md);
+}
+
+.info-card {
+    background: var(--netflix-gray);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--netflix-red);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.2);
+}
+
+.info-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--netflix-red);
+}
+
+.info-card-header i {
+    font-size: 1.5rem;
+    color: var(--netflix-red);
+}
+
+.info-card-header h3 {
+    color: var(--netflix-text-light);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.info-card-content {
+    color: var(--netflix-text-gray);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.info-card-content ul {
+    margin: var(--spacing-sm) 0;
+    padding-left: var(--spacing-md);
+}
+
+.info-card-content li {
+    margin: 5px 0;
+}
+
+.info-card-content strong {
+    color: var(--netflix-text-light);
+    font-weight: 600;
+}
+
+/* Responsive adjustments for info cards */
+@media (max-width: 992px) {
+    .bpmn-info-cards {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .bpmn-info-cards {
+        margin-top: var(--spacing-lg);
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .info-card {
+        padding: var(--spacing-md);
+    }
+    
+    .info-card-header h3 {
+        font-size: 1rem;
+    }
+    
+    .info-card-content {
+        font-size: 0.85rem;
+    }
+}
+
+.bpmn-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: var(--spacing-md);
+}
+
+.zoom-btn {
+    background: var(--netflix-red);
+    border: none;
+    color: var(--netflix-white);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.zoom-btn:hover {
+    background: var(--netflix-red-dark);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+}
+
+.zoom-btn:active {
+    transform: scale(0.95);
+}
+
+/* Responsive adjustments for BPMN */
+@media (max-width: 768px) {
+    .bpmn-section {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .bpmn-image-container {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .zoom-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bpmn-image-container {
+        padding: var(--spacing-xs);
+    }
+    
+    .zoom-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Fishbone Diagram Section */
+.fishbone-section {
+    padding: var(--spacing-md) 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Gemini_Generated_Image_7np1eq7np1eq7np1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.fishbone-section .section-header {
+    margin-bottom: var(--spacing-sm);
+}
+
+.fishbone-image-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: center;
+}
+
+.fishbone-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Responsive adjustments for fishbone */
+@media (max-width: 768px) {
+    .fishbone-section {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .fishbone-image-container {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .fishbone-image-container {
+        padding: var(--spacing-xs);
+    }
+}
+
+/* 5 Whys Analysis Section */
+.five-whys-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bg3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.five-whys-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.why-box {
+    background: var(--netflix-gray);
+    border-left: 4px solid var(--netflix-red);
+    padding: 25px 30px;
+    border-radius: var(--radius-md);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.why-box:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+    background: #3a3a3a;
+}
+
+.why-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--netflix-red);
+    min-width: 50px;
+    text-align: center;
+    padding: 10px;
+    background: rgba(229, 9, 20, 0.1);
+    border-radius: var(--radius-sm);
+}
+
+.why-content {
+    flex: 1;
+}
+
+.why-question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--netflix-text-light);
+    margin-bottom: 10px;
+}
+
+.why-answer {
+    font-size: 0.95rem;
+    color: var(--netflix-text-gray);
+    line-height: 1.7;
+}
+
+.why-answer strong {
+    color: var(--netflix-red);
+    font-weight: 700;
+}
+
+/* Root Cause Box - Special Styling */
+.why-box.root-cause {
+    background: linear-gradient(135deg, #E50914 0%, #B81D13 100%);
+    border-left: 6px solid #FFFFFF;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.why-box.root-cause:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(229, 9, 20, 0.6);
+}
+
+.why-box.root-cause .why-content {
+    margin: 0;
+}
+
+.root-cause-title {
+    color: #FFFFFF !important;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.root-cause-text {
+    color: #FFFFFF !important;
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.root-cause-text strong {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(229, 9, 20, 0.7);
+    }
+}
+
+/* Responsive adjustments for 5 whys */
+@media (max-width: 768px) {
+    .five-whys-section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .why-box {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .why-number {
+        min-width: auto;
+        width: 100%;
+        text-align: left;
+        font-size: 1.5rem;
+    }
+    
+    .why-question {
+        font-size: 1rem;
+    }
+    
+    .why-answer {
+        font-size: 0.9rem;
+    }
+    
+    .root-cause-title {
+        font-size: 1.2rem;
+    }
+    
+    .root-cause-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-box {
+        padding: 15px;
+    }
+    
+    .why-number {
+        font-size: 1.3rem;
+    }
+    
+    .why-question {
+        font-size: 0.95rem;
+    }
+    
+    .why-answer {
+        font-size: 0.85rem;
+    }
 }
 
 /* Print styles */

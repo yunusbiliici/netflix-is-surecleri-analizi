@@ -29,7 +29,126 @@ document.addEventListener('DOMContentLoaded', function() {
     initPerformanceOptimizations();
     initLogoAnimation();
     initIntroSound();
+    initBPMNZoom();
 });
+
+// BPMN Image Zoom Functionality
+function initBPMNZoom() {
+    const bpmnImage = document.getElementById('bpmnImage');
+    const zoomInBtn = document.getElementById('zoomInBtn');
+    const zoomOutBtn = document.getElementById('zoomOutBtn');
+    const resetBtn = document.getElementById('resetZoomBtn');
+    
+    if (!bpmnImage) return;
+    
+    let scale = 1;
+    let posX = 0;
+    let posY = 0;
+    const minScale = 0.5;
+    const maxScale = 3;
+    const scaleStep = 0.25;
+    
+    let isDragging = false;
+    let currentX = 0;
+    let currentY = 0;
+    
+    function applyTransform() {
+        bpmnImage.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+    }
+    
+    function resetPosition() {
+        scale = 1;
+        posX = 0;
+        posY = 0;
+        applyTransform();
+    }
+    
+    // Zoom In
+    if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', () => {
+            if (scale < maxScale) {
+                scale += scaleStep;
+                applyTransform();
+            }
+        });
+    }
+    
+    // Zoom Out
+    if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', () => {
+            if (scale > minScale) {
+                scale -= scaleStep;
+                // Auto center when zooming out too much
+                if (scale <= 1) {
+                    posX = 0;
+                    posY = 0;
+                }
+                applyTransform();
+            }
+        });
+    }
+    
+    // Reset
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            resetPosition();
+        });
+    }
+    
+    // Drag functionality
+    bpmnImage.addEventListener('mousedown', (e) => {
+        if (scale > 1) {
+            isDragging = true;
+            currentX = e.clientX - posX;
+            currentY = e.clientY - posY;
+        }
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging && scale > 1) {
+            e.preventDefault();
+            posX = e.clientX - currentX;
+            posY = e.clientY - currentY;
+            applyTransform();
+        }
+    });
+    
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+    
+    // Prevent context menu on right click (optional)
+    bpmnImage.addEventListener('contextmenu', (e) => {
+        if (scale > 1) {
+            e.preventDefault();
+        }
+    });
+    
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    bpmnImage.addEventListener('touchstart', (e) => {
+        if (scale > 1 && e.touches.length === 1) {
+            isDragging = true;
+            touchStartX = e.touches[0].clientX - posX;
+            touchStartY = e.touches[0].clientY - posY;
+        }
+    });
+    
+    bpmnImage.addEventListener('touchmove', (e) => {
+        if (isDragging && scale > 1 && e.touches.length === 1) {
+            e.preventDefault();
+            posX = e.touches[0].clientX - touchStartX;
+            posY = e.touches[0].clientY - touchStartY;
+            applyTransform();
+        }
+    });
+    
+    bpmnImage.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+}
 
 // Sidebar functionality
 function initSidebar() {

@@ -131,27 +131,21 @@
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#analysis" class="menu-link" data-section="analysis">
-                            <i class="fas fa-chart-line"></i>
-                            <span>İş Süreçleri Analizi</span>
+                        <a href="#fishbone" class="menu-link" data-section="fishbone">
+                            <i class="fas fa-bone"></i>
+                            <span>Balık Kılçığı Diyagramı</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#processes" class="menu-link" data-section="processes">
-                            <i class="fas fa-cogs"></i>
-                            <span>Ana Süreçler</span>
+                        <a href="#bpmn" class="menu-link" data-section="bpmn">
+                            <i class="fas fa-sitemap"></i>
+                            <span>2.0 BPMN Haritası</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#insights" class="menu-link" data-section="insights">
-                            <i class="fas fa-lightbulb"></i>
-                            <span>İçgörüler</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#contact" class="menu-link" data-section="contact">
-                            <i class="fas fa-envelope"></i>
-                            <span>İletişim</span>
+                        <a href="#five-whys" class="menu-link" data-section="five-whys">
+                            <i class="fas fa-question-circle"></i>
+                            <span>5 Neden Analizi</span>
                         </a>
                     </li>
                 </ul>
@@ -1184,174 +1178,156 @@
         </div>
     </section>
 
-    <!-- Analysis Section -->
-    <section id="analysis" class="analysis-section">
+    <!-- BPMN 2.0 Map Section -->
+    <section id="bpmn" class="bpmn-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">İş Süreçleri Analizi</h2>
-                <p class="section-subtitle">
-                    Netflix'in başarısının arkasındaki stratejik iş süreçlerini keşfedin
-                </p>
+                <h2 class="section-title">2.0 BPMN Haritası</h2>
             </div>
             
-            <div class="analysis-grid">
-                <div class="analysis-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
+            <div class="bpmn-controls">
+                <button class="zoom-btn" id="zoomInBtn" title="Yakınlaştır">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="zoom-btn" id="zoomOutBtn" title="Uzaklaştır">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="zoom-btn" id="resetZoomBtn" title="Sıfırla">
+                    <i class="fas fa-undo"></i>
+                </button>
+            </div>
+            
+            <div class="bpmn-image-container">
+                <img src="images/WhatsApp Görsel 2025-10-27 saat 15.48.19_8fe865dd.jpg" alt="BPMN 2.0 Haritası" class="bpmn-image" id="bpmnImage">
+            </div>
+            
+            <div class="bpmn-info-cards">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-play-circle"></i>
+                        <h3>Başlangıç</h3>
                     </div>
-                    <h3>Veri Analizi</h3>
-                    <p>Kullanıcı davranışlarını analiz ederek içerik stratejileri geliştirme</p>
-                    <div class="card-stats">
-                        <div class="stat">
-                            <span class="stat-number">99.9%</span>
-                            <span class="stat-label">Uptime</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">200M+</span>
-                            <span class="stat-label">Kullanıcı</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="analysis-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Müşteri Deneyimi</h3>
-                    <p>Kişiselleştirilmiş öneriler ve kullanıcı arayüzü optimizasyonu</p>
-                    <div class="card-stats">
-                        <div class="stat">
-                            <span class="stat-number">75%</span>
-                            <span class="stat-label">Kişiselleştirme</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">4.8★</span>
-                            <span class="stat-label">Memnuniyet</span>
-                        </div>
+                    <div class="info-card-content">
+                        <p>Kullanıcı, Netflix platformunda profil oluşturmak için <strong>"Profil Oluştur"</strong> butonuna tıklayarak süreci başlatır.</p>
                     </div>
                 </div>
                 
-                <div class="analysis-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-icon">
-                        <i class="fas fa-cogs"></i>
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-stop-circle"></i>
+                        <h3>Bitiş</h3>
                     </div>
-                    <h3>Operasyonel Süreçler</h3>
-                    <p>İçerik üretimi, dağıtımı ve platform yönetimi süreçleri</p>
-                    <div class="card-stats">
-                        <div class="stat">
-                            <span class="stat-number">190+</span>
-                            <span class="stat-label">Ülke</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Destek</span>
-                        </div>
+                    <div class="info-card-content">
+                        <p>Süreç, üç farklı noktada sonlanabilir:</p>
+                        <ul>
+                            <li>Kullanıcı bilgileri geçersizse: Sistem uyarı verir</li>
+                            <li>Kullanıcı takip etmek istemezse: Listeye içerik ekledikten sonra sonlanır</li>
+                            <li>Kullanıcı takip isteği gönderirse: Sistem isteği kaydeder</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Sistemler</h3>
+                    </div>
+                    <div class="info-card-content">
+                        <p><strong>Kullanıcı:</strong> Profil oluşturma, liste oluşturma, içerik ekleme, takip isteği gönderme</p>
+                        <p><strong>Netflix Sistemi:</strong> Bilgi doğrulama, profil kaydı, istek kaydetme</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Processes Section -->
-    <section id="processes" class="processes-section">
+    <!-- Fishbone Diagram Section -->
+    <section id="fishbone" class="fishbone-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Ana Süreçler</h2>
-                <p class="section-subtitle">
-                    Netflix'in temel iş süreçlerini detaylı olarak inceleyin
-                </p>
+                <h2 class="section-title">Balık Kılçığı Diyagramı</h2>
             </div>
             
-            <div class="process-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>İçerik Keşfi</h3>
-                        <p>Algoritma tabanlı öneri sistemi ve kullanıcı tercihleri analizi</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>İçerik Üretimi</h3>
-                        <p>Veri odaklı içerik stratejileri ve yapım süreçleri</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Dağıtım ve Yayın</h3>
-                        <p>Global platform yönetimi ve teknik altyapı</p>
-                    </div>
-                </div>
+            <div class="fishbone-image-container">
+                <img src="images/Soft Blue Simple Fishbone Diagram Graph-Photoroom.png" alt="Balık Kılçığı Diyagramı" class="fishbone-image">
             </div>
         </div>
     </section>
 
-    <!-- Insights Section -->
-    <section id="insights" class="insights-section">
+    <!-- 5 Whys Analysis Section -->
+    <section id="five-whys" class="five-whys-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Anahtar İçgörüler</h2>
+                <h2 class="section-title">5 Neden Analizi</h2>
                 <p class="section-subtitle">
-                    Netflix'in başarısından çıkarılan önemli dersler
+                    Abonelik iptal oranları ve düşük kullanıcı bağlılığının kök neden analizi
                 </p>
             </div>
             
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <div class="insight-number">01</div>
-                    <h3>Veri Odaklı Karar Verme</h3>
-                    <p>Her kararın arkasında güçlü veri analizi ve kullanıcı davranışları</p>
-                </div>
-                
-                <div class="insight-card">
-                    <div class="insight-number">02</div>
-                    <h3>Sürekli İnovasyon</h3>
-                    <p>Teknoloji ve süreçlerde sürekli gelişim ve adaptasyon</p>
-                </div>
-                
-                <div class="insight-card">
-                    <div class="insight-number">03</div>
-                    <h3>Müşteri Merkezli Yaklaşım</h3>
-                    <p>Kullanıcı deneyimini her şeyin üstünde tutan strateji</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">İletişim</h2>
-                <p class="section-subtitle">
-                    Proje hakkında daha fazla bilgi almak için bizimle iletişime geçin
-                </p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@netflixanalytics.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+90 555 123 4567</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>İstanbul, Türkiye</span>
+            <div class="five-whys-container">
+                <!-- Why 1 -->
+                <div class="why-box">
+                    <div class="why-number">1</div>
+                    <div class="why-content">
+                        <h3 class="why-question">Neden abonelik iptal oranları yüksek ve kullanıcı bağlılığı düşük?</h3>
+                        <div class="why-answer">
+                            <strong>Çünkü</strong> kullanıcılar platformda "izleyecek bir şey bulamıyorum" sendromu yaşıyor ve izleyecekleri bir dizi bittiğinde (Binge-and-Cancel) platformda kalmak için bir sebepleri kalmıyor.
+                        </div>
                     </div>
                 </div>
                 
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <!-- Why 2 -->
+                <div class="why-box">
+                    <div class="why-number">2</div>
+                    <div class="why-content">
+                        <h3 class="why-question">Neden "izleyecek bir şey bulamıyorlar" veya "kalmak için sebepleri yok"?</h3>
+                        <div class="why-answer">
+                            <strong>Çünkü</strong> içerik keşfi sadece "pasif" (algoritmanın önerdiğini bekleme) ve deneyim çok "izole" (yalnız). İçerik bittiğinde, deneyim de bitiyor.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Why 3 -->
+                <div class="why-box">
+                    <div class="why-number">3</div>
+                    <div class="why-content">
+                        <h3 class="why-question">Neden deneyim bu kadar "pasif" ve "izole"?</h3>
+                        <div class="why-answer">
+                            <strong>Çünkü</strong> platform, kullanıcıların birbirleriyle veya içerikle anlamlı bir bağ kurmasına izin vermiyor. Kullanıcılar pasif birer "izleyici" konumunda.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Why 4 -->
+                <div class="why-box">
+                    <div class="why-number">4</div>
+                    <div class="why-content">
+                        <h3 class="why-question">Neden kullanıcılar "anlamlı bir bağ" kuramıyor?</h3>
+                        <div class="why-answer">
+                            <strong>Çünkü</strong> temelde hiçbir sosyal özellik yok. Kullanıcılar arkadaşlarının ne izlediğini göremiyor, onlara bir şey öneremiyor veya en sevdikleri filmleri bir araya getirip (listeleyip) kendi kimliklerini platforma yansıtamıyor.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Why 5 -->
+                <div class="why-box">
+                    <div class="why-number">5</div>
+                    <div class="why-content">
+                        <h3 class="why-question">Neden bu sosyal özelliklerin "olmaması" bu kadar büyük bir sorun?</h3>
+                        <div class="why-answer">
+                            <strong>Çünkü</strong> (TOWS analizimizdeki <strong>O1 Fırsatı</strong> burada devreye giriyor) pazar değişti. İnsanlar artık sadece içerik tüketmek değil, aynı zamanda <strong>"ait olmak", "paylaşmak" ve "topluluk kurmak"</strong> istiyor. Bu temel insani ihtiyaç karşılanmadığı için, platform "yapışkan" (sticky) hale gelemiyor ve kullanıcılar kolayca iptal edebiliyor.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Root Cause -->
+                <div class="why-box root-cause">
+                    <div class="why-content">
+                        <h3 class="why-question root-cause-title">KÖK NEDEN</h3>
+                        <div class="why-answer root-cause-text">
+                            Platformun, kullanıcıları pasif 'içerik tüketicileri' olarak konumlandıran <strong>tek yönlü bir yayın modeli</strong> üzerine kurulu olmasıdır. Modern pazarın 'topluluk' ve 'etkileşim' taleplerine yanıt veremeyen bu stratejik boşluk, kullanıcının platforma kişisel yatırım yapmasını engellemektedir. Sosyal bir <strong>'bağlılık katmanı' (engagement layer)</strong> olmadığından, içerik kütüphanesi tükendiğinde veya fiyat arttığında, aboneliği sonlandırmak (churn) kullanıcı için <strong>sürtünmesiz bir karar</strong> haline gelmektedir.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1361,13 +1337,30 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fab fa-netflix"></i>
-                    <span>Netflix Analiz</span>
+                <div class="footer-grid">
+                    <div class="footer-video">
+                        <h3>Proje Videosu</h3>
+                        <video class="footer-video-player" controls>
+                            <source src="videos/WhatsApp Video 2025-10-27 saat 16.39.46_ff14fbd4.mp4" type="video/mp4">
+                            Video oynatıcı desteklenmiyor.
+                        </video>
+                    </div>
+                    
+                    <div class="footer-info">
+                        <div class="footer-logo">
+                            <img src="images/Netflix-Symbol-Photoroom.png" alt="Netflix Logo" class="footer-netflix-logo">
+                            <h3>Netflix İş Süreçleri Analizi</h3>
+                        </div>
+                        <p>Dijital Dönüşüm ve İş Süreçleri Projesi</p>
+                        <p class="footer-year">© 2025 - Tüm Hakları Saklıdır</p>
+                        
+                        <div class="footer-details">
+                            <p><strong>Platform:</strong> Netflix</p>
+                            <p><strong>Tür:</strong> İş Süreçleri Analizi</p>
+                            <p><strong>Odak:</strong> Kullanıcı Etkileşimi ve Bağlılık</p>
+                        </div>
+                    </div>
                 </div>
-                <p class="footer-text">
-                    İş Süreçleri Analizi Dersi Projesi - 2024
-                </p>
             </div>
         </div>
     </footer>
