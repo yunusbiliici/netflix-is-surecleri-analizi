@@ -146,13 +146,15 @@ function initScrollAnimations() {
                     animateInsightCard(entry.target);
                 } else if (entry.target.classList.contains('team-member')) {
                     animateTeamMember(entry.target);
+                } else if (entry.target.classList.contains('rice-row')) {
+                    animateRiceRow(entry.target);
                 }
             }
         });
     }, observerOptions);
 
     // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.analysis-card, .timeline-item, .insight-card, .team-member, .section-header, .vision-card, .mission-card, .why-content, .goal-item, .swot-card, .tows-matrix, .moscow-category');
+    const animatedElements = document.querySelectorAll('.analysis-card, .timeline-item, .insight-card, .team-member, .section-header, .vision-card, .mission-card, .why-content, .goal-item, .swot-card, .tows-matrix, .moscow-category, .rice-card, .explanation-card, .sipoc-table tbody tr');
     animatedElements.forEach(el => {
         observer.observe(el);
     });
@@ -191,6 +193,15 @@ function animateTeamMember(member) {
     setTimeout(() => {
         member.style.transform = 'translateY(0) scale(1)';
         member.style.opacity = '1';
+    }, delay);
+}
+
+// RICE row animation
+function animateRiceRow(row) {
+    const delay = Array.from(row.parentNode.children).indexOf(row) * 100;
+    setTimeout(() => {
+        row.style.transform = 'scale(1)';
+        row.style.opacity = '1';
     }, delay);
 }
 
@@ -493,6 +504,17 @@ const animationStyles = `
     .team-member.animate-in {
         opacity: 1;
         transform: translateY(0) scale(1);
+    }
+    
+    .rice-row {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: all 0.4s ease;
+    }
+    
+    .rice-row.animate-in {
+        opacity: 1;
+        transform: scale(1);
     }
     
     @keyframes float {
@@ -824,6 +846,30 @@ function initIntroSound() {
     }, { once: true });
 }
 
+// Process Modal Functions
+function openProcessModal() {
+    const modal = document.getElementById('processModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeProcessModal() {
+    const modal = document.getElementById('processModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close modal on ESC key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeProcessModal();
+    }
+});
+
 // Export functions for potential external use
 window.NetflixAnalytics = {
     initScrollAnimations,
@@ -840,5 +886,7 @@ window.NetflixAnalytics = {
     initLogoAnimation,
     initSidebar,
     initIntroSound,
-    trackEvent
+    trackEvent,
+    openProcessModal,
+    closeProcessModal
 };

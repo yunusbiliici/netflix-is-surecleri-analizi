@@ -119,6 +119,18 @@
                         </a>
                     </li>
                     <li class="menu-item">
+                        <a href="#rice" class="menu-link" data-section="rice">
+                            <i class="fas fa-star"></i>
+                            <span>RICE Puanlama</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#sipoc" class="menu-link" data-section="sipoc">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>SIPOC Diyagramı</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
                         <a href="#analysis" class="menu-link" data-section="analysis">
                             <i class="fas fa-chart-line"></i>
                             <span>İş Süreçleri Analizi</span>
@@ -154,34 +166,28 @@
         </div>
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="images/netflix-logo-1068x580.jpg" alt="Netflix Logo" class="netflix-logo">
+                <img src="images/Netflix-Symbol-Photoroom.png" alt="Netflix Logo" class="netflix-logo">
+                <h2 class="netflix-text-below">NETFLIX</h2>
             </div>
-            <h1 class="hero-title">
-                <span class="title-line">Netflix İş Süreçleri Analizi</span>
-            </h1>
-            <p class="hero-subtitle">
-                Dijital dönüşümün öncüsü Netflix'in iş süreçlerini derinlemesine analiz ediyoruz
-            </p>
+            <div class="hero-subtitle">
+                <p class="subtitle-first">Dijital dönüşümün öncüsü Netflix'in iş süreçlerini derinlemesine analiz ediyoruz</p>
+                <p class="subtitle-second">Abonelik iptalleri ve düşük kullanıcı bağlılığı</p>
+            </div>
             <div class="hero-buttons">
                 <button class="btn btn-primary" onclick="document.getElementById('company').scrollIntoView({behavior: 'smooth', block: 'start'})">
                     <i class="fas fa-building"></i>
                     Şirketi Tanıyalım
                 </button>
-                <button class="btn btn-secondary">
-                    <i class="fas fa-arrow-down"></i>
+                <button class="btn btn-secondary" onclick="document.getElementById('company').scrollIntoView({behavior: 'smooth', block: 'start'})">
+                    <i class="fas fa-arrow-down animated-arrow"></i>
                     Detaylara İn
                 </button>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow">
-                <i class="fas fa-chevron-down"></i>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="team-section">
+    <section id="team" class="team-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bg3.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Ekip Tanıtımı</h2>
@@ -198,6 +204,7 @@
                     <div class="member-info">
                         <h3 class="member-name">Ayşe Sueda Alkoç</h3>
                         <p class="member-title">İş Analisti</p>
+                        <p class="member-description">Netflix'in kullanıcı etkileşimi sorununa yönelik stratejik zemin oluşturur; As-Is ve To-Be süreç haritalarını tanımlar ve iyileştirme fırsatlarını RICE & MoSCoW yöntemleriyle önceliklendirir.</p>
                         <div class="member-socials">
                             <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                             <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
@@ -213,6 +220,7 @@
                     <div class="member-info">
                         <h3 class="member-name">Yunus Eren Bilici</h3>
                         <p class="member-title">İş Analisti</p>
+                        <p class="member-description">Netflix kullanıcı etkileşim süreçlerinin mevcut durum analizini yapar, sorunlu noktaları belirler ve kullanıcı davranışlarını veri odaklı yöntemlerle değerlendirir.</p>
                         <div class="member-socials">
                             <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                             <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
@@ -225,7 +233,7 @@
     </section>
 
     <!-- Company Section -->
-    <section id="company" class="company-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bg1.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <section id="company" class="company-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Şirket Tanıtımı</h2>
@@ -306,28 +314,9 @@
                     <div class="card-content">
                         <p>Netflix'in misyonu, <strong>teknoloji, yaratıcılık ve veri gücünü bir araya getirerek sürdürülebilir, kişiselleştirilmiş ve etkileşim temelli bir dijital eğlence deneyimi sunmak</strong>tır.</p>
                         
-                        <p>Şirket, küresel ölçekteki milyonlarca kullanıcısına yalnızca içerik izletmeyi değil, onların platformla duygusal bağ kurmalarını ve uzun vadeli bir deneyim sadakati geliştirmelerini hedefler.</p>
+                        <p>Şirket, milyonlarca kullanıcıya yalnızca içerik sunmakla kalmayıp, onlarla duygusal bağ kurmayı ve uzun vadeli sadakat oluşturmayı hedefler.</p>
                         
-                        <div class="mission-points">
-                            <div class="mission-point">
-                                <i class="fas fa-brain"></i>
-                                <span><strong>Yapay zekâ destekli öneri sistemleriyle</strong> kullanıcı tercihlerini anlamlandırır ve kişiselleştirilmiş içerik akışları oluşturur.</span>
-                            </div>
-                            <div class="mission-point">
-                                <i class="fas fa-heart"></i>
-                                <span><strong>Kullanıcı etkileşimini ve bağlılığını güçlendiren süreçleri</strong> sürekli olarak geliştirir.</span>
-                            </div>
-                            <div class="mission-point">
-                                <i class="fas fa-shield-alt"></i>
-                                <span><strong>Veri gizliliği, etik AI kullanımı ve sürdürülebilir üretim ilkeleriyle</strong> sorumlu bir dijital liderlik sergiler.</span>
-                            </div>
-                            <div class="mission-point">
-                                <i class="fas fa-globe-americas"></i>
-                                <span><strong>Yerel ve küresel içerik çeşitliliğini</strong> destekleyerek kültürel kapsayıcılığı artırır.</span>
-                            </div>
-                        </div>
-                        
-                        <p class="mission-conclusion">Netflix'in temel misyonu, her kullanıcıya özgü, anlamlı ve kalıcı bir dijital eğlence deneyimi sunarak platforma olan bağlılığı güçlendirmek ve rekabet avantajını sürdürülebilir kılmaktır.</p>
+                        <p>Netflix'in temel misyonu, her kullanıcıya özgü, anlamlı ve kalıcı bir dijital eğlence deneyimi sunarak platforma olan bağlılığı güçlendirmek ve rekabet avantajını sürdürülebilir kılmaktır.</p>
                     </div>
                 </div>
             </div>
@@ -345,13 +334,11 @@
             </div>
             
             <div class="why-content">
-                <p>Netflix, dijital yayıncılık sektöründe yüksek kaliteli içerik üretimi ve yapay zekâ destekli öneri algoritmalarıyla kişiselleştirilmiş deneyimler sunan küresel bir platformdur. Filmlerden belgesellere, dizilerden interaktif içeriklere kadar geniş bir yelpazede hizmet sunan Netflix, kullanıcılarına zengin bir içerik ekosistemi sağlamaktadır. Ancak son yıllarda yapılan pazar analizleri, abonelik iptallerinde artış ve kullanıcı bağlılığında azalma eğiliminin güçlendiğini göstermektedir.</p>
+                <p>Netflix, dijital yayıncılıkta yüksek kaliteli içerikleri ve yapay zekâ destekli öneri algoritmalarıyla kişiselleştirilmiş deneyimler sunan küresel bir platformdur. Ancak son yıllarda artan abonelik iptalleri ve azalan kullanıcı bağlılığı, izleme deneyiminin kısa vadeli tüketime dönüştüğünü göstermektedir.</p>
 
-                <p>Bu durum, kullanıcıların platformla etkileşim sıklığının azalması ve izleme deneyimini daha kısa vadeli bir tüketime dönüştürmesiyle ilişkilidir. Dijital dünyada sosyal paylaşım ve topluluk kültürü hızla gelişirken, Netflix'in bireysel izleme temelli yapısı kullanıcıların platformla duygusal bağ kurmasını zorlaştırmaktadır.</p>
+                <p>Bireysel izleme odaklı yapısı, dijital dünyadaki sosyal paylaşım kültürüyle uyumlu olmadığından kullanıcıların platformla duygusal bağ kurmasını zorlaştırmaktadır. Bu nedenle Kullanıcı Etkileşimini Artırma Süreci, sosyal bileşenlerin öneri sistemine entegre edilmesini hedeflemektedir. Kullanıcıların birbirini takip edebilmesi, içerik önerilerinde bulunması ve favori listelerini paylaşabilmesiyle sosyal etkileşim teşvik edilecektir.</p>
 
-                <p>Tam da bu noktada, Kullanıcı Etkileşimini Artırma Süreci devreye girmektedir. Bu süreç, kullanıcıların platformda daha uzun süre kalmasını, izleme deneyimlerini paylaşabilmesini ve sosyal etkileşim yoluyla Netflix'e yeniden bağlanmasını hedeflemektedir. Öneri sistemine entegre edilecek sosyal bileşenler, kullanıcıların birbirini takip edebilmesi, içerik önerilerinde bulunabilmesi ve favori listelerini paylaşabilmesi gibi özelliklerle desteklenmektedir.</p>
-
-                <p>Böylece Netflix, yalnızca içerik izlenen bir platform olmaktan çıkarak, topluluk temelli bir izleme deneyimi sunan dijital ekosistem haline gelir. Bu dönüşüm, hem kullanıcı memnuniyetini hem de uzun vadeli abonelik sürdürülebilirliğini güçlendirir.</p>
+                <p>Bu dönüşüm, Netflix'i yalnızca içerik tüketim platformu olmaktan çıkarıp topluluk temelli bir dijital ekosisteme dönüştürerek kullanıcı memnuniyetini ve abonelik sürdürülebilirliğini güçlendirecektir.</p>
             </div>
         </div>
     </section>
@@ -407,80 +394,88 @@
             <div class="swot-grid">
                 <!-- Strengths -->
                 <div class="swot-card swot-strengths">
-                    <div class="swot-letter">S</div>
-                    <div class="swot-category">STRENGTHS</div>
+                    <div class="swot-header">
+                        <div class="swot-letter">S</div>
+                        <div class="swot-category">trengths</div>
+                    </div>
                     <div class="swot-items">
                         <div class="swot-item">
-                            <p><strong>Küresel Abone Tabanı ve Marka Liderliği</strong> – 190'dan fazla ülkede 302 milyon ücretli aboneyle pazar lideridir; ölçek ekonomisi ve veri temelli strateji avantajına sahiptir.</p>
+                            <p><strong>Küresel Abone Tabanı ve Marka Liderliği</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Güçlü Finansal Performans ve Sermaye Dayanıklılığı</strong> – 2025'te gelir %16, işletme kârı %45 artmıştır; bu istikrar inovasyon yatırımlarını desteklemektedir.</p>
+                            <p><strong>Güçlü Finansal Performans ve Sermaye Dayanıklılığı</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Yapay Zekâ ve Veri Analitiği Yetkinliği</strong> – Öneri motorları izlenme davranışlarının %80'ini yönlendirmekte, kişiselleştirilmiş deneyim sunmaktadır.</p>
+                            <p><strong>Yapay Zekâ ve Veri Analitiği Yetkinliği</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Orijinal İçerik Üretim Gücü ve Kültürel Çeşitlilik</strong> – "Netflix Originals" stratejisiyle yerel ve global yapımlar üretmekte, kültürel kapsayıcılığı güçlendirmektedir.</p>
+                            <p><strong>Orijinal İçerik Üretim Gücü ve Kültürel Çeşitlilik</strong></p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Weaknesses -->
                 <div class="swot-card swot-weaknesses">
-                    <div class="swot-letter">W</div>
-                    <div class="swot-category">WEAKNESSES</div>
+                    <div class="swot-header">
+                        <div class="swot-letter">W</div>
+                        <div class="swot-category">eaknesses</div>
+                    </div>
                     <div class="swot-items">
                         <div class="swot-item">
-                            <p><strong>Kullanıcı Etkileşiminin Sınırlı Olması</strong> – Platformda sosyal etkileşim unsurları (yorum, paylaşım, birlikte izleme vb.) yetersizdir; bu durum kullanıcı bağlılığını zayıflatmaktadır.</p>
+                            <p><strong>Kullanıcı Etkileşiminin Sınırlı Olması</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Yüksek İçerik Üretim ve Lisanslama Maliyetleri</strong> – 21,8 milyar $ içerik taahhüdü, operasyonel esnekliği sınırlandırmakta ve kâr marjını daraltmaktadır.</p>
+                            <p><strong>Yüksek İçerik Üretim ve Lisanslama Maliyetleri</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Bulut Altyapısına (AWS) Aşırı Bağımlılık</strong> – Tüm operasyonların AWS üzerinde yürütülmesi, siber saldırı ve kesinti risklerinde hizmet sürekliliğini tehdit etmektedir.</p>
+                            <p><strong>Bulut Altyapısına (AWS) Aşırı Bağımlılık</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Algoritmik Şeffaflık ve Etik Endişeler</strong> – AI öneri sistemleri tam şeffaflık sağlamamakta; veri gizliliği ve güven sorunlarına yol açabilmektedir.</p>
+                            <p><strong>Algoritmik Şeffaflık ve Etik Endişeler</strong></p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Opportunities -->
                 <div class="swot-card swot-opportunities">
-                    <div class="swot-letter">O</div>
-                    <div class="swot-category">OPPORTUNITIES</div>
+                    <div class="swot-header">
+                        <div class="swot-letter">O</div>
+                        <div class="swot-category">pportunities</div>
+                    </div>
                     <div class="swot-items">
                         <div class="swot-item">
-                            <p><strong>Kullanıcıların Etkileşimli ve Topluluk Odaklı Platformlara Yönelmesi</strong> – Sosyal bağ kurmaya yönelik eğilim, Netflix için yeni etkileşim özellikleri geliştirme fırsatı yaratmaktadır.</p>
+                            <p><strong>Kullanıcıların Etkileşimli ve Topluluk Odaklı Platformlara Yönelmesi</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Yapay Zekâ ve Doğal Dil Teknolojilerindeki Gelişmeler</strong> – NLP ve duygusal analiz teknolojileri, öneri sistemlerini daha insancıl ve sezgisel hale getirme olanağı sunmaktadır.</p>
+                            <p><strong>Yapay Zekâ ve Doğal Dil Teknolojilerindeki Gelişmeler</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Reklam Destekli Abonelik Modelinin Büyümesi</strong> – Yeni kullanıcıların %40'ı reklam destekli planı tercih etmektedir; gelir çeşitliliği ve segment genişlemesi sağlar.</p>
+                            <p><strong>Reklam Destekli Abonelik Modelinin Büyümesi</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Sürdürülebilirlik ve ESG Odaklı Yatırımların Artışı</strong> – Net sıfır emisyon hedefleri ve çevresel duyarlılık, kurumsal itibarı ve kullanıcı sadakatini desteklemektedir.</p>
+                            <p><strong>Sürdürülebilirlik ve ESG Odaklı Yatırımların Artışı</strong></p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Threats -->
                 <div class="swot-card swot-threats">
-                    <div class="swot-letter">T</div>
-                    <div class="swot-category">THREATS</div>
+                    <div class="swot-header">
+                        <div class="swot-letter">T</div>
+                        <div class="swot-category">hreats</div>
+                    </div>
                     <div class="swot-items">
                         <div class="swot-item">
-                            <p><strong>Yoğun Rekabet ve Pazar Doygunluğu</strong> – Disney+, Prime Video ve bölgesel platformlar agresif yatırımlarla pazar payını tehdit etmektedir.</p>
+                            <p><strong>Yoğun Rekabet ve Pazar Doygunluğu</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Kısa Video Platformlarının Yükselişi</strong> – TikTok ve Reels gibi platformlar kullanıcıların dikkat süresini bölmekte, uzun formatlı içeriklere ilgiyi azaltmaktadır.</p>
+                            <p><strong>Kısa Video Platformlarının Yükselişi</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Siber Güvenlik ve Veri Gizliliği Riskleri</strong> – Bulut bağımlılığı nedeniyle oluşabilecek veri ihlalleri, itibar ve kullanıcı güveni açısından tehdit oluşturmaktadır.</p>
+                            <p><strong>Siber Güvenlik ve Veri Gizliliği Riskleri</strong></p>
                         </div>
                         <div class="swot-item">
-                            <p><strong>Düzenleyici ve Hukuki Baskılar</strong> – Yerel içerik kotaları, vergi düzenlemeleri ve veri koruma yasaları maliyetleri artırmakta ve operasyonel esnekliği sınırlamaktadır.</p>
+                            <p><strong>Düzenleyici ve Hukuki Baskılar</strong></p>
                         </div>
                     </div>
                 </div>
@@ -489,7 +484,7 @@
     </section>
 
     <!-- TOWS Matrix Section -->
-    <section id="tows" class="tows-section">
+    <section id="tows" class="tows-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bg2.png'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">TOWS Matrisi</h2>
@@ -498,112 +493,115 @@
                 </p>
             </div>
             
-            <div class="tows-matrix">
-                <!-- Header Row -->
-                <div class="tows-row tows-header">
-                    <div class="tows-cell tows-empty"></div>
-                    <div class="tows-cell tows-header-cell tows-opportunities">
-                        <div class="tows-header-title">Fırsatlar (O)</div>
-                        <div class="tows-header-subtitle">Dış çevredeki olumlu gelişmeler</div>
+            <div class="tows-grid">
+                <!-- SO Strategies -->
+                <div class="tows-column tows-so">
+                    <div class="column-header">
+                        <div class="column-badge">SO</div>
+                        <p>Güçlü Yönler × Fırsatlar</p>
                     </div>
-                    <div class="tows-cell tows-header-cell tows-threats">
-                        <div class="tows-header-title">Tehditler (T)</div>
-                        <div class="tows-header-subtitle">Dış çevredeki olumsuz unsurlar</div>
-                    </div>
-                </div>
-                
-                <!-- Strengths Row -->
-                <div class="tows-row">
-                    <div class="tows-cell tows-side-header tows-strengths">
-                        <div class="tows-side-title">Güçlü Yönler (S)</div>
-                        <div class="tows-side-subtitle">Şirketin içsel avantajları</div>
-                    </div>
-                    
-                    <!-- SO Strategies -->
-                    <div class="tows-cell tows-content tows-so">
-                        <h4 class="tows-strategy-title">SO Stratejileri</h4>
-                        <p class="tows-strategy-desc">Güçlü yönleri fırsatlara dönüştürme</p>
-                        <div class="tows-strategies">
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Veri analitiği ve yapay zekâ gücüyle kullanıcıların sosyal etkileşim beklentisine yanıt verecek yeni deneyimler geliştirmek.</span>
+                    <div class="strategy-list">
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(S3 + O1 + O2)</span>
                             </div>
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Reklam destekli model sayesinde güçlü finansal yapıyı yeni pazarlara açılımda kullanmak.</span>
-                            </div>
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Orijinal içerik üretim kabiliyetini sürdürülebilirlik temalı yerel yapımlarla güçlendirmek.</span>
-                            </div>
+                            <p class="strategy-text">Yapay Zekâ Yetkinliğini, Topluluk Odaklı Yeni Etkileşim Modelleriyle Birleştirerek Sosyal Öneri Motoru Geliştirmek.</p>
                         </div>
-                    </div>
-                    
-                    <!-- ST Strategies -->
-                    <div class="tows-cell tows-content tows-st">
-                        <h4 class="tows-strategy-title">ST Stratejileri</h4>
-                        <p class="tows-strategy-desc">Güçlü yönleri kullanarak tehditleri azaltma</p>
-                        <div class="tows-strategies">
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Yapay zekâ altyapısını kullanarak kısa video trendlerine uygun içerik formatları geliştirmek.</span>
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(S1 + O1)</span>
                             </div>
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Finansal gücü siber güvenlik ve veri koruma yatırımlarına yönlendirmek.</span>
+                            <p class="strategy-text">Küresel Abone Tabanını, Etkileşimli Özellikler Aracılığıyla Topluluk Gruplarına Dönüştürerek Yeni Bir Büyüme Vektörü Oluşturmak.</p>
+                        </div>
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(S4 + O1)</span>
                             </div>
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Küresel marka bilinirliğini kullanarak rekabetin yoğun olduğu pazarlarda marka sadakatini güçlendirmek.</span>
-                            </div>
+                            <p class="strategy-text">Orijinal İçerik Gücünü, Kullanıcı Tarafından Oluşturulan Liste ve Paylaşımlarla (UGC) Sosyal Keşif Döngüsüne Entegre Etmek.</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Weaknesses Row -->
-                <div class="tows-row">
-                    <div class="tows-cell tows-side-header tows-weaknesses">
-                        <div class="tows-side-title">Zayıf Yönler (W)</div>
-                        <div class="tows-side-subtitle">Şirketin içsel zayıflıkları</div>
+                <!-- ST Strategies -->
+                <div class="tows-column tows-st">
+                    <div class="column-header">
+                        <div class="column-badge">ST</div>
+                        <p>Güçlü Yönler × Tehditler</p>
                     </div>
-                    
-                    <!-- WO Strategies -->
-                    <div class="tows-cell tows-content tows-wo">
-                        <h4 class="tows-strategy-title">WO Stratejileri</h4>
-                        <p class="tows-strategy-desc">Zayıf yönleri fırsatlarla iyileştirme</p>
-                        <div class="tows-strategies">
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-tools"></i>
-                                <span>Kullanıcı etkileşimi eksikliğini, dijital dünyadaki topluluk odaklı eğilimlerle gidermek.</span>
+                    <div class="strategy-list">
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(S1 + S3 + T1)</span>
                             </div>
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-tools"></i>
-                                <span>Bulut bağımlılığını hibrit ve edge teknolojileriyle azaltmak.</span>
+                            <p class="strategy-text">Küresel Liderliği ve Veri Analitiğini Kullanarak, Rakip Platformların Kullanıcıyı Çekme Çabalarına Karşı Yüksek Kişiselleştirme ve Bağlılık Savunması Oluşturmak.</p>
+                        </div>
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(S4 + T2)</span>
                             </div>
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-tools"></i>
-                                <span>Yüksek içerik maliyetlerini, reklam destekli abonelik gelirleriyle dengelemek.</span>
+                            <p class="strategy-text">Orijinal İçerik Çeşitliliği ile Kısa Video Platformlarının (TikTok vb.) Dikkat Dağıtmasına Karşı, Derinlemesine İçerik Bağlılığını Güçlendirmek.</p>
+                        </div>
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(S2 + S3 + T3)</span>
                             </div>
+                            <p class="strategy-text">Finansal Dayanıklılığı, Siber Güvenlik ve Veri Gizliliği Risklerine karşı Güvenlik Altyapısını İnovasyonla Güçlendirmek.</p>
                         </div>
                     </div>
-                    
-                    <!-- WT Strategies -->
-                    <div class="tows-cell tows-content tows-wt">
-                        <h4 class="tows-strategy-title">WT Stratejileri</h4>
-                        <p class="tows-strategy-desc">Zayıflıkları ve tehditleri birlikte azaltma</p>
-                        <div class="tows-strategies">
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span>Etik yapay zekâ politikaları geliştirerek veri gizliliği ve algoritmik önyargı risklerini önlemek.</span>
+                </div>
+                
+                <!-- WO Strategies -->
+                <div class="tows-column tows-wo">
+                    <div class="column-header">
+                        <div class="column-badge">WO</div>
+                        <p>Zayıf Yönler × Fırsatlar</p>
+                    </div>
+                    <div class="strategy-list">
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(W1 + O1)</span>
                             </div>
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span>Çoklu bulut sistemi kurarak AWS bağımlılığı ve kesinti risklerini azaltmak.</span>
+                            <p class="strategy-text">Kullanıcı Etkileşiminin Sınırlı Olması Zayıflığını, Topluluk Odaklı Platformlara Yönelme Fırsatı ile Yeni Sosyal Özellikler Geliştirerek Hızla Kapatmak.</p>
+                        </div>
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(W2 + O3)</span>
                             </div>
-                            <div class="tows-strategy-item">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span>Yapay zekâ destekli prodüksiyon planlamasıyla içerik maliyetlerini düşürmek ve verimliliği artırmak.</span>
+                            <p class="strategy-text">Yüksek İçerik Maliyetleri Baskısını, Reklam Destekli Abonelik Modelinin Büyümesinden Kazanılan Gelir Çeşitliliğiyle Yumuşatmak.</p>
+                        </div>
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(W4 + O2)</span>
                             </div>
+                            <p class="strategy-text">Algoritmik Şeffaflık Endişelerini, NLP Gelişmeleri Sayesinde Daha Anlaşılır ve Etik Öneri Açıklamaları Sunarak Azaltmak.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- WT Strategies -->
+                <div class="tows-column tows-wt">
+                    <div class="column-header">
+                        <div class="column-badge">WT</div>
+                        <p>Zayıf Yönler × Tehditler</p>
+                    </div>
+                    <div class="strategy-list">
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(W1 + T1)</span>
+                            </div>
+                            <p class="strategy-text">Kullanıcı Etkileşiminin Zayıflığını, Yoğun Rekabet ve Pazar Doygunluğu Ortamında Aşama Aşama Geri Bildirim Döngüleri ile Yöneterek Proje Riskini En Aza İndirmek.</p>
+                        </div>
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(W3 + T3)</span>
+                            </div>
+                            <p class="strategy-text">Bulut Bağımlılığı ve Siber Güvenlik Risklerini, Sektörel Ortaklıklar Kurarak ve Güvenlik Protokollerini Güçlendirerek Azaltmak.</p>
+                        </div>
+                        <div class="strategy-card">
+                            <div class="strategy-meta">
+                                <span class="strategy-factors">(W2 + T4)</span>
+                            </div>
+                            <p class="strategy-text">İçerik Maliyetlerini ve Düzenleyici Baskıları, Yerel Ortaklıklar ve Veri Koruma Standartlarını Erken Uygulama ile Dengelemek.</p>
                         </div>
                     </div>
                 </div>
@@ -623,125 +621,566 @@
             
             <div class="moscow-grid">
                 <!-- Must Have -->
-                <div class="moscow-category moscow-must">
+                <div class="moscow-column moscow-must">
                     <div class="moscow-header">
                         <div class="moscow-icon">M</div>
-                        <div class="moscow-title">
-                            <h3>Must Have</h3>
-                            <span class="moscow-subtitle">Olmazsa Olmaz</span>
-                        </div>
+                        <h3>Must Have</h3>
+                        <p class="moscow-subtitle">Olmazsa Olmaz</p>
                     </div>
-                    <div class="moscow-content">
+                    <div class="moscow-items">
                         <div class="moscow-item">
                             <h4 class="moscow-item-title">
                                 <i class="fas fa-users"></i>
-                                Kullanıcılar Arası Etkileşim
+                                Kullanıcılar arası etkileşim
                             </h4>
-                            <p class="moscow-item-desc">Takipleşme, öneri paylaşımı, favori liste oluşturma</p>
-                            <p class="moscow-item-detail">Netflix kullanıcılarının birbirini takip edebilmesi, beğendiği içerikleri önerebilmesi ve kendi "favori listelerini" oluşturarak takipçileriyle paylaşabilmesi sağlanmalıdır. Bu sistem, tıpkı Spotify'daki sosyal dinleme modelinde olduğu gibi, kullanıcılar arasında etkileşimi güçlendirir. Böylece izleme deneyimi bireysellikten çıkıp topluluk temelli hale gelir; kullanıcılar platformda daha uzun süre kalır, abonelik iptali riski azalır.</p>
                         </div>
-                        
                         <div class="moscow-item">
                             <h4 class="moscow-item-title">
                                 <i class="fas fa-robot"></i>
-                                Yapay Zekâ Tabanlı İçerik Öneri Chatbotu
+                                Yapay zekâ destekli içerik öneri chatbotu
                             </h4>
-                            <p class="moscow-item-desc">Doğal dil işleme ile kişisel asistan</p>
-                            <p class="moscow-item-detail">Kullanıcıların doğal dilde ("akşam moduma uygun film öner") gibi ifadelerle içerik talep edebilmesini sağlar. Bu sistem, kullanıcıya kişisel asistan deneyimi sunar ve içerik keşfini kolaylaştırarak platform etkileşimini sürekli canlı tutar.</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Should Have -->
-                <div class="moscow-category moscow-should">
+                <div class="moscow-column moscow-should">
                     <div class="moscow-header">
                         <div class="moscow-icon">S</div>
-                        <div class="moscow-title">
-                            <h3>Should Have</h3>
-                            <span class="moscow-subtitle">Olmalı</span>
-                        </div>
+                        <h3>Should Have</h3>
+                        <p class="moscow-subtitle">Olmalı</p>
                     </div>
-                    <div class="moscow-content">
+                    <div class="moscow-items">
                         <div class="moscow-item">
                             <h4 class="moscow-item-title">
                                 <i class="fas fa-heart"></i>
-                                AI Temelli Duygu Analizi
+                                AI tabanlı duygu analizi (emotional tagging)
                             </h4>
-                            <p class="moscow-item-desc">Emotional tagging ile kişiselleştirilmiş öneriler</p>
-                            <p class="moscow-item-detail">Kullanıcının duygusal durumuna göre içerik önerileri yaparak (ör. "rahatlatıcı dizi", "heyecanlı belgesel") kişisel bağ kurma oranını artırır. Bu özellik, bağlılık ve memnuniyet düzeyini yükseltir.</p>
                         </div>
-                        
                         <div class="moscow-item">
                             <h4 class="moscow-item-title">
                                 <i class="fas fa-trophy"></i>
-                                Sadakat ve Aktivite Rozetleri
+                                Sadakat ve aktivite rozetleri (gamification)
                             </h4>
-                            <p class="moscow-item-desc">Loyalty Gamification</p>
-                            <p class="moscow-item-detail">Kullanıcılara izleme süresi, öneri paylaşımı veya takipçi sayısına göre dijital rozetler ve başarı puanları kazandırır. Oyunlaştırma yaklaşımı, kullanıcıların platformda kalma motivasyonunu artırır.</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Could Have -->
-                <div class="moscow-category moscow-could">
+                <div class="moscow-column moscow-could">
                     <div class="moscow-header">
                         <div class="moscow-icon">C</div>
-                        <div class="moscow-title">
-                            <h3>Could Have</h3>
-                            <span class="moscow-subtitle">Olabilir</span>
-                        </div>
+                        <h3>Could Have</h3>
+                        <p class="moscow-subtitle">Olabilir</p>
                     </div>
-                    <div class="moscow-content">
+                    <div class="moscow-items">
                         <div class="moscow-item">
                             <h4 class="moscow-item-title">
                                 <i class="fas fa-film"></i>
-                                Haftalık Kısa İçerik Akışı
+                                Yapay zekâ destekli haftalık içerik özeti (Reels benzeri)
                             </h4>
-                            <p class="moscow-item-desc">Reels benzeri yapı</p>
-                            <p class="moscow-item-detail">Kullanıcıların ilgisini korumak için haftalık kısa içerik veya "trend özetleri" sunar. Pasif kullanıcıları yeniden platforma çeker; ancak temel bağlılık faktörü olmadığı için zorunlu değildir.</p>
                         </div>
-                        
                         <div class="moscow-item">
                             <h4 class="moscow-item-title">
                                 <i class="fas fa-user-cog"></i>
-                                Kullanıcı Profili Özelleştirmesi
+                                Kullanıcı profili özelleştirmesi (tema, görünüm)
                             </h4>
-                            <p class="moscow-item-desc">Tema, görünüm, etkileşim geçmişi</p>
-                            <p class="moscow-item-detail">Kullanıcıların kendi profillerini özelleştirerek platformda kişisel alan hissi kazanmalarını sağlar. Etkileşimi destekler, ancak temel öncelik değildir.</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Won't Have -->
-                <div class="moscow-category moscow-wont">
+                <div class="moscow-column moscow-wont">
                     <div class="moscow-header">
                         <div class="moscow-icon">W</div>
-                        <div class="moscow-title">
-                            <h3>Won't Have</h3>
-                            <span class="moscow-subtitle">Şimdilik Olmayacak</span>
-                        </div>
+                        <h3>Won't Have</h3>
+                        <p class="moscow-subtitle">Şimdilik Olmayacak</p>
                     </div>
-                    <div class="moscow-content">
+                    <div class="moscow-items">
                         <div class="moscow-item">
                             <h4 class="moscow-item-title">
                                 <i class="fas fa-ban"></i>
-                                Kullanıcılar Arası Mesajlaşma
+                                Özel mesajlaşma / sohbet sistemi
                             </h4>
-                            <p class="moscow-item-desc">Özel sohbet sistemi</p>
-                            <p class="moscow-item-detail">Veri gizliliği, moderasyon ve güvenlik riskleri nedeniyle kısa vadede uygulanması planlanmamıştır. Sosyal etkileşim altyapısı (takipleşme, öneri paylaşımı) bu ihtiyacı dolaylı olarak karşılar.</p>
                         </div>
-                        
                         <div class="moscow-item">
                             <h4 class="moscow-item-title">
                                 <i class="fas fa-ban"></i>
-                                Kullanıcıların Kendi İçeriğini Üretmesi
+                                Kullanıcı üretimi içerik (UGC)
                             </h4>
-                            <p class="moscow-item-desc">User Generated Content</p>
-                            <p class="moscow-item-detail">Netflix'in mevcut marka yapısı ve yayın politikasıyla uyumlu değildir. Platform kimliğini zayıflatabileceği için proje kapsamı dışında tutulmuştur.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- RICE Scoring Section -->
+    <section id="rice" class="rice-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">RICE Puanlama Tablosu</h2>
+                <p class="section-subtitle">
+                    RICE = (Reach × Impact × Confidence) / Effort
+                </p>
+            </div>
+            
+            <div class="rice-cards-container">
+                <!-- 1st Place -->
+                <div class="rice-card rice-winner">
+                    <div class="card-rank">
+                        <div class="rank-number gold">1</div>
+                        <div class="rank-medal">🥇</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Kullanıcılar Arası Etkileşim</h3>
+                        <p class="card-subtitle">Takipleşme, öneri paylaşımı, favori listeleri</p>
+                        <div class="card-metrics">
+                            <div class="metric-box">
+                                <span class="metric-label">Reach</span>
+                                <span class="metric-value">90</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Impact</span>
+                                <span class="metric-value">4</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value">%80</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Effort</span>
+                                <span class="metric-value">3</span>
+                            </div>
+                            <div class="card-score">
+                                <span class="score-label">RICE</span>
+                                <span class="score-value">96.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd Place -->
+                <div class="rice-card rice-silver">
+                    <div class="card-rank">
+                        <div class="rank-number silver">2</div>
+                        <div class="rank-medal">🥈</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Yapay Zekâ Tabanlı İçerik Öneri Chatbotu</h3>
+                        <p class="card-subtitle">Doğal dil işleme ile kişisel asistan</p>
+                        <div class="card-metrics">
+                            <div class="metric-box">
+                                <span class="metric-label">Reach</span>
+                                <span class="metric-value">85</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Impact</span>
+                                <span class="metric-value">3</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value">%70</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Effort</span>
+                                <span class="metric-value">2</span>
+                            </div>
+                            <div class="card-score">
+                                <span class="score-label">RICE</span>
+                                <span class="score-value">89.25</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3rd Place -->
+                <div class="rice-card rice-bronze">
+                    <div class="card-rank">
+                        <div class="rank-number bronze">3</div>
+                        <div class="rank-medal">🥉</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">AI Temelli Duygu Analizi</h3>
+                        <p class="card-subtitle">Emotional tagging ile kişiselleştirilmiş öneriler</p>
+                        <div class="card-metrics">
+                            <div class="metric-box">
+                                <span class="metric-label">Reach</span>
+                                <span class="metric-value">85</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Impact</span>
+                                <span class="metric-value">3</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value">%70</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Effort</span>
+                                <span class="metric-value">3</span>
+                            </div>
+                            <div class="card-score">
+                                <span class="score-label">RICE</span>
+                                <span class="score-value">59.5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Items -->
+                <div class="rice-card rice-normal">
+                    <div class="card-rank">
+                        <div class="rank-number normal">4</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Sadakat & Aktivite Rozetleri</h3>
+                        <p class="card-subtitle">Loyalty Gamification</p>
+                        <div class="card-metrics">
+                            <div class="metric-box">
+                                <span class="metric-label">Reach</span>
+                                <span class="metric-value">70</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Impact</span>
+                                <span class="metric-value">2</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value">%60</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Effort</span>
+                                <span class="metric-value">2</span>
+                            </div>
+                            <div class="card-score">
+                                <span class="score-label">RICE</span>
+                                <span class="score-value">42.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rice-card rice-normal">
+                    <div class="card-rank">
+                        <div class="rank-number normal">5</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Haftalık Kısa İçerik Akışı</h3>
+                        <p class="card-subtitle">Reels benzeri yapı</p>
+                        <div class="card-metrics">
+                            <div class="metric-box">
+                                <span class="metric-label">Reach</span>
+                                <span class="metric-value">80</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Impact</span>
+                                <span class="metric-value">3</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value">%70</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Effort</span>
+                                <span class="metric-value">4</span>
+                            </div>
+                            <div class="card-score">
+                                <span class="score-label">RICE</span>
+                                <span class="score-value">42.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rice-card rice-normal">
+                    <div class="card-rank">
+                        <div class="rank-number normal">6</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Kullanıcı Profili Özelleştirmesi</h3>
+                        <p class="card-subtitle">Tema, görünüm, etkileşim geçmişi</p>
+                        <div class="card-metrics">
+                            <div class="metric-box">
+                                <span class="metric-label">Reach</span>
+                                <span class="metric-value">70</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Impact</span>
+                                <span class="metric-value">2</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value">%60</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Effort</span>
+                                <span class="metric-value">2</span>
+                            </div>
+                            <div class="card-score">
+                                <span class="score-label">RICE</span>
+                                <span class="score-value">42.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rice-card rice-low">
+                    <div class="card-rank">
+                        <div class="rank-number low">7</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Özel Mesajlaşma / Sohbet Sistemi</h3>
+                        <p class="card-subtitle">Özel sohbet sistemi</p>
+                        <div class="card-metrics">
+                            <div class="metric-box">
+                                <span class="metric-label">Reach</span>
+                                <span class="metric-value">70</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Impact</span>
+                                <span class="metric-value">2</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value">%60</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Effort</span>
+                                <span class="metric-value">4</span>
+                            </div>
+                            <div class="card-score">
+                                <span class="score-label">RICE</span>
+                                <span class="score-value">21.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rice-card rice-low">
+                    <div class="card-rank">
+                        <div class="rank-number low">8</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Kullanıcı İçerik Üretimi</h3>
+                        <p class="card-subtitle">User Generated Content</p>
+                        <div class="card-metrics">
+                            <div class="metric-box">
+                                <span class="metric-label">Reach</span>
+                                <span class="metric-value">75</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Impact</span>
+                                <span class="metric-value">1</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Confidence</span>
+                                <span class="metric-value">%70</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Effort</span>
+                                <span class="metric-value">5</span>
+                            </div>
+                            <div class="card-score">
+                                <span class="score-label">RICE</span>
+                                <span class="score-value">10.5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIPOC Diagram Section -->
+    <section id="sipoc" class="sipoc-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SIPOC Diyagramı</h2>
+                <p class="section-subtitle">
+                    Netflix Kullanıcı Etkileşim Süreci - Stratejik Süreç Analizi
+                </p>
+            </div>
+            
+            <div class="sipoc-flow">
+                <!-- SIPOC Flow Container -->
+                <div class="sipoc-columns" id="sipocColumns">
+                    <!-- S - Suppliers -->
+                    <div class="sipoc-column column-suppliers">
+                        <div class="column-header">
+                            <div class="column-icon">S</div>
+                            <h3>Tedarikçiler<br>(Suppliers)</h3>
+                        </div>
+                        <div class="column-content">
+                            <div class="sipoc-item">
+                                <p><strong>Kullanıcı</strong></p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p><strong>Netflix Geliştirme Ekibi (UI/UX)</strong></p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p><strong>İçerik Yönetim Departmanı</strong> <em>(Veritabanını yöneten ekip)</em></p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p><strong>Hesap Yönetimi Departmanı</strong> <em>(Kullanıcı hesaplarını yöneten ekip)</em></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- I - Inputs -->
+                    <div class="sipoc-column column-inputs">
+                        <div class="column-header">
+                            <div class="column-icon">I</div>
+                            <h3>Girdiler<br>(Inputs)</h3>
+                        </div>
+                        <div class="column-content">
+                            <div class="sipoc-item">
+                                <p>Liste oluşturma.<br>Kullanıcı takip etme.<br>Profil/Liste gizlilik ayarı.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>Yeni profil sayfası arayüzü.<br>"Takip Et" butonu.<br>"Profil Paylaş" link fonksiyonu.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>Film/Dizi metadatası.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>Doğrulanmış Kullanıcı Kimliği<br>Mevcut kullanıcı adı.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- P - Process -->
+                    <div class="sipoc-column column-process">
+                        <div class="column-header">
+                            <div class="column-icon featured">P</div>
+                            <h3>Süreç<br>(Process)</h3>
+                        </div>
+                        <div class="column-content">
+                            <div class="sipoc-item">
+                                <p>1. Kullanıcı "Profil" sayfasına gider ve "Liste Oluştur"u seçer.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>2. Listeye içerik ekler ve listeyi yayınlar.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>3. Kullanıcı, arkadaşını "Kullanıcı Adı ile Arama" veya "Profil Paylaşma Linki" yoluyla bulur.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>4. Kullanıcı, arkadaşının profilindeki "Takip Et" butonuna tıklar.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>5. Kullanıcı, takip ettiği kişilerin listelerini ve profillerini görüntüler.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- O - Outputs -->
+                    <div class="sipoc-column column-outputs">
+                        <div class="column-header">
+                            <div class="column-icon">O</div>
+                            <h3>Çıktılar<br>(Outputs)</h3>
+                        </div>
+                        <div class="column-content">
+                            <div class="sipoc-item">
+                                <p>Oluşturulmuş, isimlendirilmiş içerik listesi.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>Yayınlanmış ve profil sayfasında görünen içerik listesi.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>Benzersiz, paylaşılabilir profil URL'si.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>Sosyal grafikte (veritabanında) oluşturulan yeni "Takipçi/Takip Edilen" ilişkisi.</p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p>Artan kullanıcı etkileşimi ve platformda geçirilen süre (KPI).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- C - Customers -->
+                    <div class="sipoc-column column-customers">
+                        <div class="column-header">
+                            <div class="column-icon">C</div>
+                            <h3>Müşteriler<br>(Customers)</h3>
+                        </div>
+                        <div class="column-content">
+                            <div class="sipoc-item">
+                                <p><strong>Kullanıcı (Kendisi)</strong></p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p><strong>Kullanıcının Arkadaşları / Takipçileri</strong></p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p><strong>Netflix İş Zekası / Analitik Ekibi</strong></p>
+                            </div>
+                            <div class="sipoc-item">
+                                <p><strong>Netflix Öneri Algoritması</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process Modal -->
+        <div class="process-modal" id="processModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>
+                        <span class="modal-icon">P</span>
+                        Süreç Detayları (Process Details)
+                    </h2>
+                    <button class="modal-close" onclick="closeProcessModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="process-timeline">
+                        <div class="timeline-step">
+                            <div class="timeline-number">1</div>
+                            <div class="timeline-content">
+                                <h3>Kullanıcı "Profil" sayfasına gider ve "Liste Oluştur"u seçer</h3>
+                                <p>Kullanıcı profil sayfasından listesini oluşturur, adlandırır ve gizlilik ayarlarını yapar.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <div class="timeline-number">2</div>
+                            <div class="timeline-content">
+                                <h3>Listeye içerik ekler ve listeyi yayınlar</h3>
+                                <p>Kullanıcı listesine içerik ekler ve liste özelliklerini ayarlar.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <div class="timeline-number">3</div>
+                            <div class="timeline-content">
+                                <h3>Kullanıcı, arkadaşını arama veya profil linki paylaşma yoluyla bulur</h3>
+                                <p>Kullanıcı adıyla arama yaparak veya profil linkini paylaşarak arkadaşını bulur.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <div class="timeline-number">4</div>
+                            <div class="timeline-content">
+                                <h3>Kullanıcı "Takip Et" butonuna tıklar</h3>
+                                <p>Kullanıcı arkadaşına "Takip Et" butonuyla takip isteği gönderir.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <div class="timeline-number">5</div>
+                            <div class="timeline-content">
+                                <h3>Takip edilen kişilerin listeleri ve profilleri görüntülenir</h3>
+                                <p>Kullanıcı takip ettiği kişilerin listelerini ve profillerini görüntüler.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-overlay" onclick="closeProcessModal()"></div>
         </div>
     </section>
 
