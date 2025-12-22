@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initLogoAnimation();
     initIntroSound();
     initBPMNZoom();
+    initPersonaModal();
 });
 
 // BPMN Image Zoom Functionality
@@ -147,6 +148,109 @@ function initBPMNZoom() {
     
     bpmnImage.addEventListener('touchend', () => {
         isDragging = false;
+    });
+}
+
+// Persona fullscreen modal
+function initPersonaModal() {
+    const configs = [
+        {
+            imageId: 'personaImage',
+            openBtnId: 'personaOpenBtn',
+            modalId: 'personaModal',
+            closeBtnId: 'personaModalClose'
+        },
+        {
+            imageId: 'personaImage2',
+            openBtnId: 'personaOpenBtn2',
+            modalId: 'personaModal2',
+            closeBtnId: 'personaModalClose2'
+        },
+        {
+            imageId: 'requirementsImage',
+            openBtnId: 'requirementsOpenBtn',
+            modalId: 'requirementsModal',
+            closeBtnId: 'requirementsModalClose'
+        },
+        {
+            imageId: 'userStoriesImage',
+            openBtnId: 'userStoriesOpenBtn',
+            modalId: 'userStoriesModal',
+            closeBtnId: 'userStoriesModalClose'
+        },
+        {
+            imageId: 'useCaseImage',
+            openBtnId: 'useCaseOpenBtn',
+            modalId: 'useCaseModal',
+            closeBtnId: 'useCaseModalClose'
+        },
+        {
+            imageId: 'wireframeImage1',
+            openBtnId: 'wireframeOpenBtn1',
+            modalId: 'wireframeModal1',
+            closeBtnId: 'wireframeModalClose1'
+        },
+        {
+            imageId: 'wireframeImage2',
+            openBtnId: 'wireframeOpenBtn2',
+            modalId: 'wireframeModal2',
+            closeBtnId: 'wireframeModalClose2'
+        },
+        {
+            imageId: 'wireframeImage3',
+            openBtnId: 'wireframeOpenBtn3',
+            modalId: 'wireframeModal3',
+            closeBtnId: 'wireframeModalClose3'
+        },
+        {
+            imageId: 'warframeDemoImage',
+            openBtnId: 'warframeDemoOpenBtn',
+            modalId: 'warframeDemoModal',
+            closeBtnId: 'warframeDemoModalClose'
+        },
+        {
+            imageId: 'userStoryMappingImage',
+            openBtnId: 'userStoryMappingOpenBtn',
+            modalId: 'userStoryMappingModal',
+            closeBtnId: 'userStoryMappingModalClose'
+        }
+    ];
+
+    configs.forEach(cfg => {
+        const image = document.getElementById(cfg.imageId);
+        const openBtn = document.getElementById(cfg.openBtnId);
+        const modal = document.getElementById(cfg.modalId);
+        const closeBtn = document.getElementById(cfg.closeBtnId);
+
+        if (!modal) return;
+
+        function openModal() {
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        if (image) {
+            image.addEventListener('click', openModal);
+        }
+
+        if (openBtn) {
+            openBtn.addEventListener('click', openModal);
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
     });
 }
 

@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Analizi - Final Projesi</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Netflix'in başarılı iş süreçlerini analiz eden final proje sunumu. Veri analizi, müşteri deneyimi ve operasyonel süreçler.">
+    <meta name="keywords" content="Netflix, iş süreçleri, final proje, analiz, veri analizi, müşteri deneyimi, operasyonel süreçler">
+    <meta name="author" content="Netflix Analytics Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Netflix İş Süreçleri Analizi - Final">
+    <meta property="og:description" content="Netflix'in başarılı iş süreçlerini analiz eden modern final proje sunumu">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netflix-analytics-final.com">
+    <meta property="og:image" content="https://netflix-analytics.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Netflix İş Süreçleri Analizi - Final">
+    <meta name="twitter:description" content="Netflix'in başarılı iş süreçlerini analiz eden modern final proje sunumu">
+    <meta name="twitter:image" content="https://netflix-analytics.com/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#E50914">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Audio for intro sound -->
+    <audio id="introAudio" preload="auto">
+        <source src="audio/videoplayback.mp4" type="audio/mp4">
+        <source src="audio/intro-sound.mp3" type="audio/mpeg">
+        <source src="audio/intro-sound.wav" type="audio/wav">
+        <source src="audio/intro-sound.ogg" type="audio/ogg">
+        Tarayıcınız ses dosyasını desteklemiyor.
+    </audio>
+    
+    <!-- Mobile Toggle Button -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3 class="sidebar-title">
+                    <i class="fab fa-netflix"></i>
+                    <span>Hızlı Menü - Final</span>
+                </h3>
+            </div>
+            <nav class="sidebar-menu">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="#home" class="menu-link active" data-section="home">
+                            <i class="fas fa-home"></i>
+                            <span>Ana Sayfa</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#team" class="menu-link" data-section="team">
+                            <i class="fas fa-users"></i>
+                            <span>Ekip Tanıtımı</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#three-m-analysis" class="menu-link" data-section="three-m-analysis">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>3M Analizi &amp; EBO</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#eight-wastes" class="menu-link" data-section="eight-wastes">
+                            <i class="fas fa-recycle"></i>
+                            <span>8 İsraf Analizi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#analysis-results" class="menu-link" data-section="analysis-results">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analiz Sonuçları</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#ebo-improvement" class="menu-link" data-section="ebo-improvement">
+                            <i class="fas fa-level-up-alt"></i>
+                            <span>EBO Analizi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#to-be-map" class="menu-link" data-section="to-be-map">
+                            <i class="fas fa-map"></i>
+                            <span>TO-BE Süreç Haritası</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#power-interest-matrix" class="menu-link" data-section="power-interest-matrix">
+                            <i class="fas fa-users-cog"></i>
+                            <span>Güç / İlgi Matrisi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#raci-matrix" class="menu-link" data-section="raci-matrix">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>RACI Matrisi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#persona-empathy" class="menu-link" data-section="persona-empathy">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Persona &amp; Empati</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#hmw-ideas" class="menu-link" data-section="hmw-ideas">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>HMW İdeasyonları</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#requirements-pyramid" class="menu-link" data-section="requirements-pyramid">
+                            <i class="fas fa-layer-group"></i>
+                            <span>Gereksinim Piramidi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#kano-model" class="menu-link" data-section="kano-model">
+                            <i class="fas fa-sliders-h"></i>
+                            <span>KANO Modeli</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#user-stories" class="menu-link" data-section="user-stories">
+                            <i class="fas fa-book-open"></i>
+                            <span>Kullanıcı Hikayeleri</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#invest-analysis" class="menu-link" data-section="invest-analysis">
+                            <i class="fas fa-check-circle"></i>
+                            <span>INVEST Analizi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#acceptance-criteria" class="menu-link" data-section="acceptance-criteria">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Kabul Kriterleri (BDD)</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#use-case-diagram" class="menu-link" data-section="use-case-diagram">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Use Case Diyagramı</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#wireframe" class="menu-link" data-section="wireframe">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Wireframe</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#warframe-demo" class="menu-link" data-section="warframe-demo">
+                            <i class="fas fa-tablet-alt"></i>
+                            <span>Warframe demo Ekranları</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#user-story-mapping" class="menu-link" data-section="user-story-mapping">
+                            <i class="fas fa-map"></i>
+                            <span>User Story Mapping</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#results-impact" class="menu-link" data-section="results-impact">
+                            <i class="fas fa-trophy"></i>
+                            <span>Sonuç ve Etki</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#user-stories" class="menu-link" data-section="user-stories">
+                            <i class="fas fa-book-open"></i>
+                            <span>Kullanıcı Hikayeleri</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="images/Netflix-Symbol-Photoroom.png" alt="Netflix Logo" class="netflix-logo">
+                <h2 class="netflix-text-below">NETFLIX</h2>
+            </div>
+            <div class="hero-subtitle">
+                <p class="subtitle-first">Netflix'in iş süreçlerini bu kez final projesi kapsamında yeniden ele alıyoruz</p>
+                <p class="subtitle-second">Final Projesi: Kullanıcı etkileşimi ve bağlılık odaklı yeni değerlendirme</p>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('three-m-analysis').scrollIntoView({behavior: 'smooth', block: 'start'})">
+                    <i class="fas fa-stream"></i>
+                    3M Analizine Geç
+                </button>
+                <button class="btn btn-secondary" onclick="document.getElementById('three-m-analysis').scrollIntoView({behavior: 'smooth', block: 'start'})">
+                    <i class="fas fa-arrow-down animated-arrow"></i>
+                    Final Detayları
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diğer tüm bölümler index.html ile aynı bırakıldı -->
+    <!-- Buradan itibaren index.html içeriği bire bir kopyalandı -->
+
+    <!-- Team Section -->
+    <section id="team" class="team-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bg3.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ekip Tanıtımı</h2>
+                <p class="section-subtitle">
+                    Bu final analiz çalışmasını gerçekleştiren ekip
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/sueda.jpg" alt="Sueda">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Ayşe Sueda Alkoç</h3>
+                        <p class="member-title">İş Analisti</p>
+                        <p class="member-description">Netflix'in kullanıcı etkileşimi sorununa yönelik stratejik zemin oluşturur; As-Is ve To-Be süreç haritalarını tanımlar ve iyileştirme fırsatlarını RICE & MoSCoW yöntemleriyle önceliklendirir.</p>
+                        <div class="member-socials">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/yunus1.PNG" alt="Yunus">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Yunus Eren Bilici</h3>
+                        <p class="member-title">İş Analisti</p>
+                        <p class="member-description">Netflix kullanıcı etkileşim süreçlerinin mevcut durum analizini yapar, sorunlu noktaları belirler ve kullanıcı davranışlarını veri odaklı yöntemlerle değerlendirir.</p>
+                        <div class="member-socials">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3M Analizi & EBO Bölümü -->
+    <section id="three-m-analysis" class="three-m-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mevcut Sürecin 3M Analizi ve EBO ile İyileştirilmesi</h2>
+                <p class="section-subtitle">
+                    Profil oluşturma ve takip sürecindeki düzensizlik (Mura), aşırı yük (Muri) ve israf (Muda) noktalarının profesyonel analizi.
+                </p>
+            </div>
+
+            <div class="three-m-layout">
+                <div class="three-m-panel">
+                    <div class="three-m-panel-header">
+                        <div class="three-m-panel-title">
+                            <span class="three-m-panel-index">1.1</span>
+                            <span class="three-m-panel-text">3M Analizi (Muda, Mura, Muri)</span>
+                        </div>
+                        <span class="three-m-panel-badge">
+                            <i class="fas fa-sliders-h"></i>
+                            Süreç İyileştirme Modülü
+                        </span>
+                    </div>
+
+                    <div class="three-m-grid">
+                    <!-- MURA -->
+                        <article class="three-m-card three-m-mura">
+                            <div class="three-m-icon">
+                                <i class="fas fa-wave-square"></i>
+                            </div>
+                            <div class="three-m-tag">Mura – Düzensizlik</div>
+
+                            <ul class="three-m-list">
+                                <li>
+                                    <strong>Örnek – Yeni İçerik Yayını Yoğunluğu:</strong>
+                                    Popüler bir dizi (örneğin <em>Squid Game</em>) yeni sezonu yayınlandığında, milyonlarca kullanıcının aynı anda 
+                                    <strong>"Profil Oluşturma"</strong> ve <strong>"Liste Yapma"</strong> adımına yüklenmesi; normal günlerde ise bu trafiğin düşük seyretmesi.
+                                </li>
+                                <li>
+                                    <strong>Örnek – Takip İsteği Trafiği:</strong>
+                                    Sosyal bir kampanya döneminde kullanıcıların birbirini bulma ve <strong>"Takip İsteği Gönder"</strong> adımını yoğun kullanması, 
+                                    sistemdeki veri akışında düzensiz dalgalanmalar yaratır.
+                                </li>
+                            </ul>
+
+                            <p class="three-m-definition">
+                                <strong>Tanım:</strong>
+                                Düzensiz ve öngörülemeyen iş yükü; sistemin bazen atıl kalması, bazen ise aşırı yoğunlukla karşılaşması.
+                            </p>
+                        </article>
+
+                        <!-- MURI -->
+                        <article class="three-m-card three-m-muri">
+                            <div class="three-m-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div class="three-m-tag">Muri – Aşırı Yük</div>
+
+                            <ul class="three-m-list">
+                                <li>
+                                    <strong>Örnek – Tekli Onay Mekanizması:</strong>
+                                    Diyagramdaki <strong>"Kullanıcı Bilgileri Uygun Mu?"</strong> kontrolünün merkezi bir sunucu üzerinden yapılması durumunda, 
+                                    yoğun saatlerde bu sunucunun tüm istekleri karşılamakta zorlanması ve sistemin yavaşlaması.
+                                </li>
+                                <li>
+                                    <strong>Örnek – Bilişsel Yük:</strong>
+                                    Kullanıcının profil oluştururken tek bir ekranda çok fazla veri 
+                                    (<em>Ad, Kullanıcı Adı, E-posta, Tercihler</em>) girmeye zorlanması; kullanıcının karar verme kapasitesinin aşırı zorlanması.
+                                </li>
+                            </ul>
+
+                            <p class="three-m-definition">
+                                <strong>Tanım:</strong>
+                                Kapasite yetersizliği; sistem kaynaklarının veya kullanıcının zihinsel odaklanma sınırlarının aşırı zorlanması.
+                            </p>
+                        </article>
+
+                        <!-- MUDA -->
+                        <article class="three-m-card three-m-muda">
+                            <div class="three-m-icon">
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+                            <div class="three-m-tag">Muda – Görünen İsraf</div>
+
+                            <ul class="three-m-list">
+                                <li>
+                                    <strong>Örnek – Hatalı Veri Girişi (Rework):</strong>
+                                    Diyagramda görülen <strong>"Kullanıcı Adı Alınmıştır"</strong> uyarısı sonrası kullanıcının tekrar başa dönüp tüm bilgileri yeniden girmesi; 
+                                    değer katmayan bir <strong>Hatalı İşlem</strong> israfıdır.
+                                </li>
+                                <li>
+                                    <strong>Örnek – Gereksiz Bekleme Zamanı:</strong>
+                                    Kullanıcının takip etmek istediği kişiyi <strong>"Kullanıcı Adı Ara"</strong> adımında manuel olarak araması ve sistemin sonuçları getirmesini beklemesi. 
+                                    Otomatik öneriler olmaması nedeniyle oluşan belirgin bir <strong>Bekleme</strong> israfıdır.
+                                </li>
+                            </ul>
+
+                            <p class="three-m-definition">
+                                <strong>Tanım:</strong>
+                                Süreçte açıkça görülen, kullanıcı deneyimine değer katmayan ve kaynak tüketen faaliyetler.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8 İsraf Analizi Bölümü -->
+    <section id="eight-wastes" class="wastes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">8 İsraf Analizi</h2>
+            </div>
+
+            <div class="wastes-panel">
+                <div class="wastes-panel-header">
+                    <div class="wastes-panel-title">
+                        <span class="wastes-panel-index">1.2</span>
+                        <span class="wastes-panel-text">8 İsraf Yaklaşımı ile Mevcut Sürecin Okunması</span>
+                    </div>
+                    <span class="wastes-panel-badge">
+                        <i class="fas fa-search"></i>
+                        İsraf Odaklı Kök Neden İncelemesi
+                    </span>
+                </div>
+
+                <div class="wastes-grid">
+                    <!-- Aşırı İşleme -->
+                    <article class="waste-card waste-overprocessing">
+                        <div class="waste-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="waste-title">Aşırı İşleme (Over-Processing)</h3>
+
+                        <div class="waste-block">
+                            <h4 class="waste-label">Analiz</h4>
+                            <p>
+                                Kullanıcıdan <strong>"Profil Oluştur"</strong> aşamasında alınan bilgilerin, 
+                                <strong>"Liste Oluştur"</strong> ve <strong>"İçerik Ekle"</strong> aşamalarında tekrar sorgulanması 
+                                veya kullanıcının bu listeyi sıfırdan elle oluşturmaya zorlanması.
+                            </p>
+                        </div>
+
+                        <div class="waste-block">
+                            <h4 class="waste-label">Somut Kanıt</h4>
+                            <p>
+                                Diyagramdaki <em>"Liste Oluştur"</em> ve <em>"Listeye İçerik Ekle"</em> adımlarının, 
+                                sistemin elindeki verileri kullanmak yerine kullanıcıya manuel olarak yaptırılması.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Bekleme İsrafı -->
+                    <article class="waste-card waste-waiting">
+                        <div class="waste-icon">
+                            <i class="fas fa-hourglass-half"></i>
+                        </div>
+                        <h3 class="waste-title">Bekleme İsrafı (Waiting)</h3>
+
+                        <div class="waste-block">
+                            <h4 class="waste-label">Analiz</h4>
+                            <p>
+                                Kullanıcının bir arkadaşını takip etmek istemesi durumunda, sistemin otomatik eşleşme sunmaması nedeniyle 
+                                kullanıcının manuel arama sonuçlarını beklemesi.
+                            </p>
+                        </div>
+
+                        <div class="waste-block">
+                            <h4 class="waste-label">Somut Kanıt</h4>
+                            <p>
+                                Diyagramdaki <em>"Takip Edilecek Kullanıcı Adını Ara"</em> adımı sırasında geçen süre ve sistemin sorgu yanıt süreci.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Hatalı İşlem / Düzeltme -->
+                    <article class="waste-card waste-defect">
+                        <div class="waste-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="waste-title">Hatalı İşlem / Düzeltme (Defects / Rework)</h3>
+
+                        <div class="waste-block">
+                            <h4 class="waste-label">Analiz</h4>
+                            <p>
+                                Kullanıcı adı veya e-posta hatası alındığında tüm sürecin kırılması ve kullanıcının en başa dönerek 
+                                aynı verileri tekrar girmek zorunda kalması.
+                            </p>
+                        </div>
+
+                        <div class="waste-block">
+                            <h4 class="waste-label">Somut Kanıt</h4>
+                            <p>
+                                Diyagramdaki <em>"Kullanıcı Bilgileri Uygun Mu? → Hayır"</em> oku sonrası sürecin tekrar 
+                                <em>"Ad, Kullanıcı Adı Gir"</em> kutusuna dönmesi.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analiz Sonuçları Bölümü -->
+    <section id="analysis-results" class="analysis-results-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Analiz Sonuçları</h2>
+            </div>
+
+            <div class="analysis-results-panel">
+                <div class="analysis-results-header">
+                    <span class="analysis-results-badge">
+                        <i class="fas fa-clipboard-check"></i>
+                        Süreç Özeti
+                    </span>
+                </div>
+
+                <div class="analysis-results-grid">
+                    <!-- 11 Adım -->
+                    <article class="analysis-result-card result-steps">
+                        <div class="result-icon">
+                            <i class="fas fa-stream"></i>
+                        </div>
+                        <div class="result-content">
+                            <h3 class="result-title">11 Adım</h3>
+                            <p class="result-subtitle">Mevcut AS-IS süreç uzunluğu</p>
+                            <p class="result-text">
+                                Mevcut (AS-IS) profil oluşturma ve takip sürecindeki toplam adım sayısı.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 4 Tane Gereksiz -->
+                    <article class="analysis-result-card result-waste">
+                        <div class="result-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="result-content">
+                            <h3 class="result-title">4 Gereksiz Adım</h3>
+                            <p class="result-subtitle">Kullanıcıya değer katmayan işlemler</p>
+                            <p class="result-text">
+                                Kullanıcı adı hatasında başa dönme, manuel liste oluşturma gibi kullanıcı için değer katmayan, israf niteliğindeki işlemler.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 3 Otomatize Edilebilir -->
+                    <article class="analysis-result-card result-automation">
+                        <div class="result-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="result-content">
+                            <h3 class="result-title">3 Otomatize Edilebilir Adım</h3>
+                            <p class="result-subtitle">Algoritmik iyileştirme fırsatları</p>
+                            <p class="result-text">
+                                "Kullanıcı adı uygunluk kontrolü", "Otomatik başlangıç listesi oluşturma" ve 
+                                "Rehber eşleştirme ile arkadaş bulma" adımları algoritmalarla otomatikleştirilebilir.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Süreç İyileştirme: EBO Analizi Bölümü -->
+    <section id="ebo-improvement" class="ebo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Süreç İyileştirme: EBO Analizi</h2>
+            </div>
+
+            <div class="ebo-panel">
+                <div class="ebo-header">
+                    <span class="ebo-badge">
+                        <i class="fas fa-magic"></i>
+                        Elimine Et • Birleştir • Optimize Et
+                    </span>
+                </div>
+
+                <div class="ebo-grid">
+                    <!-- 1. Elimine Et -->
+                    <article class="ebo-card ebo-eliminate">
+                        <div class="ebo-step-label">1. Elimine Et</div>
+                        <h3 class="ebo-title">Gereksiz Adımları Kaldır</h3>
+
+                        <ul class="ebo-list">
+                            <li>❌ <strong>Manuel Arkadaş Arama Zorunluluğu</strong></li>
+                            <li>❌ <strong>Hata Sonrası Tüm Formu Başa Döndürme (Rework)</strong></li>
+                            <li>❌ <strong>Sayfa Yenileme ve Onay Bekleme Süreleri</strong></li>
+                        </ul>
+
+                        <div class="ebo-metrics">
+                            <div class="ebo-metric">
+                                <span class="ebo-metric-label">Süre</span>
+                                <span class="ebo-metric-value">5 DK → 2.5 DK</span>
+                            </div>
+                            <div class="ebo-metric">
+                                <span class="ebo-metric-label">Kazanım</span>
+                                <span class="ebo-metric-value highlight">%50 Zaman Azalması</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2. Birleştir -->
+                    <article class="ebo-card ebo-combine">
+                        <div class="ebo-step-label">2. Birleştir</div>
+                        <h3 class="ebo-title">Güçleri Birleştir ve Otomatize Et</h3>
+
+                        <ul class="ebo-list">
+                            <li>🤖 <strong>Akıllı Profil:</strong> "İlgi Alanı Seçimi" ile "Liste Oluşturma" tek adımda birleştirildi.</li>
+                            <li>🤖 <strong>Sosyal Senkronizasyon:</strong> Profil kurulumuyla birlikte "Tanıyor Olabilirsin" önerileri sunuldu.</li>
+                            <li>🤖 <strong>Veri Doğrulama:</strong> Kullanıcı adı uygunluk kontrolü sisteme devredildi.</li>
+                        </ul>
+
+                        <div class="ebo-metrics">
+                            <div class="ebo-metric">
+                                <span class="ebo-metric-label">Süre</span>
+                                <span class="ebo-metric-value">2.5 DK → 1 DK</span>
+                            </div>
+                            <div class="ebo-metric">
+                                <span class="ebo-metric-label">Kazanım</span>
+                                <span class="ebo-metric-value highlight">%60 Verimlilik Artışı</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Optimize Et -->
+                    <article class="ebo-card ebo-optimise">
+                        <div class="ebo-step-label">3. Optimize Et</div>
+                        <h3 class="ebo-title">Kalanları Kolaylaştır ve Basitleştir</h3>
+
+                        <ul class="ebo-list">
+                            <li>📱 <strong>Anlık Geri Bildirim:</strong> Yazım hatalarının "Kaydet" butonuna basmadan anlık düzeltilmesi.</li>
+                            <li>📍 <strong>Toplu Takip:</strong> Önerilen arkadaşların tek tıkla listeye eklenmesi.</li>
+                            <li>💳 <strong>Otomatik İçerik Atama:</strong> Algoritma ile hazır içerik listesinin kullanıcıya sunulması.</li>
+                        </ul>
+
+                        <div class="ebo-metrics">
+                            <div class="ebo-metric">
+                                <span class="ebo-metric-label">Süre</span>
+                                <span class="ebo-metric-value">1 DK → 30 SN</span>
+                            </div>
+                            <div class="ebo-metric">
+                                <span class="ebo-metric-label">Kazanım</span>
+                                <span class="ebo-metric-value highlight">%50 Zaman Tasarrufu</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TO-BE Süreç Haritası (Zoom'lu Görsel) -->
+    <section id="to-be-map" class="bpmn-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">TO-BE Süreç Haritası</h2>
+            </div>
+            
+            <div class="bpmn-controls">
+                <button class="zoom-btn" id="zoomInBtn" title="Yakınlaştır">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="zoom-btn" id="zoomOutBtn" title="Uzaklaştır">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="zoom-btn" id="resetZoomBtn" title="Sıfırla">
+                    <i class="fas fa-undo"></i>
+                </button>
+            </div>
+            
+            <div class="bpmn-image-container">
+                <img src="images/TO-BE 2.png" alt="TO-BE Süreç Haritası" class="bpmn-image" id="bpmnImage">
+            </div>
+            
+            <div class="bpmn-info-cards">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-stopwatch"></i>
+                        <h3>Zaman Verimliliği</h3>
+                    </div>
+                    <div class="info-card-content">
+                        <p>
+                            <strong>Muda</strong> ile süreç tamamlama süresi
+                            <strong>5 dakikadan 30 saniyeye</strong> indirilmiş; operasyonel hızda
+                            <strong>%90 oranında artış</strong> sağlanmıştır.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Hata Maliyetinin Azaltılması</h3>
+                    </div>
+                    <div class="info-card-content">
+                        <p>
+                            <strong>"Satır İçi Doğrulama"</strong> sayesinde, kullanıcıların hata yapıp
+                            sürece en baştan başlama durumu ortadan kaldırılmıştır, bu da kullanıcı kaybını azaltmıştır.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Süreç Yalınlaşması</h3>
+                    </div>
+                    <div class="info-card-content">
+                        <p>
+                            Toplam <strong>11 adımdan</strong> oluşan hantal yapı, <strong>4 temel adıma</strong>
+                            düşürülerek sürecin yönetilebilirliği ve sistem üzerindeki veri trafiği yükü
+                            anlamlı ölçüde hafifletilmiştir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Güç / İlgi Matrisi Bölümü -->
+    <section id="power-interest-matrix" class="matrix-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Güç / İlgi Matrisi</h2>
+                <p class="section-subtitle">
+                    Projeden etkilenen paydaşların güç ve ilgi düzeylerine göre konumlandırılması.
+                </p>
+            </div>
+
+            <div class="matrix-panel">
+                <div class="matrix-header">
+                    <span class="matrix-badge">
+                        <i class="fas fa-table"></i>
+                        Puanlama Tablosu
+                    </span>
+                </div>
+
+                <div class="matrix-table-wrapper">
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>Paydaş</th>
+                                <th>Güç (1–5)</th>
+                                <th>İlgi (1–5)</th>
+                                <th>Nedeni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Netflix CEO / Üst Yönetim</strong></td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>Projeyi iptal edebilir, stratejik kararları verir.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Yazılım &amp; Ürün Müdürü</strong></td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>Her gün projeyle uğraşır, teknik kararları verir.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hukuk Departmanı</strong></td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>Veri gizliliği gibi konularda süreci durdurabilir.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Normal Kullanıcılar</strong></td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td>En çok etkilenen grup ancak süreci durduramazlar.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pazarlama Ekibi</strong></td>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>Sürecin başarısından etkilenirler ancak yetkileri azdır.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Teknoloji Haberleri / Basın</strong></td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>Sadece haber yaparlar, süreci değiştiremezler.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Güç / İlgi Matrisi: Stratejik Konumlandırma (Animasyonlu Kartlar) -->
+    <section class="matrix-strategy-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Güç / İlgi Matrisi: Stratejik Konumlandırma</h2>
+            </div>
+
+            <div class="matrix-strategy-grid">
+                <!-- Yakından Yönet -->
+                <article class="matrix-strategy-card quadrant-manage animate-fade-up">
+                    <div class="matrix-strategy-icon">
+                        <span>🔥</span>
+                    </div>
+                    <h3 class="matrix-strategy-title">Yakından Yönet</h3>
+                    <p class="matrix-strategy-subtitle">Yüksek Güç / Yüksek İlgi</p>
+                    <div class="matrix-strategy-content">
+                        <p><strong>Paydaş:</strong> Netflix Ürün Müdürü ve Yazılım Ekibi.</p>
+                        <p><strong>Strateji:</strong> En kritik paydaşlar! Haftalık rapor sunumu, her büyük kararda onay alma ve yüz yüze toplantılar şarttır.</p>
+                    </div>
+                </article>
+
+                <!-- Memnun Tut -->
+                <article class="matrix-strategy-card quadrant-keep-satisfied animate-fade-up">
+                    <div class="matrix-strategy-icon">
+                        <span>⚡</span>
+                    </div>
+                    <h3 class="matrix-strategy-title">Memnun Tut</h3>
+                    <p class="matrix-strategy-subtitle">Yüksek Güç / Düşük İlgi</p>
+                    <div class="matrix-strategy-content">
+                        <p><strong>Paydaş:</strong> Hukuk Departmanı ve Üst Yönetim.</p>
+                        <p><strong>Strateji:</strong> Aylık rapor sun, yasal bir sorun olduğunda hemen bilgilendir.</p>
+                    </div>
+                </article>
+
+                <!-- Bilgilendir -->
+                <article class="matrix-strategy-card quadrant-inform animate-fade-up">
+                    <div class="matrix-strategy-icon">
+                        <span>📢</span>
+                    </div>
+                    <h3 class="matrix-strategy-title">Bilgilendir</h3>
+                    <p class="matrix-strategy-subtitle">Düşük Güç / Yüksek İlgi</p>
+                    <div class="matrix-strategy-content">
+                        <p><strong>Paydaş:</strong> Normal Kullanıcılar ve Pazarlama Ekibi.</p>
+                        <p><strong>Strateji:</strong> Sosyal medya duyuruları ve beta test grupları ile geri bildirim al.</p>
+                    </div>
+                </article>
+
+                <!-- Sadece İzle -->
+                <article class="matrix-strategy-card quadrant-monitor animate-fade-up">
+                    <div class="matrix-strategy-icon">
+                        <span>👁️</span>
+                    </div>
+                    <h3 class="matrix-strategy-title">Sadece İzle</h3>
+                    <p class="matrix-strategy-subtitle">Düşük Güç / Düşük İlgi</p>
+                    <div class="matrix-strategy-content">
+                        <p><strong>Paydaş:</strong> Teknoloji Habercileri.</p>
+                        <p><strong>Strateji:</strong> Genel basın açıklaması yeterlidir.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- RACI Matrisi Bölümü -->
+    <section id="raci-matrix" class="raci-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">RACI Matrisi</h2>
+                <p class="section-subtitle">
+                    Süreçte yer alan rollerin <strong>Sorumlu (R)</strong>, <strong>Hesap Veren (A)</strong>, <strong>Danışılan (C)</strong> ve <strong>Bilgilendirilen (I)</strong> olarak konumlandırılması.
+                </p>
+            </div>
+
+            <div class="matrix-panel">
+                <div class="matrix-header">
+                    <span class="matrix-badge">
+                        <i class="fas fa-table"></i>
+                        RACI Puanlama Tablosu
+                    </span>
+                </div>
+
+                <div class="matrix-table-wrapper">
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>Aktivite / Görev</th>
+                                <th>Proje Yöneticisi</th>
+                                <th>Yazılım Ekibi</th>
+                                <th>Veri Analisti</th>
+                                <th>Hukuk</th>
+                                <th>Pazarlama Ekibi</th>
+                                <th>Üst Yönetim</th>
+                                <th>Son Kullanıcı</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. İş Hedefleri ve Başarı Kriterleri</strong></td>
+                                <td><span class="raci-badge raci-r">R</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-a">A</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Satır İçi Doğrulama Kodlaması</strong></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-r">R</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-a">A</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Otomatik Liste Algoritması</strong></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-r">R</span></td>
+                                <td><span class="raci-badge raci-a">A</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Sosyal Medya &amp; API Entegrasyonu</strong></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-r">R</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-a">A</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>5. Yeni Arayüz Kullanıcı Testleri</strong></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-r">R</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-a">A</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>6. Yeni Sürecin Duyuru Stratejisi</strong></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-r">R</span></td>
+                                <td><span class="raci-badge raci-a">A</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>7. Sürecin Canlı Sisteme Alınması</strong></td>
+                                <td><span class="raci-badge raci-r">R</span></td>
+                                <td><span class="raci-badge raci-a">A</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>8. Kullanıcı Memnuniyet Raporlaması</strong></td>
+                                <td><span class="raci-badge raci-a">A</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-r">R</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                                <td><span class="raci-badge raci-c">C</span></td>
+                                <td><span class="raci-badge raci-i">I</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Persona ve Empati Haritası Bölümü -->
+    <section id="persona-empathy" class="persona-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Persona ve Empati Haritası</h2>
+                <p class="section-subtitle">
+                    Netflix kullanıcılarının davranışlarını, motivasyonlarını ve acı noktalarını görselleştiren empati odaklı analiz.
+                </p>
+            </div>
+
+            <div class="persona-panel">
+                <div class="persona-image-wrapper">
+                    <img 
+                        src="images/ChatGPT Image 22 Ara 2025 15_25_26.png" 
+                        alt="Persona ve Empati Haritası" 
+                        class="persona-image"
+                        id="personaImage"
+                    >
+                </div>
+                <div class="persona-actions">
+                    <button class="btn btn-secondary persona-fullscreen-btn" id="personaOpenBtn">
+                        <i class="fas fa-expand"></i>
+                        Tam Ekran Görüntüle
+                    </button>
+                </div>
+
+                <!-- İkinci Persona Kartı -->
+                <div class="persona-image-wrapper" style="margin-top: var(--spacing-xl);">
+                    <img 
+                        src="images/ChatGPT Image 22 Ara 2025 15_52_02.png" 
+                        alt="Persona ve Empati Haritası 2" 
+                        class="persona-image"
+                        id="personaImage2"
+                    >
+                </div>
+                <div class="persona-actions">
+                    <button class="btn btn-secondary persona-fullscreen-btn" id="personaOpenBtn2">
+                        <i class="fas fa-expand"></i>
+                        Tam Ekran Görüntüle
+                    </button>
+                </div>
+            </div>
+
+            <!-- Persona Fullscreen Modal -->
+            <div class="persona-modal" id="personaModal">
+                <div class="persona-modal-content">
+                    <button class="persona-modal-close" id="personaModalClose" aria-label="Kapat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <img 
+                        src="images/ChatGPT Image 22 Ara 2025 15_25_26.png" 
+                        alt="Persona ve Empati Haritası - Tam Ekran" 
+                        class="persona-modal-image"
+                        id="personaModalImage"
+                    >
+                </div>
+            </div>
+
+            <!-- İkinci Persona Fullscreen Modal -->
+            <div class="persona-modal" id="personaModal2">
+                <div class="persona-modal-content">
+                    <button class="persona-modal-close" id="personaModalClose2" aria-label="Kapat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <img 
+                        src="images/ChatGPT Image 22 Ara 2025 15_52_02.png" 
+                        alt="Persona ve Empati Haritası 2 - Tam Ekran" 
+                        class="persona-modal-image"
+                        id="personaModalImage2"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Might We (HMW) İdeasyonları Bölümü -->
+    <section id="hmw-ideas" class="hmw-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">"How Might We..." (HMW) İdeasyonları</h2>
+                <p class="section-subtitle">
+                    Mert'in Netflix deneyimini hız, sosyal bağ, topluluk etkileşimi ve hata-dostu akış üzerinden yeniden tasarlayan problem cümleleri.
+                </p>
+            </div>
+
+            <div class="hmw-grid">
+                <!-- Karar Hızı ve Akıllı Keşif -->
+                <article class="hmw-card animate-fade-up">
+                    <div class="hmw-icon hmw-primary">
+                        <span>01</span>
+                    </div>
+                    <h3 class="hmw-title">Karar Hızı &amp; Akıllı Keşif</h3>
+                    <p class="hmw-question-label">❓ Nasıl yapabiliriz ki...</p>
+                    <p class="hmw-question">
+                        Mert, binlerce içerik arasında kaybolmak (Karar Felci) yerine, o anki ruh haline en uygun içeriğe 
+                        <strong>saniyeler içinde ve zahmetsizce</strong> ulaşabilsin?
+                    </p>
+                    <p class="hmw-hint-label">💡 İpucu:</p>
+                    <p class="hmw-hint">
+                        Yapay zeka mod tahminleyicisi, "Mood" bazlı kaydırma (swipe) özelliği, akıllı önizlemeler.
+                    </p>
+                </article>
+
+                <!-- Zahmetsiz Sosyal Bağ -->
+                <article class="hmw-card animate-fade-up">
+                    <div class="hmw-icon hmw-secondary">
+                        <span>02</span>
+                    </div>
+                    <h3 class="hmw-title">Zahmetsiz Sosyal Bağ</h3>
+                    <p class="hmw-question-label">❓ Nasıl yapabiliriz ki...</p>
+                    <p class="hmw-question">
+                        Mert'in arkadaş bulma ve takip etme sürecini, manuel aramayı tamamen ortadan kaldırarak 
+                        <strong>tek tıkla gerçekleşen doğal bir etkileşime</strong> dönüştürebilelim?
+                    </p>
+                    <p class="hmw-hint-label">💡 İpucu:</p>
+                    <p class="hmw-hint">
+                        Sosyal medya rehber eşleşmesi, "Tanıyor Olabileceğin Arkadaşlar" algoritması, QR kod ile profil paylaşımı.
+                    </p>
+                </article>
+
+                <!-- İnteraktif Topluluk Deneyimi -->
+                <article class="hmw-card animate-fade-up">
+                    <div class="hmw-icon hmw-tertiary">
+                        <span>03</span>
+                    </div>
+                    <h3 class="hmw-title">İnteraktif Topluluk Deneyimi</h3>
+                    <p class="hmw-question-label">❓ Nasıl yapabiliriz ki...</p>
+                    <p class="hmw-question">
+                        Netflix'i sadece bir video izleme platformu olmaktan çıkarıp, Mert ve arkadaşlarının 
+                        <strong>birlikte içerik tükettiği ve anlık etkileşim kurduğu</strong> yaşayan bir sosyal alana dönüştürebilelim?
+                    </p>
+                    <p class="hmw-hint-label">💡 İpucu:</p>
+                    <p class="hmw-hint">
+                        Uygulama içi "Watch Party" (Birlikte İzle) odaları, sahne bazlı yorum bırakma, etkileşimli sosyal akış ekranı.
+                    </p>
+                </article>
+
+                <!-- Hata-Dostu Süreç Akışı -->
+                <article class="hmw-card animate-fade-up">
+                    <div class="hmw-icon hmw-accent">
+                        <span>04</span>
+                    </div>
+                    <h3 class="hmw-title">Hata-Dostu Süreç Akışı</h3>
+                    <p class="hmw-question-label">❓ Nasıl yapabiliriz ki...</p>
+                    <p class="hmw-question">
+                        Mert'in profil yönetimi veya veri girişi sırasında yaptığı hataları (rework), süreci kesintiye uğratan bir engel değil; 
+                        <strong>sistemin anında düzelttiği, akıcı bir deneyim</strong> haline getirebilelim?
+                    </p>
+                    <p class="hmw-hint-label">💡 İpucu:</p>
+                    <p class="hmw-hint">
+                        Satır içi anlık doğrulama (Inline validation), otomatik kullanıcı adı önerileri, kesintisiz form geçişleri.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gereksinim Piramidi Bölümü -->
+    <section id="requirements-pyramid" class="persona-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Gereksinim Piramidi</h2>
+                <p class="section-subtitle">
+                    Mert'in Netflix deneyimindeki temel, performans ve heyecan verici gereksinimlerinin piramit yapısında görselleştirilmesi.
+                </p>
+            </div>
+
+            <div class="persona-panel">
+                <div class="persona-image-wrapper">
+                    <img 
+                        src="images/ChatGPT Image 22 Ara 2025 16_07_29.png" 
+                        alt="Gereksinim Piramidi" 
+                        class="persona-image"
+                        id="requirementsImage"
+                    >
+                </div>
+                <div class="persona-actions">
+                    <button class="btn btn-secondary persona-fullscreen-btn" id="requirementsOpenBtn">
+                        <i class="fas fa-expand"></i>
+                        Tam Ekran Görüntüle
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gereksinim Piramidi Fullscreen Modal -->
+            <div class="persona-modal" id="requirementsModal">
+                <div class="persona-modal-content">
+                    <button class="persona-modal-close" id="requirementsModalClose" aria-label="Kapat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <img 
+                        src="images/ChatGPT Image 22 Ara 2025 16_07_29.png" 
+                        alt="Gereksinim Piramidi - Tam Ekran" 
+                        class="persona-modal-image"
+                        id="requirementsModalImage"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Çözüm Gereksinimleri (Fonksiyonel & Non-Fonksiyonel) Bölümü -->
+    <section class="requirements-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Çözüm Gereksinimleri</h2>
+            </div>
+
+            <div class="requirements-grid">
+                <article class="requirements-card requirements-functional">
+                    <h4 class="requirements-subtitle">A) Fonksiyonel Gereksinimler <span>(Sistem NE yapacak?)</span></h4>
+                    <ul class="requirements-list">
+                        <li>
+                            <strong>FR-1 (Ortak İzleme Listesi):</strong>
+                            Sistem, iki veya daha fazla kullanıcının ortak bir "İzleme Listesi" oluşturmasına, bu listeye içerik ekleyip çıkarmasına
+                            ve içerikleri puanlamasına olanak tanımalıdır.
+                        </li>
+                        <li>
+                            <strong>FR-2 (Sosyal Profil Özelleştirme):</strong>
+                            Sistem, kullanıcıların profillerinde "Favori 5 İçerik" ve "Şu An Ne İzliyorum" gibi sosyal kartlar oluşturmasına ve bu
+                            kartların takipçileri tarafından görüntülenmesine izin vermelidir.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="requirements-card requirements-nonfunctional">
+                    <h4 class="requirements-subtitle">B) Fonksiyonel Olmayan Gereksinimler <span>(Sistem NASIL çalışacak?)</span></h4>
+                    <ul class="requirements-list">
+                        <li>
+                            <strong>NFR-1 (Ölçeklenebilirlik):</strong>
+                            Sistem, aynı anda 10 milyon kullanıcının sosyal akış ekranına erişmesini destekleyebilmeli ve çökme yaşamamalıdır.
+                        </li>
+                        <li>
+                            <strong>NFR-2 (Güvenlik):</strong>
+                            Sosyal etkileşimler sırasında kullanıcıların e-posta veya telefon gibi kişisel iletişim bilgileri gizli tutulmalı ve
+                            sistem bu verileri şifreleyerek korumalıdır.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- KANO Modeli ile Önceliklendirme Bölümü -->
+    <section id="kano-model" class="kano-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">KANO Modeli ile Önceliklendirme</h2>
+                <p class="section-subtitle">
+                    Netflix deneyimini etkileyen özelliklerin Temel, Performans, Heyecan Verici, Kayıtsız ve Tersine kategorilerine göre sınıflandırılması.
+                </p>
+            </div>
+
+            <div class="matrix-panel kano-panel">
+                <div class="matrix-header">
+                    <span class="matrix-badge">
+                        <i class="fas fa-table"></i>
+                        KANO Özellik Tablosu
+                    </span>
+                </div>
+
+                <div class="matrix-table-wrapper">
+                    <table class="matrix-table kano-table">
+                        <thead>
+                            <tr>
+                                <th>Özellik</th>
+                                <th>KANO Kategorisi</th>
+                                <th>Neden Bu Kategori?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Video Oynatma ve Altyazı</strong></td>
+                                <td><span class="kano-tag kano-must">1️⃣ Temel (Must-Be)</span></td>
+                                <td>Varlığı fark edilmez ancak yokluğu büyük kriz ve hayal kırıklığı yaratır; platformun minimum standardıdır.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>İçerik Arama ve Yükleme Hızı</strong></td>
+                                <td><span class="kano-tag kano-performance">2️⃣ Performans</span></td>
+                                <td>"Ne kadar hızlı, o kadar iyi" prensibi geçerlidir; memnuniyet hızla doğru orantılı olarak artar.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ortak İzleme Listesi ve Sosyal Akış</strong></td>
+                                <td><span class="kano-tag kano-excitement">3️⃣ Heyecan Verici (Attractive)</span></td>
+                                <td>Kullanıcının beklemediği "VAY BE!" etkisidir; gerçek inovasyon burada başlar ve marka değeri yaratır.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Profil Menüsü Tema Seçenekleri</strong></td>
+                                <td><span class="kano-tag kano-indifferent">4️⃣ Kayıtsız (Indifferent)</span></td>
+                                <td>Varlığı da yokluğu da memnuniyeti değiştirmez; müşteri sadece içeriğe ulaşmak ister.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Karmaşık / Labirent İptal Süreci</strong></td>
+                                <td><span class="kano-tag kano-reverse">5️⃣ Tersine (Reverse)</span></td>
+                                <td>Varlığı kullanıcıyı rahatsız eder ve sinirlendirir; yokluğu (basit olması) memnuniyeti artırır.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="kano-strategy">
+                    <h3 class="kano-strategy-title">Geliştirme Stratejisi</h3>
+                    <ol class="kano-strategy-list">
+                        <li>
+                            <strong>Mutlaka Yap (Temel):</strong>
+                            Video oynatma fonksiyonları hatasız sürdürülmelidir; yatırım memnuniyeti artırmasa da eksiklik felakettir.
+                        </li>
+                        <li>
+                            <strong>Rekabette Öne Geç (Performans):</strong>
+                            Arama ve yükleme hızları sürekli iyileştirilmeli ve bu performans avantajı pazarlamada vurgulanmalıdır.
+                        </li>
+                        <li>
+                            <strong>Fark Yarat ve Viral Ol (Heyecan Verici):</strong>
+                            Projemizin asıl inovasyonu olan "Ortak İzleme Listesi"ne odaklanılmalıdır; bu özellik sürpriz bir "WOW" etkisi yaratır.
+                        </li>
+                        <li>
+                            <strong>Kaynak Tasarrufu (Kayıtsız):</strong>
+                            Profil teması gibi kimsenin umursamadığı detaylara bütçe ve zaman ayrılmamalıdır; bu bir kaynak israfıdır.
+                        </li>
+                        <li>
+                            <strong>Hemen Kaldır/Düzelt (Tersine):</strong>
+                            Kullanıcıyı platformdan soğutan karmaşık abonelik veya ayar menüleri derhal yalınlaştırılmalıdır.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kullanıcı Hikayeleri Bölümü -->
+    <section id="user-stories" class="persona-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kullanıcı Hikayeleri</h2>
+                <p class="section-subtitle">
+                    Mert ve benzeri kullanıcı profillerinin beklenti ve senaryolarını görselleştiren kullanıcı hikayeleri şeması.
+                </p>
+            </div>
+
+            <div class="persona-panel">
+                <div class="persona-image-wrapper">
+                    <img 
+                        src="images/ChatGPT Image 22 Ara 2025 16_32_31.png" 
+                        alt="Kullanıcı Hikayeleri" 
+                        class="persona-image"
+                        id="userStoriesImage"
+                    >
+                </div>
+                <div class="persona-actions">
+                    <button class="btn btn-secondary persona-fullscreen-btn" id="userStoriesOpenBtn">
+                        <i class="fas fa-expand"></i>
+                        Tam Ekran Görüntüle
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kullanıcı Hikayeleri Fullscreen Modal -->
+            <div class="persona-modal" id="userStoriesModal">
+                <div class="persona-modal-content">
+                    <button class="persona-modal-close" id="userStoriesModalClose" aria-label="Kapat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <img 
+                        src="images/ChatGPT Image 22 Ara 2025 16_32_31.png" 
+                        alt="Kullanıcı Hikayeleri - Tam Ekran" 
+                        class="persona-modal-image"
+                        id="userStoriesModalImage"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INVEST Analizi Bölümü -->
+    <section id="invest-analysis" class="invest-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">INVEST Analizi</h2>
+            </div>
+
+            <div class="invest-grid">
+                <!-- INVEST Değerlendirmesi: Hikaye 1.1 -->
+                <article class="invest-card">
+                    <h3 class="invest-title">INVEST Değerlendirmesi: Hikaye 1.1 - Ortak Liste Tasarımı</h3>
+                    <p class="invest-intro">
+                        Seçilen kullanıcı hikayesinin (<strong>Hikaye 1.1 - Ortak Liste Tasarımı</strong>) INVEST kriterlerine göre analizi:
+                    </p>
+                    <div class="matrix-table-wrapper">
+                        <table class="matrix-table invest-table">
+                            <thead>
+                                <tr>
+                                    <th>Kriter</th>
+                                    <th>Değerlendirme</th>
+                                    <th>Açıklama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>I - Independent (Bağımsız)</strong></td>
+                                    <td><strong>Evet</strong></td>
+                                    <td>Ortak liste oluşturma özelliği, sosyal akış veya rehber eşleşmesi özelliklerinden bağımsız geliştirilebilir ve kendi başına değer sunar.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>N - Negotiable (Müzakere Edilebilir)</strong></td>
+                                    <td><strong>Evet</strong></td>
+                                    <td>Listenin kaç kişiyle paylaşılabileceği, kimlerin silme yetkisine sahip olacağı gibi detaylar ekip içinde müzakereye açıktır.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>V - Valuable (Değerli)</strong></td>
+                                    <td><strong>Evet</strong></td>
+                                    <td>Bu hikaye, projenin temel stratejisi olan "sosyal bağlılık" ve Mert'in "karar felci" sorununu çözme değerini doğrudan karşılar.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>E - Estimable (Tahmin Edilebilir)</strong></td>
+                                    <td><strong>Evet</strong></td>
+                                    <td>Liste yönetimi (ekleme/çıkarma/puanlama) fonksiyonları teknik olarak nettir. Ekip, veritabanı ve UI tasarımı için efor tahmini yapabilir.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>S - Small (Küçük)</strong></td>
+                                    <td><strong>Evet</strong></td>
+                                    <td>Sadece ortak liste oluşturma ve temel içerik ekleme fonksiyonu, tek bir sprint (genelde 2 hafta) içinde tamamlanabilecek boyuttadır.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>T - Testable (Test Edilebilir)</strong></td>
+                                    <td><strong>Evet</strong></td>
+                                    <td>"İki farklı kullanıcı aynı listeyi görüyor mu?", "Eklenen içerik her iki tarafta güncelleniyor mu?" gibi net senaryolarla test edilebilir.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kabul Kriterleri (Gherkin/BDD Senaryoları) Bölümü -->
+    <section id="acceptance-criteria" class="bdd-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kabul Kriterleri (Gherkin / BDD Senaryoları)</h2>
+            </div>
+
+            <div class="bdd-grid">
+                <!-- Feature 1.1 -->
+                <article class="bdd-card animate-fade-up">
+                    <div class="bdd-card-header">
+                        <div class="bdd-badge">1.1</div>
+                        <div>
+                            <h3 class="bdd-title">Feature: Ortak Liste Yönetimi</h3>
+                            <p class="bdd-subtitle">Scenario: Birden fazla kullanıcının aynı listeye içerik ekleyerek senkronize olması</p>
+                        </div>
+                    </div>
+                    <ul class="bdd-steps">
+                        <li><span class="bdd-label given">Given</span> Mert ve arkadaşı Ali, platform üzerinde arkadaştır.</li>
+                        <li><span class="bdd-label and">And</span> Mert, "Haftalık Dizi Gecesi" adında bir ortak liste oluşturmuştur.</li>
+                        <li><span class="bdd-label when">When</span> Ali, ortak liste bağlantısını kabul edip listeye "Black Mirror" dizisini ekler.</li>
+                        <li><span class="bdd-label then">Then</span> Mert’in ekranındaki ortak listede "Black Mirror" içeriği anlık olarak belirmelidir.</li>
+                        <li><span class="bdd-label and">And</span> İçeriğin yanında Ali’nin profil ikonu "Ekleyen" olarak gösterilmelidir.</li>
+                    </ul>
+                </article>
+
+                <!-- Feature 1.2 -->
+                <article class="bdd-card animate-fade-up">
+                    <div class="bdd-card-header">
+                        <div class="bdd-badge">1.2</div>
+                        <div>
+                            <h3 class="bdd-title">Feature: Sosyal Paylaşım - Zaman Damgası</h3>
+                            <p class="bdd-subtitle">Scenario: Kullanıcının beğendiği sahneyi saniyesi saniyesine arkadaşına iletmesi</p>
+                        </div>
+                    </div>
+                    <ul class="bdd-steps">
+                        <li><span class="bdd-label given">Given</span> Mert, bir film izlemektedir ve videonun 45. dakikasındadır.</li>
+                        <li><span class="bdd-label when">When</span> Mert, "Zaman Damgalı Paylaş" butonuna tıklar ve arkadaşına gönderir.</li>
+                        <li><span class="bdd-label then">Then</span> Oluşturulan paylaşım linkinin sonuna zaman parametresi otomatik eklenmelidir.</li>
+                        <li><span class="bdd-label and">And</span> Arkadaşı linki açtığında video doğrudan 45:00 saniyesinden başlamalıdır.</li>
+                        <li><span class="bdd-label but">But</span> Linke tıklayan kişinin Netflix aboneliği yoksa içerik yerine üyelik sayfası açılmalıdır.</li>
+                    </ul>
+                </article>
+
+                <!-- Feature 1.3 -->
+                <article class="bdd-card animate-fade-up">
+                    <div class="bdd-card-header">
+                        <div class="bdd-badge">1.3</div>
+                        <div>
+                            <h3 class="bdd-title">Feature: Sosyal Profil Aktivitesi</h3>
+                            <p class="bdd-subtitle">Scenario: İzleme aktivitesinin profilde otomatik güncellenmesi</p>
+                        </div>
+                    </div>
+                    <ul class="bdd-steps">
+                        <li><span class="bdd-label given">Given</span> Mert, profil ayarlarından "İzleme Aktivitesini Paylaş" özelliğini aktif etmiştir.</li>
+                        <li><span class="bdd-label when">When</span> Mert, ana menüden "The Crown" dizisini izlemeye başlar.</li>
+                        <li><span class="bdd-label then">Then</span> Mert’in profilini ziyaret eden arkadaşları "Şu An Ne İzliyor?" kartında "The Crown" afişini görmelidir.</li>
+                        <li><span class="bdd-label and">And</span> Mert içeriği durdurduğunda veya kapattığında karttaki bilgi 5 saniye içinde silinmelidir.</li>
+                    </ul>
+                </article>
+
+                <!-- Feature 1.4 -->
+                <article class="bdd-card animate-fade-up">
+                    <div class="bdd-card-header">
+                        <div class="bdd-badge">1.4</div>
+                        <div>
+                            <h3 class="bdd-title">Feature: Arkadaş Bulma - Akıllı Eşleşme</h3>
+                            <p class="bdd-subtitle">Scenario: Rehber izniyle platformdaki arkadaşların otomatik bulunması</p>
+                        </div>
+                    </div>
+                    <ul class="bdd-steps">
+                        <li><span class="bdd-label given">Given</span> Mert’in rehberinde Netflix kullanan ve gizlilik ayarları açık 15 arkadaşı bulunmaktadır.</li>
+                        <li><span class="bdd-label when">When</span> Mert, "Rehberimi Eşleştir" butonuna basarak sistem iznini onaylar.</li>
+                        <li><span class="bdd-label then">Then</span> Sistem rehberdeki numaraları tarayıp eşleşen 15 kişiyi "Takip Et" listesinde göstermelidir.</li>
+                        <li><span class="bdd-label and">And</span> Mert bu listeden istediği kişileri tek tıkla takip edebilmelidir.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Case Diyagramı Bölümü -->
+    <section id="use-case-diagram" class="use-case-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Use Case Diyagramı</h2>
+            </div>
+
+            <div class="use-case-content">
+                <div class="use-case-text-card animate-fade-up">
+                    <div class="use-case-text-content">
+                        <p class="use-case-description">
+                            Diyagramın merkezinde yer alan dikdörtgen çerçeve, Netflix Uygulaması'nın sistem sınırlarını 
+                            <span class="highlight-term">System Boundary</span> temsil eder. Sistemin ana aktörü olan 
+                            <strong class="actor-name">"Sosyal Kaşif (Mert)"</strong>, bu sınırların dışında konumlandırılarak 
+                            sistemin birincil tetikleyicisi <span class="highlight-term">Primary Actor</span> olarak tanımlanmıştır. 
+                            Mert'ten çıkan ilişki çizgileri <span class="highlight-term">Associations</span>, aktörün hangi temel 
+                            fonksiyonlarla doğrudan etkileşime girdiğini göstermektedir.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="use-case-diagram-wrapper animate-fade-up">
+                    <div class="use-case-image-card">
+                        <img 
+                            id="useCaseImage"
+                            src="images/Başlıksız Diyagram-Sayfa -2.drawio (2).png" 
+                            alt="Use Case Diyagramı" 
+                            class="use-case-image"
+                        >
+                        <button id="useCaseOpenBtn" class="use-case-zoom-btn" aria-label="Görseli büyüt">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Case Modal -->
+        <div id="useCaseModal" class="persona-modal">
+            <div class="persona-modal-content">
+                <img 
+                    src="images/Başlıksız Diyagram-Sayfa -2.drawio (2).png" 
+                    alt="Use Case Diyagramı - Tam Ekran" 
+                    class="persona-modal-image"
+                >
+                <button id="useCaseModalClose" class="persona-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wireframe Bölümü -->
+    <section id="wireframe" class="wireframe-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Wireframe</h2>
+            </div>
+
+            <div class="wireframe-grid">
+                <!-- Ekran 1 -->
+                <div class="wireframe-card animate-fade-up">
+                    <h3 class="wireframe-title">Ekran 1: Sosyal Etkileşimli Ana Sayfa</h3>
+                    <div class="wireframe-image-wrapper">
+                        <img 
+                            id="wireframeImage1"
+                            src="images/ChatGPT Image 22 Ara 2025 14_35_42.png" 
+                            alt="Ekran 1: Sosyal Etkileşimli Ana Sayfa" 
+                            class="wireframe-image"
+                        >
+                        <button id="wireframeOpenBtn1" class="wireframe-zoom-btn" aria-label="Görseli büyüt">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ekran 2 -->
+                <div class="wireframe-card animate-fade-up">
+                    <h3 class="wireframe-title">Ekran 2: İçerik Detay ve Zaman Damgalı Paylaşım</h3>
+                    <div class="wireframe-image-wrapper">
+                        <img 
+                            id="wireframeImage2"
+                            src="images/ChatGPT Image 22 Ara 2025 14_40_14.png" 
+                            alt="Ekran 2: İçerik Detay ve Zaman Damgalı Paylaşım" 
+                            class="wireframe-image"
+                        >
+                        <button id="wireframeOpenBtn2" class="wireframe-zoom-btn" aria-label="Görseli büyüt">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ekran 3 -->
+                <div class="wireframe-card animate-fade-up">
+                    <h3 class="wireframe-title">Ekran 3: Ortak İzleme Listesi Paneli</h3>
+                    <div class="wireframe-image-wrapper">
+                        <img 
+                            id="wireframeImage3"
+                            src="images/ChatGPT Image 22 Ara 2025 14_51_22.png" 
+                            alt="Ekran 3: Ortak İzleme Listesi Paneli" 
+                            class="wireframe-image"
+                        >
+                        <button id="wireframeOpenBtn3" class="wireframe-zoom-btn" aria-label="Görseli büyüt">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wireframe Modals -->
+        <!-- Modal 1 -->
+        <div id="wireframeModal1" class="persona-modal">
+            <div class="persona-modal-content">
+                <img 
+                    src="images/ChatGPT Image 22 Ara 2025 14_35_42.png" 
+                    alt="Ekran 1: Sosyal Etkileşimli Ana Sayfa - Tam Ekran" 
+                    class="persona-modal-image"
+                >
+                <button id="wireframeModalClose1" class="persona-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal 2 -->
+        <div id="wireframeModal2" class="persona-modal">
+            <div class="persona-modal-content">
+                <img 
+                    src="images/ChatGPT Image 22 Ara 2025 14_40_14.png" 
+                    alt="Ekran 2: İçerik Detay ve Zaman Damgalı Paylaşım - Tam Ekran" 
+                    class="persona-modal-image"
+                >
+                <button id="wireframeModalClose2" class="persona-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal 3 -->
+        <div id="wireframeModal3" class="persona-modal">
+            <div class="persona-modal-content">
+                <img 
+                    src="images/ChatGPT Image 22 Ara 2025 14_51_22.png" 
+                    alt="Ekran 3: Ortak İzleme Listesi Paneli - Tam Ekran" 
+                    class="persona-modal-image"
+                >
+                <button id="wireframeModalClose3" class="persona-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warframe demo Ekranları Bölümü -->
+    <section id="warframe-demo" class="warframe-demo-section">
+        <div class="container">
+            <div class="warframe-demo-wrapper animate-fade-up">
+                <div class="warframe-demo-card">
+                    <div class="warframe-demo-image-wrapper">
+                        <img
+                            id="warframeDemoImage"
+                            src="images/22 Ara 2025 14_58_52.png"
+                            alt="Warframe demo Ekranları"
+                            class="warframe-demo-image"
+                        >
+                        <button id="warframeDemoOpenBtn" class="warframe-demo-zoom-btn" aria-label="Görseli büyüt">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warframe Demo Modal -->
+        <div id="warframeDemoModal" class="persona-modal">
+            <div class="persona-modal-content">
+                <img
+                    src="images/22 Ara 2025 14_58_52.png"
+                    alt="Warframe demo Ekranları - Tam Ekran"
+                    class="persona-modal-image"
+                >
+                <button id="warframeDemoModalClose" class="persona-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Story Mapping (Yol Haritası) Bölümü -->
+    <section id="user-story-mapping" class="warframe-demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">User Story Mapping (Yol Haritası)</h2>
+            </div>
+
+            <div class="warframe-demo-wrapper">
+                <div class="warframe-demo-card animate-fade-up">
+                    <div class="warframe-demo-image-wrapper">
+                        <img 
+                            id="userStoryMappingImage"
+                            src="images/ChatGPT Image 22 Ara 2025 17_55_01.png" 
+                            alt="User Story Mapping (Yol Haritası)" 
+                            class="warframe-demo-image"
+                        >
+                        <button id="userStoryMappingOpenBtn" class="warframe-demo-zoom-btn" aria-label="Görseli büyüt">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Story Mapping Modal -->
+        <div id="userStoryMappingModal" class="persona-modal">
+            <div class="persona-modal-content">
+                <img 
+                    src="images/ChatGPT Image 22 Ara 2025 17_55_01.png" 
+                    alt="User Story Mapping (Yol Haritası) - Tam Ekran" 
+                    class="persona-modal-image"
+                >
+                <button id="userStoryMappingModalClose" class="persona-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sonuç ve Etki Bölümü -->
+    <section id="results-impact" class="results-impact-section">
+        <div class="results-impact-background"></div>
+        <div class="container">
+            <div class="section-header">
+                <div class="results-impact-main-title">
+                    <span class="trophy-icon">🏆</span>
+                    <h2 class="section-title">NETFLIX SOCIAL CONNECT: SONUÇ VE ETKİ</h2>
+                </div>
+            </div>
+
+            <div class="results-impact-grid">
+                <!-- Metrik 1 -->
+                <div class="results-impact-card results-card-1 animate-fade-up">
+                    <div class="results-card-glow"></div>
+                    <div class="results-card-content">
+                        <div class="results-card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="results-card-title">🚀 Karar Süresinde %50 Tasarruf!</h3>
+                        <p class="results-card-description">
+                            Ortak izleme listeleri sayesinde "ne izlesek?" tartışmaları bitti, içeriğe ulaşma hızı iki katına çıktı.
+                        </p>
+                        <div class="results-card-stat">
+                            <span class="stat-number">%50</span>
+                            <span class="stat-label">Tasarruf</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrik 2 -->
+                <div class="results-impact-card results-card-2 animate-fade-up">
+                    <div class="results-card-glow"></div>
+                    <div class="results-card-content">
+                        <div class="results-card-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="results-card-title">💬 Kullanıcı Etkileşimi Zirve Yaptı!</h3>
+                        <p class="results-card-description">
+                            Zaman damgalı paylaşımlar ve sosyal profil kartları ile platform içi etkileşim saniyeler içine indirildi.
+                        </p>
+                        <div class="results-card-stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Etkileşim</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrik 3 -->
+                <div class="results-impact-card results-card-3 animate-fade-up">
+                    <div class="results-card-glow"></div>
+                    <div class="results-card-content">
+                        <div class="results-card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="results-card-title">📉 Churn (Abonelik İptal) Oranı Düştü!</h3>
+                        <p class="results-card-description">
+                            Sosyal bağlılık ve arkadaş çevresi entegrasyonu sayesinde kullanıcıların platformu terk etme motivasyonu minimize edildi.
+                        </p>
+                        <div class="results-card-stat">
+                            <span class="stat-number">↓</span>
+                            <span class="stat-label">Churn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrik 4 -->
+                <div class="results-impact-card results-card-4 animate-fade-up">
+                    <div class="results-card-glow"></div>
+                    <div class="results-card-content">
+                        <div class="results-card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="results-card-title">👥 Maksimum Sosyal Erişim!</h3>
+                        <p class="results-card-description">
+                            Akıllı rehber eşleşmesi ile manuel arkadaş arama zahmeti bitti, sosyal çevre tek tıkla platforma taşındı.
+                        </p>
+                        <div class="results-card-stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Erişim</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrik 5 -->
+                <div class="results-impact-card results-card-5 animate-fade-up">
+                    <div class="results-card-glow"></div>
+                    <div class="results-card-content">
+                        <div class="results-card-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="results-card-title">💎 Hiper-Kişiselleştirilmiş Deneyim!</h3>
+                        <p class="results-card-description">
+                            Algoritmaların ötesinde, gerçek arkadaş tavsiyeleriyle kullanıcı memnuniyeti ve izleme kalitesi en üst seviyeye çıkarıldı.
+                        </p>
+                        <div class="results-card-stat">
+                            <span class="stat-number">★</span>
+                            <span class="stat-label">Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-video">
+                        <h3>Final Proje Videosu</h3>
+                        <video class="footer-video-player" controls>
+                            <source src="videos/WhatsApp Video 2025-10-27 saat 16.39.46_ff14fbd4.mp4" type="video/mp4">
+                            Video oynatıcı desteklenmiyor.
+                        </video>
+                    </div>
+                    
+                    <div class="footer-info">
+                        <div class="footer-logo">
+                            <img src="images/Netflix-Symbol-Photoroom.png" alt="Netflix Logo" class="footer-netflix-logo">
+                            <h3>Netflix İş Süreçleri Analizi - Final</h3>
+                        </div>
+                        <p>Dijital Dönüşüm ve İş Süreçleri Final Projesi</p>
+                        <p class="footer-year">© 2025 - Tüm Hakları Saklıdır</p>
+                        
+                        <div class="footer-details">
+                            <p><strong>Platform:</strong> Netflix</p>
+                            <p><strong>Tür:</strong> İş Süreçleri Analizi - Final</p>
+                            <p><strong>Odak:</strong> Kullanıcı Etkileşimi ve Bağlılık</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
