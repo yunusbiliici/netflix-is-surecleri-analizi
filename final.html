@@ -161,7 +161,13 @@
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#acceptance-criteria" class="menu-link" data-section="acceptance-criteria">
+                        <a href="#acceptance-criteria-table" class="menu-link" data-section="acceptance-criteria-table">
+                            <i class="fas fa-table"></i>
+                            <span>Acceptance Criteria</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#bdd-scenarios" class="menu-link" data-section="bdd-scenarios">
                             <i class="fas fa-clipboard-list"></i>
                             <span>Kabul Kriterleri (BDD)</span>
                         </a>
@@ -529,7 +535,7 @@
                 <div class="ebo-header">
                     <span class="ebo-badge">
                         <i class="fas fa-magic"></i>
-                        Elimine Et • Birleştir • Optimize Et
+                        Elimine Et • Birleştir • Otomatize Et
                     </span>
                 </div>
 
@@ -582,9 +588,9 @@
                         </div>
                     </article>
 
-                    <!-- 3. Optimize Et -->
+                    <!-- 3. Otomatize Et -->
                     <article class="ebo-card ebo-optimise">
-                        <div class="ebo-step-label">3. Optimize Et</div>
+                        <div class="ebo-step-label">3. Otomatize Et</div>
 
                         <ul class="ebo-list">
                             <li>📱 <strong>Anlık Geri Bildirim:</strong> Yazım hatalarının "Kaydet" butonuna basmadan anlık düzeltilmesi.</li>
@@ -1597,8 +1603,57 @@
         </div>
     </section>
 
+    <!-- Acceptance Criteria Table Section -->
+    <section id="acceptance-criteria-table" class="acceptance-criteria-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kullanıcı Hikayeleri ve Kabul Kriterleri</h2>
+            </div>
+
+            <!-- User Stories & Acceptance Criteria Table -->
+            <div class="user-stories-table-wrapper">
+                <table class="user-stories-table">
+                    <thead>
+                        <tr>
+                            <th>EPIC</th>
+                            <th>USER STORY (KULLANICI HİKAYESİ)</th>
+                            <th>ACCEPTANCE CRITERIA (KABUL KRİTERLERİ)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="epic-cell">Ortak Liste Yönetimi & Sosyal Senkronizasyon</td>
+                            <td class="story-cell">Ortak Listeye İçerik Ekleme<br><br>Bir sosyal etkileşim odaklı kullanıcı olarak, arkadaşlarımla oluşturduğumuz ortak izleme listesine herkesin içerik ekleyebilmesini ve eklenen içeriklerin anlık olarak senkronize edilmesini istiyorum; böylece liste üzerinde birlikte karar verebildiğimizi net şekilde görebileyim.</td>
+                            <td class="criteria-cell">
+                                <span class="gherkin-given">Given</span> Mert ve Ali platform üzerinde arkadaş durumundadır.<br>
+                                <span class="gherkin-and">And</span> Mert, "Haftalık Dizi Gecesi" adında bir ortak liste oluşturmuştur.<br>
+                                <span class="gherkin-and">And</span> Ali, ortak liste davet bağlantısını kabul etmiştir.<br><br>
+                                <span class="gherkin-when">When</span> Ali, ortak listeye "Black Mirror" içeriğini eklediğinde,<br><br>
+                                <span class="gherkin-then">Then</span> Mert'in ekranındaki ortak listede "Black Mirror" içeriği anlık olarak görüntülenmelidir.<br>
+                                <span class="gherkin-and">And</span> Eklenen içeriğin yanında Ali'nin profil ikonu gösterilmelidir.<br>
+                                <span class="gherkin-and">And</span> İçerik üzerinde "Ekleyen: Ali" bilgisi yer almalıdır.<br>
+                                <span class="gherkin-and">And</span> Liste sıralaması ekleme zamanına göre otomatik güncellenmelidir.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="epic-cell">Sosyal Paylaşım & Anlık Etkileşim</td>
+                            <td class="story-cell">Zaman Damgalı Sahne Paylaşımı<br><br>Bir dijital yerli kullanıcı olarak, izlediğim içerikte beğendiğim sahneyi saniyesi saniyesine zaman damgası ile arkadaşlarıma göndermek istiyorum; böylece sahneyi tarif etmekle vakit kaybetmeden doğrudan o an üzerinden etkileşim kurabileyim.</td>
+                            <td class="criteria-cell">
+                                <span class="gherkin-given">Given</span> Mert bir film izlemektedir ve video 45:00 dakikasındadır.<br><br>
+                                <span class="gherkin-when">When</span> Mert, "Zaman Damgalı Paylaş" butonuna tıklayıp paylaşımı arkadaşına gönderdiğinde,<br><br>
+                                <span class="gherkin-then">Then</span> Oluşturulan paylaşım linkinin sonuna izleme süresini temsil eden zaman parametresi otomatik olarak eklenmelidir.<br>
+                                <span class="gherkin-and">And</span> Arkadaşı linki açtığında video doğrudan 45:00 dakikasından başlatılmalıdır.<br>
+                                <span class="gherkin-but">But</span> Linke tıklayan kullanıcının aktif Netflix aboneliği yoksa, içerik oynatılmamalı ve kullanıcı üyelik/abonelik sayfasına yönlendirilmelidir.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <!-- Kabul Kriterleri (Gherkin/BDD Senaryoları) Bölümü -->
-    <section id="acceptance-criteria" class="bdd-section">
+    <section id="bdd-scenarios" class="bdd-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Kabul Kriterleri (Gherkin / BDD Senaryoları)</h2>
@@ -1798,7 +1853,7 @@
                     <div class="use-case-image-card">
                         <img 
                             id="useCaseImage"
-                            src="images/Başlıksız Diyagram-Sayfa -2.drawio (2).png" 
+                            src="images/Mert ve Netflix kullanım diyagramı.png" 
                             alt="Use Case Diyagramı" 
                             class="use-case-image"
                         >
@@ -1814,7 +1869,7 @@
         <div id="useCaseModal" class="persona-modal">
             <div class="persona-modal-content">
                 <img 
-                    src="images/Başlıksız Diyagram-Sayfa -2.drawio (2).png" 
+                    src="images/Mert ve Netflix kullanım diyagramı.png" 
                     alt="Use Case Diyagramı - Tam Ekran" 
                     class="persona-modal-image"
                 >
