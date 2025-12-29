@@ -101,6 +101,12 @@
                         </a>
                     </li>
                     <li class="menu-item">
+                        <a href="#bpmn" class="menu-link" data-section="bpmn">
+                            <i class="fas fa-sitemap"></i>
+                            <span>As-Is Süreç Haritası</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
                         <a href="#to-be-map" class="menu-link" data-section="to-be-map">
                             <i class="fas fa-map"></i>
                             <span>TO-BE Süreç Haritası</span>
@@ -303,21 +309,18 @@
                     <div class="three-m-grid">
                     <!-- MURA -->
                         <article class="three-m-card three-m-mura">
-                            <div class="three-m-icon">
-                                <i class="fas fa-wave-square"></i>
+                            <div class="three-m-header">
+                                <div class="three-m-icon">
+                                    <i class="fas fa-wave-square"></i>
+                                </div>
+                                <div class="three-m-tag">Mura – Düzensizlik</div>
                             </div>
-                            <div class="three-m-tag">Mura – Düzensizlik</div>
 
                             <ul class="three-m-list">
                                 <li>
                                     <strong>Örnek – Yeni İçerik Yayını Yoğunluğu:</strong>
                                     Popüler bir dizi (örneğin <em>Squid Game</em>) yeni sezonu yayınlandığında, milyonlarca kullanıcının aynı anda 
                                     <strong>"Profil Oluşturma"</strong> ve <strong>"Liste Yapma"</strong> adımına yüklenmesi; normal günlerde ise bu trafiğin düşük seyretmesi.
-                                </li>
-                                <li>
-                                    <strong>Örnek – Takip İsteği Trafiği:</strong>
-                                    Sosyal bir kampanya döneminde kullanıcıların birbirini bulma ve <strong>"Takip İsteği Gönder"</strong> adımını yoğun kullanması, 
-                                    sistemdeki veri akışında düzensiz dalgalanmalar yaratır.
                                 </li>
                             </ul>
 
@@ -329,21 +332,18 @@
 
                         <!-- MURI -->
                         <article class="three-m-card three-m-muri">
-                            <div class="three-m-icon">
-                                <i class="fas fa-tachometer-alt"></i>
+                            <div class="three-m-header">
+                                <div class="three-m-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="three-m-tag">Muri – Aşırı Yük</div>
                             </div>
-                            <div class="three-m-tag">Muri – Aşırı Yük</div>
 
                             <ul class="three-m-list">
                                 <li>
                                     <strong>Örnek – Tekli Onay Mekanizması:</strong>
                                     Diyagramdaki <strong>"Kullanıcı Bilgileri Uygun Mu?"</strong> kontrolünün merkezi bir sunucu üzerinden yapılması durumunda, 
                                     yoğun saatlerde bu sunucunun tüm istekleri karşılamakta zorlanması ve sistemin yavaşlaması.
-                                </li>
-                                <li>
-                                    <strong>Örnek – Bilişsel Yük:</strong>
-                                    Kullanıcının profil oluştururken tek bir ekranda çok fazla veri 
-                                    (<em>Ad, Kullanıcı Adı, E-posta, Tercihler</em>) girmeye zorlanması; kullanıcının karar verme kapasitesinin aşırı zorlanması.
                                 </li>
                             </ul>
 
@@ -355,17 +355,14 @@
 
                         <!-- MUDA -->
                         <article class="three-m-card three-m-muda">
-                            <div class="three-m-icon">
-                                <i class="fas fa-trash-alt"></i>
+                            <div class="three-m-header">
+                                <div class="three-m-icon">
+                                    <i class="fas fa-trash-alt"></i>
+                                </div>
+                                <div class="three-m-tag">Muda – Görünen İsraf</div>
                             </div>
-                            <div class="three-m-tag">Muda – Görünen İsraf</div>
 
                             <ul class="three-m-list">
-                                <li>
-                                    <strong>Örnek – Hatalı Veri Girişi (Rework):</strong>
-                                    Diyagramda görülen <strong>"Kullanıcı Adı Alınmıştır"</strong> uyarısı sonrası kullanıcının tekrar başa dönüp tüm bilgileri yeniden girmesi; 
-                                    değer katmayan bir <strong>Hatalı İşlem</strong> israfıdır.
-                                </li>
                                 <li>
                                     <strong>Örnek – Gereksiz Bekleme Zamanı:</strong>
                                     Kullanıcının takip etmek istediği kişiyi <strong>"Kullanıcı Adı Ara"</strong> adımında manuel olarak araması ve sistemin sonuçları getirmesini beklemesi. 
@@ -392,24 +389,15 @@
             </div>
 
             <div class="wastes-panel">
-                <div class="wastes-panel-header">
-                    <div class="wastes-panel-title">
-                        <span class="wastes-panel-index">1.2</span>
-                        <span class="wastes-panel-text">8 İsraf Yaklaşımı ile Mevcut Sürecin Okunması</span>
-                    </div>
-                    <span class="wastes-panel-badge">
-                        <i class="fas fa-search"></i>
-                        İsraf Odaklı Kök Neden İncelemesi
-                    </span>
-                </div>
-
                 <div class="wastes-grid">
                     <!-- Aşırı İşleme -->
                     <article class="waste-card waste-overprocessing">
-                        <div class="waste-icon">
-                            <i class="fas fa-sync-alt"></i>
+                        <div class="waste-header">
+                            <div class="waste-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3 class="waste-title">Aşırı İşleme</h3>
                         </div>
-                        <h3 class="waste-title">Aşırı İşleme (Over-Processing)</h3>
 
                         <div class="waste-block">
                             <h4 class="waste-label">Analiz</h4>
@@ -431,10 +419,12 @@
 
                     <!-- Bekleme İsrafı -->
                     <article class="waste-card waste-waiting">
-                        <div class="waste-icon">
-                            <i class="fas fa-hourglass-half"></i>
+                        <div class="waste-header">
+                            <div class="waste-icon">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <h3 class="waste-title">Bekleme İsrafı</h3>
                         </div>
-                        <h3 class="waste-title">Bekleme İsrafı (Waiting)</h3>
 
                         <div class="waste-block">
                             <h4 class="waste-label">Analiz</h4>
@@ -454,10 +444,12 @@
 
                     <!-- Hatalı İşlem / Düzeltme -->
                     <article class="waste-card waste-defect">
-                        <div class="waste-icon">
-                            <i class="fas fa-exclamation-triangle"></i>
+                        <div class="waste-header">
+                            <div class="waste-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3 class="waste-title">Hatalı İşlem / Düzeltme</h3>
                         </div>
-                        <h3 class="waste-title">Hatalı İşlem / Düzeltme (Defects / Rework)</h3>
 
                         <div class="waste-block">
                             <h4 class="waste-label">Analiz</h4>
@@ -488,13 +480,6 @@
             </div>
 
             <div class="analysis-results-panel">
-                <div class="analysis-results-header">
-                    <span class="analysis-results-badge">
-                        <i class="fas fa-clipboard-check"></i>
-                        Süreç Özeti
-                    </span>
-                </div>
-
                 <div class="analysis-results-grid">
                     <!-- 11 Adım -->
                     <article class="analysis-result-card result-steps">
@@ -504,9 +489,6 @@
                         <div class="result-content">
                             <h3 class="result-title">11 Adım</h3>
                             <p class="result-subtitle">Mevcut AS-IS süreç uzunluğu</p>
-                            <p class="result-text">
-                                Mevcut (AS-IS) profil oluşturma ve takip sürecindeki toplam adım sayısı.
-                            </p>
                         </div>
                     </article>
 
@@ -518,9 +500,6 @@
                         <div class="result-content">
                             <h3 class="result-title">4 Gereksiz Adım</h3>
                             <p class="result-subtitle">Kullanıcıya değer katmayan işlemler</p>
-                            <p class="result-text">
-                                Kullanıcı adı hatasında başa dönme, manuel liste oluşturma gibi kullanıcı için değer katmayan, israf niteliğindeki işlemler.
-                            </p>
                         </div>
                     </article>
 
@@ -532,10 +511,6 @@
                         <div class="result-content">
                             <h3 class="result-title">3 Otomatize Edilebilir Adım</h3>
                             <p class="result-subtitle">Algoritmik iyileştirme fırsatları</p>
-                            <p class="result-text">
-                                "Kullanıcı adı uygunluk kontrolü", "Otomatik başlangıç listesi oluşturma" ve 
-                                "Rehber eşleştirme ile arkadaş bulma" adımları algoritmalarla otomatikleştirilebilir.
-                            </p>
                         </div>
                     </article>
                 </div>
@@ -562,7 +537,6 @@
                     <!-- 1. Elimine Et -->
                     <article class="ebo-card ebo-eliminate">
                         <div class="ebo-step-label">1. Elimine Et</div>
-                        <h3 class="ebo-title">Gereksiz Adımları Kaldır</h3>
 
                         <ul class="ebo-list">
                             <li>❌ <strong>Manuel Arkadaş Arama Zorunluluğu</strong></li>
@@ -572,11 +546,13 @@
 
                         <div class="ebo-metrics">
                             <div class="ebo-metric">
-                                <span class="ebo-metric-label">Süre</span>
-                                <span class="ebo-metric-value">5 DK → 2.5 DK</span>
+                                <div class="ebo-time-comparison">
+                                    <span class="ebo-time-before">5 DK</span>
+                                    <span class="ebo-time-arrow">→</span>
+                                    <span class="ebo-time-after">2.5 DK</span>
+                                </div>
                             </div>
                             <div class="ebo-metric">
-                                <span class="ebo-metric-label">Kazanım</span>
                                 <span class="ebo-metric-value highlight">%50 Zaman Azalması</span>
                             </div>
                         </div>
@@ -585,7 +561,6 @@
                     <!-- 2. Birleştir -->
                     <article class="ebo-card ebo-combine">
                         <div class="ebo-step-label">2. Birleştir</div>
-                        <h3 class="ebo-title">Güçleri Birleştir ve Otomatize Et</h3>
 
                         <ul class="ebo-list">
                             <li>🤖 <strong>Akıllı Profil:</strong> "İlgi Alanı Seçimi" ile "Liste Oluşturma" tek adımda birleştirildi.</li>
@@ -595,11 +570,13 @@
 
                         <div class="ebo-metrics">
                             <div class="ebo-metric">
-                                <span class="ebo-metric-label">Süre</span>
-                                <span class="ebo-metric-value">2.5 DK → 1 DK</span>
+                                <div class="ebo-time-comparison">
+                                    <span class="ebo-time-before">2.5 DK</span>
+                                    <span class="ebo-time-arrow">→</span>
+                                    <span class="ebo-time-after">1 DK</span>
+                                </div>
                             </div>
                             <div class="ebo-metric">
-                                <span class="ebo-metric-label">Kazanım</span>
                                 <span class="ebo-metric-value highlight">%60 Verimlilik Artışı</span>
                             </div>
                         </div>
@@ -608,7 +585,6 @@
                     <!-- 3. Optimize Et -->
                     <article class="ebo-card ebo-optimise">
                         <div class="ebo-step-label">3. Optimize Et</div>
-                        <h3 class="ebo-title">Kalanları Kolaylaştır ve Basitleştir</h3>
 
                         <ul class="ebo-list">
                             <li>📱 <strong>Anlık Geri Bildirim:</strong> Yazım hatalarının "Kaydet" butonuna basmadan anlık düzeltilmesi.</li>
@@ -618,15 +594,80 @@
 
                         <div class="ebo-metrics">
                             <div class="ebo-metric">
-                                <span class="ebo-metric-label">Süre</span>
-                                <span class="ebo-metric-value">1 DK → 30 SN</span>
+                                <div class="ebo-time-comparison">
+                                    <span class="ebo-time-before">1 DK</span>
+                                    <span class="ebo-time-arrow">→</span>
+                                    <span class="ebo-time-after">30 SN</span>
+                                </div>
                             </div>
                             <div class="ebo-metric">
-                                <span class="ebo-metric-label">Kazanım</span>
                                 <span class="ebo-metric-value highlight">%50 Zaman Tasarrufu</span>
                             </div>
                         </div>
                     </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BPMN 2.0 Map Section -->
+    <section id="bpmn" class="bpmn-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">As-Is Süreç Haritası</h2>
+            </div>
+            
+            <div class="bpmn-controls">
+                <button class="zoom-btn" id="bpmnZoomInBtn" title="Yakınlaştır">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="zoom-btn" id="bpmnZoomOutBtn" title="Uzaklaştır">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="zoom-btn" id="bpmnResetZoomBtn" title="Sıfırla">
+                    <i class="fas fa-undo"></i>
+                </button>
+            </div>
+            
+            <div class="bpmn-image-container">
+                <img src="images/BPMN DİYAGRAMI.jpg" alt="BPMN 2.0 Haritası" class="bpmn-image" id="bpmnImage">
+            </div>
+            
+            <div class="bpmn-info-cards">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-play-circle"></i>
+                        <h3>Başlangıç</h3>
+                    </div>
+                    <div class="info-card-content">
+                        <p>Kullanıcı, Netflix platformunda profil oluşturmak için <strong>"Profil Oluştur"</strong> butonuna tıklayarak süreci başlatır.</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-stop-circle"></i>
+                        <h3>Bitiş</h3>
+                    </div>
+                    <div class="info-card-content">
+                        <p>Süreç, üç farklı noktada sonlanabilir:</p>
+                        <ul>
+                            <li>Kullanıcı bilgileri geçersizse: Sistem uyarı verir</li>
+                            <li>Kullanıcı takip etmek istemezse: Listeye içerik ekledikten sonra sonlanır</li>
+                            <li>Kullanıcı takip isteği gönderirse: Sistem isteği kaydeder</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Sistemler</h3>
+                    </div>
+                    <div class="info-card-content">
+                        <p><strong>Kullanıcı:</strong> Profil oluşturma, liste oluşturma, içerik ekleme, takip isteği gönderme</p>
+                        <p><strong>Netflix Sistemi:</strong> Bilgi doğrulama, profil kaydı, istek kaydetme</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -640,19 +681,19 @@
             </div>
             
             <div class="bpmn-controls">
-                <button class="zoom-btn" id="zoomInBtn" title="Yakınlaştır">
+                <button class="zoom-btn" id="tobeZoomInBtn" title="Yakınlaştır">
                     <i class="fas fa-plus"></i>
                 </button>
-                <button class="zoom-btn" id="zoomOutBtn" title="Uzaklaştır">
+                <button class="zoom-btn" id="tobeZoomOutBtn" title="Uzaklaştır">
                     <i class="fas fa-minus"></i>
                 </button>
-                <button class="zoom-btn" id="resetZoomBtn" title="Sıfırla">
+                <button class="zoom-btn" id="tobeResetZoomBtn" title="Sıfırla">
                     <i class="fas fa-undo"></i>
                 </button>
             </div>
             
             <div class="bpmn-image-container">
-                <img src="images/TO-BE 2.png" alt="TO-BE Süreç Haritası" class="bpmn-image" id="bpmnImage">
+                <img src="images/TO-BE 2.png" alt="TO-BE Süreç Haritası" class="bpmn-image" id="tobeBpmnImage">
             </div>
             
             <div class="bpmn-info-cards">
@@ -701,136 +742,143 @@
     </section>
 
     <!-- Güç / İlgi Matrisi Bölümü -->
-    <section id="power-interest-matrix" class="matrix-section">
+    <section id="power-interest-matrix" class="power-interest-matrix-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Güç / İlgi Matrisi</h2>
-                <p class="section-subtitle">
-                    Projeden etkilenen paydaşların güç ve ilgi düzeylerine göre konumlandırılması.
-                </p>
             </div>
 
-            <div class="matrix-panel">
-                <div class="matrix-header">
-                    <span class="matrix-badge">
-                        <i class="fas fa-table"></i>
-                        Puanlama Tablosu
-                    </span>
+            <div class="matrix-container">
+                <!-- Y Ekseni: Güç -->
+                <div class="matrix-y-axis">
+                    <div class="axis-label axis-label-top">Yüksek</div>
+                    <div class="axis-title axis-title-vertical">GÜÇ</div>
+                    <div class="axis-label axis-label-bottom">Düşük</div>
                 </div>
 
-                <div class="matrix-table-wrapper">
-                    <table class="matrix-table">
-                        <thead>
-                            <tr>
-                                <th>Paydaş</th>
-                                <th>Güç (1–5)</th>
-                                <th>İlgi (1–5)</th>
-                                <th>Nedeni</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Netflix CEO / Üst Yönetim</strong></td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>Projeyi iptal edebilir, stratejik kararları verir.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Yazılım &amp; Ürün Müdürü</strong></td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>Her gün projeyle uğraşır, teknik kararları verir.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Hukuk Departmanı</strong></td>
-                                <td>4</td>
-                                <td>2</td>
-                                <td>Veri gizliliği gibi konularda süreci durdurabilir.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Normal Kullanıcılar</strong></td>
-                                <td>1</td>
-                                <td>5</td>
-                                <td>En çok etkilenen grup ancak süreci durduramazlar.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Pazarlama Ekibi</strong></td>
-                                <td>2</td>
-                                <td>4</td>
-                                <td>Sürecin başarısından etkilenirler ancak yetkileri azdır.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Teknoloji Haberleri / Basın</strong></td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>Sadece haber yaparlar, süreci değiştiremezler.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- X Ekseni: İlgi -->
+                <div class="matrix-x-axis">
+                    <div class="axis-label axis-label-left">Düşük</div>
+                    <div class="axis-title axis-title-horizontal">İLGİ</div>
+                    <div class="axis-label axis-label-right">Yüksek</div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Güç / İlgi Matrisi: Stratejik Konumlandırma (Animasyonlu Kartlar) -->
-    <section class="matrix-strategy-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Güç / İlgi Matrisi: Stratejik Konumlandırma</h2>
-            </div>
+                <!-- 2x2 Grid Matris -->
+                <div class="matrix-grid">
+                    <!-- Sol Üst: Memnun Tut (Yüksek Güç / Düşük İlgi) -->
+                    <div class="matrix-quadrant quadrant-keep-satisfied">
+                        <div class="quadrant-header">
+                            <div class="quadrant-icon">⚡</div>
+                            <h3 class="quadrant-title">Memnun Tut</h3>
+                            <p class="quadrant-subtitle">(Yüksek Güç / Düşük İlgi)</p>
+                        </div>
+                        <div class="quadrant-content">
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Paydaşlar</h4>
+                                <ul class="quadrant-list">
+                                    <li>Hukuk Departmanı</li>
+                                    <li>Üst Yönetim</li>
+                                </ul>
+                            </div>
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Rol & Etki</h4>
+                                <p class="quadrant-text">Projeyi durdurabilecek veya yön değiştirebilecek yetkiye sahiptirler</p>
+                                <p class="quadrant-text">Günlük operasyonla sınırlı ilgileri vardır</p>
+                            </div>
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Strateji</h4>
+                                <p class="quadrant-text">Aylık durum ve bütçe raporu sunulur</p>
+                                <p class="quadrant-text">Yasal veya kritik bir risk oluştuğunda anında bilgilendirme yapılır</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="matrix-strategy-grid">
-                <!-- Yakından Yönet -->
-                <article class="matrix-strategy-card quadrant-manage animate-fade-up">
-                    <div class="matrix-strategy-icon">
-                        <span>🔥</span>
+                    <!-- Sağ Üst: Yakından Yönet (Yüksek Güç / Yüksek İlgi) -->
+                    <div class="matrix-quadrant quadrant-manage">
+                        <div class="quadrant-header">
+                            <div class="quadrant-icon">🔥</div>
+                            <h3 class="quadrant-title">Yakından Yönet</h3>
+                            <p class="quadrant-subtitle">(Yüksek Güç / Yüksek İlgi)</p>
+                        </div>
+                        <div class="quadrant-content">
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Paydaşlar</h4>
+                                <ul class="quadrant-list">
+                                    <li>Netflix Ürün Müdürü</li>
+                                    <li>Yazılım Ekibi</li>
+                                </ul>
+                            </div>
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Rol & Etki</h4>
+                                <p class="quadrant-text">Projenin ana sorumluları</p>
+                                <p class="quadrant-text">Günlük operasyon ve stratejik kararların merkezinde yer alırlar</p>
+                            </div>
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Strateji</h4>
+                                <p class="quadrant-text">En kritik paydaş grubu</p>
+                                <p class="quadrant-text">Haftalık rapor sunumu yapılır</p>
+                                <p class="quadrant-text">Her büyük kararda onay alınır</p>
+                                <p class="quadrant-text">Yüz yüze / senkron toplantılar zorunludur</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="matrix-strategy-title">Yakından Yönet</h3>
-                    <p class="matrix-strategy-subtitle">Yüksek Güç / Yüksek İlgi</p>
-                    <div class="matrix-strategy-content">
-                        <p><strong>Paydaş:</strong> Netflix Ürün Müdürü ve Yazılım Ekibi.</p>
-                        <p><strong>Strateji:</strong> En kritik paydaşlar! Haftalık rapor sunumu, her büyük kararda onay alma ve yüz yüze toplantılar şarttır.</p>
-                    </div>
-                </article>
 
-                <!-- Memnun Tut -->
-                <article class="matrix-strategy-card quadrant-keep-satisfied animate-fade-up">
-                    <div class="matrix-strategy-icon">
-                        <span>⚡</span>
+                    <!-- Sol Alt: Sadece İzle (Düşük Güç / Düşük İlgi) -->
+                    <div class="matrix-quadrant quadrant-monitor">
+                        <div class="quadrant-header">
+                            <div class="quadrant-icon">👁️</div>
+                            <h3 class="quadrant-title">Sadece İzle</h3>
+                            <p class="quadrant-subtitle">(Düşük Güç / Düşük İlgi)</p>
+                        </div>
+                        <div class="quadrant-content">
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Paydaşlar</h4>
+                                <ul class="quadrant-list">
+                                    <li>Teknoloji Habercileri</li>
+                                </ul>
+                            </div>
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Rol & Etki</h4>
+                                <p class="quadrant-text">Proje üzerinde doğrudan etkileri yoktur</p>
+                                <p class="quadrant-text">Kamuoyu algısı oluşturabilirler</p>
+                            </div>
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Strateji</h4>
+                                <p class="quadrant-text">Genel basın açıklaması yeterlidir</p>
+                                <p class="quadrant-text">Proaktif iletişim gerekmez</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="matrix-strategy-title">Memnun Tut</h3>
-                    <p class="matrix-strategy-subtitle">Yüksek Güç / Düşük İlgi</p>
-                    <div class="matrix-strategy-content">
-                        <p><strong>Paydaş:</strong> Hukuk Departmanı ve Üst Yönetim.</p>
-                        <p><strong>Strateji:</strong> Aylık rapor sun, yasal bir sorun olduğunda hemen bilgilendir.</p>
-                    </div>
-                </article>
 
-                <!-- Bilgilendir -->
-                <article class="matrix-strategy-card quadrant-inform animate-fade-up">
-                    <div class="matrix-strategy-icon">
-                        <span>📢</span>
+                    <!-- Sağ Alt: Bilgilendir (Düşük Güç / Yüksek İlgi) -->
+                    <div class="matrix-quadrant quadrant-inform">
+                        <div class="quadrant-header">
+                            <div class="quadrant-icon">📢</div>
+                            <h3 class="quadrant-title">Bilgilendir</h3>
+                            <p class="quadrant-subtitle">(Düşük Güç / Yüksek İlgi)</p>
+                        </div>
+                        <div class="quadrant-content">
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Paydaşlar</h4>
+                                <ul class="quadrant-list">
+                                    <li>Normal Kullanıcılar</li>
+                                    <li>Pazarlama Ekibi</li>
+                                </ul>
+                            </div>
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Rol & Etki</h4>
+                                <p class="quadrant-text">Ürünü aktif kullanırlar ve geri bildirim üretirler</p>
+                                <p class="quadrant-text">Karar mekanizmasında doğrudan güçleri yoktur</p>
+                            </div>
+                            <div class="quadrant-section">
+                                <h4 class="quadrant-section-title">Strateji</h4>
+                                <p class="quadrant-text">Sosyal medya duyuruları yapılır</p>
+                                <p class="quadrant-text">Beta test grupları oluşturulur</p>
+                                <p class="quadrant-text">Anket ve geri bildirim mekanizmaları aktif tutulur</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="matrix-strategy-title">Bilgilendir</h3>
-                    <p class="matrix-strategy-subtitle">Düşük Güç / Yüksek İlgi</p>
-                    <div class="matrix-strategy-content">
-                        <p><strong>Paydaş:</strong> Normal Kullanıcılar ve Pazarlama Ekibi.</p>
-                        <p><strong>Strateji:</strong> Sosyal medya duyuruları ve beta test grupları ile geri bildirim al.</p>
-                    </div>
-                </article>
-
-                <!-- Sadece İzle -->
-                <article class="matrix-strategy-card quadrant-monitor animate-fade-up">
-                    <div class="matrix-strategy-icon">
-                        <span>👁️</span>
-                    </div>
-                    <h3 class="matrix-strategy-title">Sadece İzle</h3>
-                    <p class="matrix-strategy-subtitle">Düşük Güç / Düşük İlgi</p>
-                    <div class="matrix-strategy-content">
-                        <p><strong>Paydaş:</strong> Teknoloji Habercileri.</p>
-                        <p><strong>Strateji:</strong> Genel basın açıklaması yeterlidir.</p>
-                    </div>
-                </article>
+                </div>
             </div>
         </div>
     </section>
@@ -1042,115 +1090,183 @@
 
             <div class="hmw-grid">
                 <!-- Karar Hızı ve Akıllı Keşif -->
-                <article class="hmw-card animate-fade-up">
-                    <div class="hmw-icon hmw-primary">
-                        <span>01</span>
+                <article class="hmw-card" data-hmw="01">
+                    <div class="hmw-card-header">
+                        <div class="hmw-icon hmw-primary">
+                            <span class="hmw-icon-emoji">⚡</span>
+                        </div>
+                        <h3 class="hmw-title">Karar Hızı &amp; Akıllı Keşif</h3>
                     </div>
-                    <h3 class="hmw-title">Karar Hızı &amp; Akıllı Keşif</h3>
-                    <p class="hmw-question-label">❓ Nasıl yapabiliriz ki...</p>
-                    <p class="hmw-question">
-                        Mert, binlerce içerik arasında kaybolmak (Karar Felci) yerine, o anki ruh haline en uygun içeriğe 
-                        <strong>saniyeler içinde ve zahmetsizce</strong> ulaşabilsin?
-                    </p>
-                    <p class="hmw-hint-label">💡 İpucu:</p>
-                    <p class="hmw-hint">
-                        Yapay zeka mod tahminleyicisi, "Mood" bazlı kaydırma (swipe) özelliği, akıllı önizlemeler.
-                    </p>
+                    <div class="hmw-card-content">
+                        <div class="hmw-question-block">
+                            <p class="hmw-question-label"><span class="hmw-emoji">❓</span> Nasıl yapabiliriz ki...</p>
+                            <p class="hmw-question">
+                                Mert, binlerce içerik arasında kaybolmak (Karar Felci) yerine, o anki ruh haline en uygun içeriğe 
+                                <strong>saniyeler içinde ve zahmetsizce</strong> ulaşabilsin?
+                            </p>
+                        </div>
+                        <div class="hmw-hint-block">
+                            <p class="hmw-hint-label"><span class="hmw-emoji">💡</span> İpucu:</p>
+                            <p class="hmw-hint">
+                                Yapay zeka mod tahminleyicisi, "Mood" bazlı kaydırma (swipe) özelliği, akıllı önizlemeler.
+                            </p>
+                        </div>
+                    </div>
                 </article>
 
                 <!-- Zahmetsiz Sosyal Bağ -->
-                <article class="hmw-card animate-fade-up">
-                    <div class="hmw-icon hmw-secondary">
-                        <span>02</span>
+                <article class="hmw-card" data-hmw="02">
+                    <div class="hmw-card-header">
+                        <div class="hmw-icon hmw-secondary">
+                            <span class="hmw-icon-emoji">🤝</span>
+                        </div>
+                        <h3 class="hmw-title">Zahmetsiz Sosyal Bağ</h3>
                     </div>
-                    <h3 class="hmw-title">Zahmetsiz Sosyal Bağ</h3>
-                    <p class="hmw-question-label">❓ Nasıl yapabiliriz ki...</p>
-                    <p class="hmw-question">
-                        Mert'in arkadaş bulma ve takip etme sürecini, manuel aramayı tamamen ortadan kaldırarak 
-                        <strong>tek tıkla gerçekleşen doğal bir etkileşime</strong> dönüştürebilelim?
-                    </p>
-                    <p class="hmw-hint-label">💡 İpucu:</p>
-                    <p class="hmw-hint">
-                        Sosyal medya rehber eşleşmesi, "Tanıyor Olabileceğin Arkadaşlar" algoritması, QR kod ile profil paylaşımı.
-                    </p>
+                    <div class="hmw-card-content">
+                        <div class="hmw-question-block">
+                            <p class="hmw-question-label"><span class="hmw-emoji">❓</span> Nasıl yapabiliriz ki...</p>
+                            <p class="hmw-question">
+                                Mert'in arkadaş bulma ve takip etme sürecini, manuel aramayı tamamen ortadan kaldırarak 
+                                <strong>tek tıkla gerçekleşen doğal bir etkileşime</strong> dönüştürebilelim?
+                            </p>
+                        </div>
+                        <div class="hmw-hint-block">
+                            <p class="hmw-hint-label"><span class="hmw-emoji">💡</span> İpucu:</p>
+                            <p class="hmw-hint">
+                                Sosyal medya rehber eşleşmesi, "Tanıyor Olabileceğin Arkadaşlar" algoritması, QR kod ile profil paylaşımı.
+                            </p>
+                        </div>
+                    </div>
                 </article>
 
                 <!-- İnteraktif Topluluk Deneyimi -->
-                <article class="hmw-card animate-fade-up">
-                    <div class="hmw-icon hmw-tertiary">
-                        <span>03</span>
+                <article class="hmw-card" data-hmw="03">
+                    <div class="hmw-card-header">
+                        <div class="hmw-icon hmw-tertiary">
+                            <span class="hmw-icon-emoji">🎬</span>
+                        </div>
+                        <h3 class="hmw-title">İnteraktif Topluluk Deneyimi</h3>
                     </div>
-                    <h3 class="hmw-title">İnteraktif Topluluk Deneyimi</h3>
-                    <p class="hmw-question-label">❓ Nasıl yapabiliriz ki...</p>
-                    <p class="hmw-question">
-                        Netflix'i sadece bir video izleme platformu olmaktan çıkarıp, Mert ve arkadaşlarının 
-                        <strong>birlikte içerik tükettiği ve anlık etkileşim kurduğu</strong> yaşayan bir sosyal alana dönüştürebilelim?
-                    </p>
-                    <p class="hmw-hint-label">💡 İpucu:</p>
-                    <p class="hmw-hint">
-                        Uygulama içi "Watch Party" (Birlikte İzle) odaları, sahne bazlı yorum bırakma, etkileşimli sosyal akış ekranı.
-                    </p>
+                    <div class="hmw-card-content">
+                        <div class="hmw-question-block">
+                            <p class="hmw-question-label"><span class="hmw-emoji">❓</span> Nasıl yapabiliriz ki...</p>
+                            <p class="hmw-question">
+                                Netflix'i sadece bir video izleme platformu olmaktan çıkarıp, Mert ve arkadaşlarının 
+                                <strong>birlikte içerik tükettiği ve anlık etkileşim kurduğu</strong> yaşayan bir sosyal alana dönüştürebilelim?
+                            </p>
+                        </div>
+                        <div class="hmw-hint-block">
+                            <p class="hmw-hint-label"><span class="hmw-emoji">💡</span> İpucu:</p>
+                            <p class="hmw-hint">
+                                Uygulama içi "Watch Party" (Birlikte İzle) odaları, sahne bazlı yorum bırakma, etkileşimli sosyal akış ekranı.
+                            </p>
+                        </div>
+                    </div>
                 </article>
 
                 <!-- Hata-Dostu Süreç Akışı -->
-                <article class="hmw-card animate-fade-up">
-                    <div class="hmw-icon hmw-accent">
-                        <span>04</span>
+                <article class="hmw-card" data-hmw="04">
+                    <div class="hmw-card-header">
+                        <div class="hmw-icon hmw-accent">
+                            <span class="hmw-icon-emoji">✨</span>
+                        </div>
+                        <h3 class="hmw-title">Hata-Dostu Süreç Akışı</h3>
                     </div>
-                    <h3 class="hmw-title">Hata-Dostu Süreç Akışı</h3>
-                    <p class="hmw-question-label">❓ Nasıl yapabiliriz ki...</p>
-                    <p class="hmw-question">
-                        Mert'in profil yönetimi veya veri girişi sırasında yaptığı hataları (rework), süreci kesintiye uğratan bir engel değil; 
-                        <strong>sistemin anında düzelttiği, akıcı bir deneyim</strong> haline getirebilelim?
-                    </p>
-                    <p class="hmw-hint-label">💡 İpucu:</p>
-                    <p class="hmw-hint">
-                        Satır içi anlık doğrulama (Inline validation), otomatik kullanıcı adı önerileri, kesintisiz form geçişleri.
-                    </p>
+                    <div class="hmw-card-content">
+                        <div class="hmw-question-block">
+                            <p class="hmw-question-label"><span class="hmw-emoji">❓</span> Nasıl yapabiliriz ki...</p>
+                            <p class="hmw-question">
+                                Mert'in profil yönetimi veya veri girişi sırasında yaptığı hataları (rework), süreci kesintiye uğratan bir engel değil; 
+                                <strong>sistemin anında düzelttiği, akıcı bir deneyim</strong> haline getirebilelim?
+                            </p>
+                        </div>
+                        <div class="hmw-hint-block">
+                            <p class="hmw-hint-label"><span class="hmw-emoji">💡</span> İpucu:</p>
+                            <p class="hmw-hint">
+                                Satır içi anlık doğrulama (Inline validation), otomatik kullanıcı adı önerileri, kesintisiz form geçişleri.
+                            </p>
+                        </div>
+                    </div>
                 </article>
             </div>
         </div>
     </section>
 
     <!-- Gereksinim Piramidi Bölümü -->
-    <section id="requirements-pyramid" class="persona-section">
+    <section id="requirements-pyramid" class="requirements-pyramid-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Gereksinim Piramidi</h2>
-                <p class="section-subtitle">
-                    Mert'in Netflix deneyimindeki temel, performans ve heyecan verici gereksinimlerinin piramit yapısında görselleştirilmesi.
-                </p>
             </div>
 
-            <div class="persona-panel">
-                <div class="persona-image-wrapper">
-                    <img 
-                        src="images/ChatGPT Image 22 Ara 2025 16_07_29.png" 
-                        alt="Gereksinim Piramidi" 
-                        class="persona-image"
-                        id="requirementsImage"
-                    >
+            <div class="pyramid-container">
+                <!-- 1. Seviye: İş Gereksinimleri (En Üst) -->
+                <div class="pyramid-level pyramid-level-1">
+                    <div class="pyramid-level-header">
+                        <div class="pyramid-level-icon">1️⃣</div>
+                        <h3 class="pyramid-level-title">İş Gereksinimleri – "NEDEN?"</h3>
+                    </div>
+                    <p class="pyramid-level-subtitle">Şirket ne istiyor? Büyük hedefler ve stratejik kararlar.</p>
+                    <div class="pyramid-level-content">
+                        <div class="pyramid-item">
+                            <p class="pyramid-item-label"><strong>Stratejik Hedef:</strong></p>
+                            <p class="pyramid-item-text">2026 yılı sonuna kadar platform içindeki kullanıcı etkileşim oranlarını %25 artırarak "sosyal bağlılık" üzerinden abone kaybını (churn) minimize etmek.</p>
+                        </div>
+                        <div class="pyramid-item">
+                            <p class="pyramid-item-label"><strong>Büyüme Hedefi:</strong></p>
+                            <p class="pyramid-item-text">Arkadaş tavsiyesi üzerinden gelen yeni üyelik oranını küresel pazarda %15 artırmak.</p>
+                        </div>
+                        <div class="pyramid-owner">
+                            <span class="pyramid-owner-icon">👔</span>
+                            <span class="pyramid-owner-text">Kimin İşi: CEO, Üst Yönetim</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="persona-actions">
-                    <button class="btn btn-secondary persona-fullscreen-btn" id="requirementsOpenBtn">
-                        <i class="fas fa-expand"></i>
-                        Tam Ekran Görüntüle
-                    </button>
-                </div>
-            </div>
 
-            <!-- Gereksinim Piramidi Fullscreen Modal -->
-            <div class="persona-modal" id="requirementsModal">
-                <div class="persona-modal-content">
-                    <button class="persona-modal-close" id="requirementsModalClose" aria-label="Kapat">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <img 
-                        src="images/ChatGPT Image 22 Ara 2025 16_07_29.png" 
-                        alt="Gereksinim Piramidi - Tam Ekran" 
-                        class="persona-modal-image"
-                        id="requirementsModalImage"
-                    >
+                <!-- 2. Seviye: Kullanıcı Gereksinimleri (Orta) -->
+                <div class="pyramid-level pyramid-level-2">
+                    <div class="pyramid-level-header">
+                        <div class="pyramid-level-icon">2️⃣</div>
+                        <h3 class="pyramid-level-title">Kullanıcı Gereksinimleri – "NE YAPACAK?"</h3>
+                    </div>
+                    <p class="pyramid-level-subtitle">Kullanıcı ne yapabilmeli? Günlük işler ve kullanım senaryoları.</p>
+                    <div class="pyramid-level-content">
+                        <div class="pyramid-item">
+                            <p class="pyramid-item-label"><strong>Sosyal Etkileşim:</strong></p>
+                            <p class="pyramid-item-text">Kullanıcılar, izledikleri dizi veya filmleri platformdan çıkmadan arkadaşlarıyla paylaşabilmeli ve iki veya daha fazla kullanıcı ortak bir "İzleme Listesi" oluşturabilmeli, bu listeye içerik ekleyip çıkarabilmeli puanlama yapabilmelidir.</p>
+                        </div>
+                        <div class="pyramid-item">
+                            <p class="pyramid-item-label"><strong>Kişiselleştirilmiş Keşif:</strong></p>
+                            <p class="pyramid-item-text">Kullanıcılar, sadece sistem algoritmasına değil, takip ettikleri arkadaşlarının gerçek zamanlı "izleme listelerine" de erişerek içerik keşfedebilmelidir.</p>
+                        </div>
+                        <div class="pyramid-owner">
+                            <span class="pyramid-owner-icon">👥</span>
+                            <span class="pyramid-owner-text">Kimin İşi: İş Analisti, Ürün Yöneticisi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Seviye: Çözüm Gereksinimleri (En Alt) -->
+                <div class="pyramid-level pyramid-level-3">
+                    <div class="pyramid-level-header">
+                        <div class="pyramid-level-icon">3️⃣</div>
+                        <h3 class="pyramid-level-title">Çözüm Gereksinimleri – "NASIL?"</h3>
+                    </div>
+                    <p class="pyramid-level-subtitle">Sistem teknik olarak nasıl olmalı? Kod, özellikler ve tasarım detayları.</p>
+                    <div class="pyramid-level-content">
+                        <div class="pyramid-item">
+                            <p class="pyramid-item-label"><strong>Fonksiyonel Tasarım:</strong></p>
+                            <p class="pyramid-item-text">"Paylaş" butonu tüm içerik sayfalarında oynatma butonunun hemen altında yer almalı; arkadaş listesi sağ panelde anlık (real-time) olarak güncellenmelidir.</p>
+                        </div>
+                        <div class="pyramid-item">
+                            <p class="pyramid-item-label"><strong>Teknik Performans:</strong></p>
+                            <p class="pyramid-item-text">Sosyal akış ekranı, kaydırma sırasında donmadan saniyede 60 kare hızında çalışmalı ve arkadaş önerileri milisaniyeler içinde yüklenmelidir.</p>
+                        </div>
+                        <div class="pyramid-owner">
+                            <span class="pyramid-owner-icon">💻</span>
+                            <span class="pyramid-owner-text">Kimin İşi: Yazılım Geliştirici, Tasarımcı</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1208,78 +1324,111 @@
                 </p>
             </div>
 
-            <div class="matrix-panel kano-panel">
-                <div class="matrix-header">
-                    <span class="matrix-badge">
-                        <i class="fas fa-table"></i>
-                        KANO Özellik Tablosu
-                    </span>
-                </div>
+            <div class="kano-grid">
+                <!-- Temel (Must-Be) -->
+                <article class="kano-card kano-card-must">
+                    <div class="kano-card-header">
+                        <div class="kano-icon">1️⃣</div>
+                        <div class="kano-header-content">
+                            <h3 class="kano-feature-title">Video Oynatma ve Altyazı</h3>
+                            <span class="kano-tag kano-must">Temel (Must-Be)</span>
+                        </div>
+                    </div>
+                    <div class="kano-card-body">
+                        <div class="kano-reason">
+                            <p class="kano-reason-label">📋 Neden Bu Kategori?</p>
+                            <p class="kano-reason-text">Varlığı fark edilmez ancak yokluğu büyük kriz ve hayal kırıklığı yaratır; platformun minimum standardıdır.</p>
+                        </div>
+                        <div class="kano-strategy">
+                            <p class="kano-strategy-label">🎯 Geliştirme Stratejisi</p>
+                            <p class="kano-strategy-text"><strong>Mutlaka Yap:</strong> Video oynatma fonksiyonları hatasız sürdürülmelidir; yatırım memnuniyeti artırmasa da eksiklik felakettir.</p>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="matrix-table-wrapper">
-                    <table class="matrix-table kano-table">
-                        <thead>
-                            <tr>
-                                <th>Özellik</th>
-                                <th>KANO Kategorisi</th>
-                                <th>Neden Bu Kategori?</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Video Oynatma ve Altyazı</strong></td>
-                                <td><span class="kano-tag kano-must">1️⃣ Temel (Must-Be)</span></td>
-                                <td>Varlığı fark edilmez ancak yokluğu büyük kriz ve hayal kırıklığı yaratır; platformun minimum standardıdır.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>İçerik Arama ve Yükleme Hızı</strong></td>
-                                <td><span class="kano-tag kano-performance">2️⃣ Performans</span></td>
-                                <td>"Ne kadar hızlı, o kadar iyi" prensibi geçerlidir; memnuniyet hızla doğru orantılı olarak artar.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Ortak İzleme Listesi ve Sosyal Akış</strong></td>
-                                <td><span class="kano-tag kano-excitement">3️⃣ Heyecan Verici (Attractive)</span></td>
-                                <td>Kullanıcının beklemediği "VAY BE!" etkisidir; gerçek inovasyon burada başlar ve marka değeri yaratır.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Profil Menüsü Tema Seçenekleri</strong></td>
-                                <td><span class="kano-tag kano-indifferent">4️⃣ Kayıtsız (Indifferent)</span></td>
-                                <td>Varlığı da yokluğu da memnuniyeti değiştirmez; müşteri sadece içeriğe ulaşmak ister.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Karmaşık / Labirent İptal Süreci</strong></td>
-                                <td><span class="kano-tag kano-reverse">5️⃣ Tersine (Reverse)</span></td>
-                                <td>Varlığı kullanıcıyı rahatsız eder ve sinirlendirir; yokluğu (basit olması) memnuniyeti artırır.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <!-- Performans -->
+                <article class="kano-card kano-card-performance">
+                    <div class="kano-card-header">
+                        <div class="kano-icon">2️⃣</div>
+                        <div class="kano-header-content">
+                            <h3 class="kano-feature-title">İçerik Arama ve Yükleme Hızı</h3>
+                            <span class="kano-tag kano-performance">Performans</span>
+                        </div>
+                    </div>
+                    <div class="kano-card-body">
+                        <div class="kano-reason">
+                            <p class="kano-reason-label">📋 Neden Bu Kategori?</p>
+                            <p class="kano-reason-text">"Ne kadar hızlı, o kadar iyi" prensibi geçerlidir; memnuniyet hızla doğru orantılı olarak artar.</p>
+                        </div>
+                        <div class="kano-strategy">
+                            <p class="kano-strategy-label">🎯 Geliştirme Stratejisi</p>
+                            <p class="kano-strategy-text"><strong>Rekabette Öne Geç:</strong> Arama ve yükleme hızları sürekli iyileştirilmeli ve bu performans avantajı pazarlamada vurgulanmalıdır.</p>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="kano-strategy">
-                    <h3 class="kano-strategy-title">Geliştirme Stratejisi</h3>
-                    <ol class="kano-strategy-list">
-                        <li>
-                            <strong>Mutlaka Yap (Temel):</strong>
-                            Video oynatma fonksiyonları hatasız sürdürülmelidir; yatırım memnuniyeti artırmasa da eksiklik felakettir.
-                        </li>
-                        <li>
-                            <strong>Rekabette Öne Geç (Performans):</strong>
-                            Arama ve yükleme hızları sürekli iyileştirilmeli ve bu performans avantajı pazarlamada vurgulanmalıdır.
-                        </li>
-                        <li>
-                            <strong>Fark Yarat ve Viral Ol (Heyecan Verici):</strong>
-                            Projemizin asıl inovasyonu olan "Ortak İzleme Listesi"ne odaklanılmalıdır; bu özellik sürpriz bir "WOW" etkisi yaratır.
-                        </li>
-                        <li>
-                            <strong>Kaynak Tasarrufu (Kayıtsız):</strong>
-                            Profil teması gibi kimsenin umursamadığı detaylara bütçe ve zaman ayrılmamalıdır; bu bir kaynak israfıdır.
-                        </li>
-                        <li>
-                            <strong>Hemen Kaldır/Düzelt (Tersine):</strong>
-                            Kullanıcıyı platformdan soğutan karmaşık abonelik veya ayar menüleri derhal yalınlaştırılmalıdır.
-                        </li>
-                    </ol>
-                </div>
+                <!-- Heyecan Verici -->
+                <article class="kano-card kano-card-excitement">
+                    <div class="kano-card-header">
+                        <div class="kano-icon">3️⃣</div>
+                        <div class="kano-header-content">
+                            <h3 class="kano-feature-title">Ortak İzleme Listesi ve Sosyal Akış</h3>
+                            <span class="kano-tag kano-excitement">Heyecan Verici (Attractive)</span>
+                        </div>
+                    </div>
+                    <div class="kano-card-body">
+                        <div class="kano-reason">
+                            <p class="kano-reason-label">📋 Neden Bu Kategori?</p>
+                            <p class="kano-reason-text">Kullanıcının beklemediği "VAY BE!" etkisidir; gerçek inovasyon burada başlar ve marka değeri yaratır.</p>
+                        </div>
+                        <div class="kano-strategy">
+                            <p class="kano-strategy-label">🎯 Geliştirme Stratejisi</p>
+                            <p class="kano-strategy-text"><strong>Fark Yarat ve Viral Ol:</strong> Projemizin asıl inovasyonu olan "Ortak İzleme Listesi"ne odaklanılmalıdır; bu özellik sürpriz bir "WOW" etkisi yaratır.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Kayıtsız -->
+                <article class="kano-card kano-card-indifferent">
+                    <div class="kano-card-header">
+                        <div class="kano-icon">4️⃣</div>
+                        <div class="kano-header-content">
+                            <h3 class="kano-feature-title">Profil Menüsü Tema Seçenekleri</h3>
+                            <span class="kano-tag kano-indifferent">Kayıtsız (Indifferent)</span>
+                        </div>
+                    </div>
+                    <div class="kano-card-body">
+                        <div class="kano-reason">
+                            <p class="kano-reason-label">📋 Neden Bu Kategori?</p>
+                            <p class="kano-reason-text">Varlığı da yokluğu da memnuniyeti değiştirmez; müşteri sadece içeriğe ulaşmak ister.</p>
+                        </div>
+                        <div class="kano-strategy">
+                            <p class="kano-strategy-label">🎯 Geliştirme Stratejisi</p>
+                            <p class="kano-strategy-text"><strong>Kaynak Tasarrufu:</strong> Profil teması gibi kimsenin umursamadığı detaylara bütçe ve zaman ayrılmamalıdır; bu bir kaynak israfıdır.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tersine -->
+                <article class="kano-card kano-card-reverse">
+                    <div class="kano-card-header">
+                        <div class="kano-icon">5️⃣</div>
+                        <div class="kano-header-content">
+                            <h3 class="kano-feature-title">Karmaşık / Labirent İptal Süreci</h3>
+                            <span class="kano-tag kano-reverse">Tersine (Reverse)</span>
+                        </div>
+                    </div>
+                    <div class="kano-card-body">
+                        <div class="kano-reason">
+                            <p class="kano-reason-label">📋 Neden Bu Kategori?</p>
+                            <p class="kano-reason-text">Varlığı kullanıcıyı rahatsız eder ve sinirlendirir; yokluğu (basit olması) memnuniyeti artırır.</p>
+                        </div>
+                        <div class="kano-strategy">
+                            <p class="kano-strategy-label">🎯 Geliştirme Stratejisi</p>
+                            <p class="kano-strategy-text"><strong>Hemen Kaldır/Düzelt:</strong> Kullanıcıyı platformdan soğutan karmaşık abonelik veya ayar menüleri derhal yalınlaştırılmalıdır.</p>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>

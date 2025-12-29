@@ -30,15 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
     initLogoAnimation();
     initIntroSound();
     initBPMNZoom();
+    initTOBEZoom();
     initPersonaModal();
+    initHMWCards();
 });
 
 // BPMN Image Zoom Functionality
 function initBPMNZoom() {
     const bpmnImage = document.getElementById('bpmnImage');
-    const zoomInBtn = document.getElementById('zoomInBtn');
-    const zoomOutBtn = document.getElementById('zoomOutBtn');
-    const resetBtn = document.getElementById('resetZoomBtn');
+    const zoomInBtn = document.getElementById('bpmnZoomInBtn');
+    const zoomOutBtn = document.getElementById('bpmnZoomOutBtn');
+    const resetBtn = document.getElementById('bpmnResetZoomBtn');
     
     if (!bpmnImage) return;
     
@@ -147,6 +149,122 @@ function initBPMNZoom() {
     });
     
     bpmnImage.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+}
+
+// TO-BE BPMN Image Zoom Functionality
+function initTOBEZoom() {
+    const tobeBpmnImage = document.getElementById('tobeBpmnImage');
+    const zoomInBtn = document.getElementById('tobeZoomInBtn');
+    const zoomOutBtn = document.getElementById('tobeZoomOutBtn');
+    const resetBtn = document.getElementById('tobeResetZoomBtn');
+    
+    if (!tobeBpmnImage) return;
+    
+    let scale = 1;
+    let posX = 0;
+    let posY = 0;
+    const minScale = 0.5;
+    const maxScale = 3;
+    const scaleStep = 0.25;
+    
+    let isDragging = false;
+    let currentX = 0;
+    let currentY = 0;
+    
+    function applyTransform() {
+        tobeBpmnImage.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+    }
+    
+    function resetPosition() {
+        scale = 1;
+        posX = 0;
+        posY = 0;
+        applyTransform();
+    }
+    
+    // Zoom In
+    if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', () => {
+            if (scale < maxScale) {
+                scale += scaleStep;
+                applyTransform();
+            }
+        });
+    }
+    
+    // Zoom Out
+    if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', () => {
+            if (scale > minScale) {
+                scale -= scaleStep;
+                if (scale <= 1) {
+                    posX = 0;
+                    posY = 0;
+                }
+                applyTransform();
+            }
+        });
+    }
+    
+    // Reset
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            resetPosition();
+        });
+    }
+    
+    // Drag functionality
+    tobeBpmnImage.addEventListener('mousedown', (e) => {
+        if (scale > 1) {
+            isDragging = true;
+            currentX = e.clientX - posX;
+            currentY = e.clientY - posY;
+        }
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging && scale > 1) {
+            e.preventDefault();
+            posX = e.clientX - currentX;
+            posY = e.clientY - currentY;
+            applyTransform();
+        }
+    });
+    
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+    
+    tobeBpmnImage.addEventListener('contextmenu', (e) => {
+        if (scale > 1) {
+            e.preventDefault();
+        }
+    });
+    
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    tobeBpmnImage.addEventListener('touchstart', (e) => {
+        if (scale > 1 && e.touches.length === 1) {
+            isDragging = true;
+            touchStartX = e.touches[0].clientX - posX;
+            touchStartY = e.touches[0].clientY - posY;
+        }
+    });
+    
+    tobeBpmnImage.addEventListener('touchmove', (e) => {
+        if (isDragging && scale > 1 && e.touches.length === 1) {
+            e.preventDefault();
+            posX = e.touches[0].clientX - touchStartX;
+            posY = e.touches[0].clientY - touchStartY;
+            applyTransform();
+        }
+    });
+    
+    tobeBpmnImage.addEventListener('touchend', () => {
         isDragging = false;
     });
 }
@@ -1093,6 +1211,59 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+// HMW Cards Interactive Effects
+function initHMWCards() {
+    const cards = document.querySelectorAll('.hmw-card');
+    
+    cards.forEach((card, index) => {
+        // Intersection Observer for fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(card);
+        
+        // Parallax effect on mouse move
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const moveX = (x - centerX) / 20;
+            const moveY = (y - centerY) / 20;
+            
+            card.style.transform = `translateY(-4px) translateX(4px) translate(${moveX}px, ${moveY}px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+        
+        // Color pulse animation for icons
+        const icon = card.querySelector('.hmw-icon');
+        if (icon) {
+            setInterval(() => {
+                icon.style.filter = 'brightness(1.1)';
+                setTimeout(() => {
+                    icon.style.filter = '';
+                }, 200);
+            }, 3000 + (index * 500));
+        }
+    });
+}
+
 // Export functions for potential external use
 window.NetflixAnalytics = {
     initScrollAnimations,
@@ -1109,6 +1280,7 @@ window.NetflixAnalytics = {
     initLogoAnimation,
     initSidebar,
     initIntroSound,
+    initHMWCards,
     trackEvent,
     openProcessModal,
     closeProcessModal
