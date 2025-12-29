@@ -1434,7 +1434,7 @@
     </section>
 
     <!-- Kullanıcı Hikayeleri Bölümü -->
-    <section id="user-stories" class="persona-section">
+    <section id="user-stories" class="wireframe-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Kullanıcı Hikayeleri</h2>
@@ -1443,36 +1443,97 @@
                 </p>
             </div>
 
-            <div class="persona-panel">
-                <div class="persona-image-wrapper">
-                    <img 
-                        src="images/ChatGPT Image 22 Ara 2025 16_32_31.png" 
-                        alt="Kullanıcı Hikayeleri" 
-                        class="persona-image"
-                        id="userStoriesImage"
-                    >
+            <div class="wireframe-grid">
+                <!-- Kullanıcı Hikayesi 1 -->
+                <div class="wireframe-card animate-fade-up">
+                    <h3 class="wireframe-title">Kullanıcı Hikayeleri 1</h3>
+                    <div class="wireframe-image-wrapper">
+                        <img 
+                            id="userStoriesImage1"
+                            src="images/ChatGPT Image 29 Ara 2025 13_37_32.png" 
+                            alt="Kullanıcı Hikayeleri 1" 
+                            class="wireframe-image"
+                        >
+                        <button id="userStoriesOpenBtn1" class="wireframe-zoom-btn" aria-label="Görseli büyüt">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="persona-actions">
-                    <button class="btn btn-secondary persona-fullscreen-btn" id="userStoriesOpenBtn">
-                        <i class="fas fa-expand"></i>
-                        Tam Ekran Görüntüle
-                    </button>
+
+                <!-- Kullanıcı Hikayesi 2 -->
+                <div class="wireframe-card animate-fade-up">
+                    <h3 class="wireframe-title">Kullanıcı Hikayeleri 2</h3>
+                    <div class="wireframe-image-wrapper">
+                        <img 
+                            id="userStoriesImage2"
+                            src="images/ChatGPT Image 29 Ara 2025 13_41_40.png" 
+                            alt="Kullanıcı Hikayeleri 2" 
+                            class="wireframe-image"
+                        >
+                        <button id="userStoriesOpenBtn2" class="wireframe-zoom-btn" aria-label="Görseli büyüt">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kullanıcı Hikayesi 3 -->
+                <div class="wireframe-card animate-fade-up">
+                    <h3 class="wireframe-title">Kullanıcı Hikayeleri 3</h3>
+                    <div class="wireframe-image-wrapper">
+                        <img 
+                            id="userStoriesImage3"
+                            src="images/ChatGPT Image 29 Ara 2025 13_49_40.png" 
+                            alt="Kullanıcı Hikayeleri 3" 
+                            class="wireframe-image"
+                        >
+                        <button id="userStoriesOpenBtn3" class="wireframe-zoom-btn" aria-label="Görseli büyüt">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Kullanıcı Hikayeleri Fullscreen Modal -->
-            <div class="persona-modal" id="userStoriesModal">
-                <div class="persona-modal-content">
-                    <button class="persona-modal-close" id="userStoriesModalClose" aria-label="Kapat">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <img 
-                        src="images/ChatGPT Image 22 Ara 2025 16_32_31.png" 
-                        alt="Kullanıcı Hikayeleri - Tam Ekran" 
-                        class="persona-modal-image"
-                        id="userStoriesModalImage"
-                    >
-                </div>
+        <!-- Kullanıcı Hikayeleri Modals -->
+        <!-- Modal 1 -->
+        <div id="userStoriesModal1" class="persona-modal">
+            <div class="persona-modal-content">
+                <img 
+                    src="images/ChatGPT Image 29 Ara 2025 13_37_32.png" 
+                    alt="Kullanıcı Hikayeleri 1 - Tam Ekran" 
+                    class="persona-modal-image"
+                >
+                <button id="userStoriesModalClose1" class="persona-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal 2 -->
+        <div id="userStoriesModal2" class="persona-modal">
+            <div class="persona-modal-content">
+                <img 
+                    src="images/ChatGPT Image 29 Ara 2025 13_41_40.png" 
+                    alt="Kullanıcı Hikayeleri 2 - Tam Ekran" 
+                    class="persona-modal-image"
+                >
+                <button id="userStoriesModalClose2" class="persona-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal 3 -->
+        <div id="userStoriesModal3" class="persona-modal">
+            <div class="persona-modal-content">
+                <img 
+                    src="images/ChatGPT Image 29 Ara 2025 13_49_40.png" 
+                    alt="Kullanıcı Hikayeleri 3 - Tam Ekran" 
+                    class="persona-modal-image"
+                >
+                <button id="userStoriesModalClose3" class="persona-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -1488,9 +1549,6 @@
                 <!-- INVEST Değerlendirmesi: Hikaye 1.1 -->
                 <article class="invest-card">
                     <h3 class="invest-title">INVEST Değerlendirmesi: Hikaye 1.1 - Ortak Liste Tasarımı</h3>
-                    <p class="invest-intro">
-                        Seçilen kullanıcı hikayesinin (<strong>Hikaye 1.1 - Ortak Liste Tasarımı</strong>) INVEST kriterlerine göre analizi:
-                    </p>
                     <div class="matrix-table-wrapper">
                         <table class="matrix-table invest-table">
                             <thead>
@@ -1548,7 +1606,7 @@
 
             <div class="bdd-grid">
                 <!-- Feature 1.1 -->
-                <article class="bdd-card animate-fade-up">
+                <article class="bdd-card animate-fade-up" data-bdd-card="1">
                     <div class="bdd-card-header">
                         <div class="bdd-badge">1.1</div>
                         <div>
@@ -1560,13 +1618,13 @@
                         <li><span class="bdd-label given">Given</span> Mert ve arkadaşı Ali, platform üzerinde arkadaştır.</li>
                         <li><span class="bdd-label and">And</span> Mert, "Haftalık Dizi Gecesi" adında bir ortak liste oluşturmuştur.</li>
                         <li><span class="bdd-label when">When</span> Ali, ortak liste bağlantısını kabul edip listeye "Black Mirror" dizisini ekler.</li>
-                        <li><span class="bdd-label then">Then</span> Mert’in ekranındaki ortak listede "Black Mirror" içeriği anlık olarak belirmelidir.</li>
-                        <li><span class="bdd-label and">And</span> İçeriğin yanında Ali’nin profil ikonu "Ekleyen" olarak gösterilmelidir.</li>
+                        <li><span class="bdd-label then">Then</span> Mert'in ekranındaki ortak listede "Black Mirror" içeriği anlık olarak belirmelidir.</li>
+                        <li><span class="bdd-label and">And</span> İçeriğin yanında Ali'nin profil ikonu "Ekleyen" olarak gösterilmelidir.</li>
                     </ul>
                 </article>
 
                 <!-- Feature 1.2 -->
-                <article class="bdd-card animate-fade-up">
+                <article class="bdd-card animate-fade-up" data-bdd-card="2">
                     <div class="bdd-card-header">
                         <div class="bdd-badge">1.2</div>
                         <div>
@@ -1584,7 +1642,7 @@
                 </article>
 
                 <!-- Feature 1.3 -->
-                <article class="bdd-card animate-fade-up">
+                <article class="bdd-card animate-fade-up" data-bdd-card="3">
                     <div class="bdd-card-header">
                         <div class="bdd-badge">1.3</div>
                         <div>
@@ -1595,13 +1653,13 @@
                     <ul class="bdd-steps">
                         <li><span class="bdd-label given">Given</span> Mert, profil ayarlarından "İzleme Aktivitesini Paylaş" özelliğini aktif etmiştir.</li>
                         <li><span class="bdd-label when">When</span> Mert, ana menüden "The Crown" dizisini izlemeye başlar.</li>
-                        <li><span class="bdd-label then">Then</span> Mert’in profilini ziyaret eden arkadaşları "Şu An Ne İzliyor?" kartında "The Crown" afişini görmelidir.</li>
+                        <li><span class="bdd-label then">Then</span> Mert'in profilini ziyaret eden arkadaşları "Şu An Ne İzliyor?" kartında "The Crown" afişini görmelidir.</li>
                         <li><span class="bdd-label and">And</span> Mert içeriği durdurduğunda veya kapattığında karttaki bilgi 5 saniye içinde silinmelidir.</li>
                     </ul>
                 </article>
 
                 <!-- Feature 1.4 -->
-                <article class="bdd-card animate-fade-up">
+                <article class="bdd-card animate-fade-up" data-bdd-card="4">
                     <div class="bdd-card-header">
                         <div class="bdd-badge">1.4</div>
                         <div>
@@ -1610,12 +1668,107 @@
                         </div>
                     </div>
                     <ul class="bdd-steps">
-                        <li><span class="bdd-label given">Given</span> Mert’in rehberinde Netflix kullanan ve gizlilik ayarları açık 15 arkadaşı bulunmaktadır.</li>
+                        <li><span class="bdd-label given">Given</span> Mert'in rehberinde Netflix kullanan ve gizlilik ayarları açık 15 arkadaşı bulunmaktadır.</li>
                         <li><span class="bdd-label when">When</span> Mert, "Rehberimi Eşleştir" butonuna basarak sistem iznini onaylar.</li>
                         <li><span class="bdd-label then">Then</span> Sistem rehberdeki numaraları tarayıp eşleşen 15 kişiyi "Takip Et" listesinde göstermelidir.</li>
                         <li><span class="bdd-label and">And</span> Mert bu listeden istediği kişileri tek tıkla takip edebilmelidir.</li>
                     </ul>
                 </article>
+            </div>
+        </div>
+
+        <!-- BDD Modals -->
+        <div class="bdd-modal" id="bddModal1">
+            <div class="bdd-modal-content">
+                <button class="bdd-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="bdd-modal-card">
+                    <div class="bdd-card-header">
+                        <div class="bdd-badge">1.1</div>
+                        <div>
+                            <h3 class="bdd-title">Feature: Ortak Liste Yönetimi</h3>
+                            <p class="bdd-subtitle">Scenario: Birden fazla kullanıcının aynı listeye içerik ekleyerek senkronize olması</p>
+                        </div>
+                    </div>
+                    <ul class="bdd-steps">
+                        <li><span class="bdd-label given">Given</span> Mert ve arkadaşı Ali, platform üzerinde arkadaştır.</li>
+                        <li><span class="bdd-label and">And</span> Mert, "Haftalık Dizi Gecesi" adında bir ortak liste oluşturmuştur.</li>
+                        <li><span class="bdd-label when">When</span> Ali, ortak liste bağlantısını kabul edip listeye "Black Mirror" dizisini ekler.</li>
+                        <li><span class="bdd-label then">Then</span> Mert'in ekranındaki ortak listede "Black Mirror" içeriği anlık olarak belirmelidir.</li>
+                        <li><span class="bdd-label and">And</span> İçeriğin yanında Ali'nin profil ikonu "Ekleyen" olarak gösterilmelidir.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bdd-modal" id="bddModal2">
+            <div class="bdd-modal-content">
+                <button class="bdd-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="bdd-modal-card">
+                    <div class="bdd-card-header">
+                        <div class="bdd-badge">1.2</div>
+                        <div>
+                            <h3 class="bdd-title">Feature: Sosyal Paylaşım - Zaman Damgası</h3>
+                            <p class="bdd-subtitle">Scenario: Kullanıcının beğendiği sahneyi saniyesi saniyesine arkadaşına iletmesi</p>
+                        </div>
+                    </div>
+                    <ul class="bdd-steps">
+                        <li><span class="bdd-label given">Given</span> Mert, bir film izlemektedir ve videonun 45. dakikasındadır.</li>
+                        <li><span class="bdd-label when">When</span> Mert, "Zaman Damgalı Paylaş" butonuna tıklar ve arkadaşına gönderir.</li>
+                        <li><span class="bdd-label then">Then</span> Oluşturulan paylaşım linkinin sonuna zaman parametresi otomatik eklenmelidir.</li>
+                        <li><span class="bdd-label and">And</span> Arkadaşı linki açtığında video doğrudan 45:00 saniyesinden başlamalıdır.</li>
+                        <li><span class="bdd-label but">But</span> Linke tıklayan kişinin Netflix aboneliği yoksa içerik yerine üyelik sayfası açılmalıdır.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bdd-modal" id="bddModal3">
+            <div class="bdd-modal-content">
+                <button class="bdd-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="bdd-modal-card">
+                    <div class="bdd-card-header">
+                        <div class="bdd-badge">1.3</div>
+                        <div>
+                            <h3 class="bdd-title">Feature: Sosyal Profil Aktivitesi</h3>
+                            <p class="bdd-subtitle">Scenario: İzleme aktivitesinin profilde otomatik güncellenmesi</p>
+                        </div>
+                    </div>
+                    <ul class="bdd-steps">
+                        <li><span class="bdd-label given">Given</span> Mert, profil ayarlarından "İzleme Aktivitesini Paylaş" özelliğini aktif etmiştir.</li>
+                        <li><span class="bdd-label when">When</span> Mert, ana menüden "The Crown" dizisini izlemeye başlar.</li>
+                        <li><span class="bdd-label then">Then</span> Mert'in profilini ziyaret eden arkadaşları "Şu An Ne İzliyor?" kartında "The Crown" afişini görmelidir.</li>
+                        <li><span class="bdd-label and">And</span> Mert içeriği durdurduğunda veya kapattığında karttaki bilgi 5 saniye içinde silinmelidir.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bdd-modal" id="bddModal4">
+            <div class="bdd-modal-content">
+                <button class="bdd-modal-close" aria-label="Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="bdd-modal-card">
+                    <div class="bdd-card-header">
+                        <div class="bdd-badge">1.4</div>
+                        <div>
+                            <h3 class="bdd-title">Feature: Arkadaş Bulma - Akıllı Eşleşme</h3>
+                            <p class="bdd-subtitle">Scenario: Rehber izniyle platformdaki arkadaşların otomatik bulunması</p>
+                        </div>
+                    </div>
+                    <ul class="bdd-steps">
+                        <li><span class="bdd-label given">Given</span> Mert'in rehberinde Netflix kullanan ve gizlilik ayarları açık 15 arkadaşı bulunmaktadır.</li>
+                        <li><span class="bdd-label when">When</span> Mert, "Rehberimi Eşleştir" butonuna basarak sistem iznini onaylar.</li>
+                        <li><span class="bdd-label then">Then</span> Sistem rehberdeki numaraları tarayıp eşleşen 15 kişiyi "Takip Et" listesinde göstermelidir.</li>
+                        <li><span class="bdd-label and">And</span> Mert bu listeden istediği kişileri tek tıkla takip edebilmelidir.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -1810,40 +1963,118 @@
     </section>
 
     <!-- User Story Mapping (Yol Haritası) Bölümü -->
-    <section id="user-story-mapping" class="warframe-demo-section">
+    <section id="user-story-mapping" class="user-story-mapping-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">User Story Mapping (Yol Haritası)</h2>
             </div>
 
-            <div class="warframe-demo-wrapper">
-                <div class="warframe-demo-card animate-fade-up">
-                    <div class="warframe-demo-image-wrapper">
-                        <img 
-                            id="userStoryMappingImage"
-                            src="images/ChatGPT Image 22 Ara 2025 17_55_01.png" 
-                            alt="User Story Mapping (Yol Haritası)" 
-                            class="warframe-demo-image"
-                        >
-                        <button id="userStoryMappingOpenBtn" class="warframe-demo-zoom-btn" aria-label="Görseli büyüt">
-                            <i class="fas fa-expand"></i>
-                        </button>
+            <div class="user-story-mapping-wrapper">
+                <div class="user-story-mapping-grid">
+                    <!-- Başlık Satırı -->
+                    <div class="usm-header usm-header-layer">
+                        <span class="usm-header-icon">📋</span>
+                        <span>Katman</span>
+                    </div>
+                    <div class="usm-header usm-header-col1">
+                        <span class="usm-header-icon">🔍</span>
+                        <span>Keşfet & İzle</span>
+                    </div>
+                    <div class="usm-header usm-header-col2">
+                        <span class="usm-header-icon">👥</span>
+                        <span>Birlikte Karar Ver</span>
+                    </div>
+                    <div class="usm-header usm-header-col3">
+                        <span class="usm-header-icon">📤</span>
+                        <span>Paylaş & Etkileşim</span>
+                    </div>
+                    <div class="usm-header usm-header-col4">
+                        <span class="usm-header-icon">👤</span>
+                        <span>Profil & Sosyal Akış</span>
+                    </div>
+                    
+                    <!-- Gövde (Core) Satırı -->
+                    <div class="usm-layer usm-layer-core">
+                        <strong>Gövde (Core)</strong>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Mert içerikleri keşfeder.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Mert ne izleyeceğine arkadaşlarıyla karar verir.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Mert izlediği sahneyi paylaşır.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Mert profilinden etkileşim yaratır.</div>
+                    </div>
+                    
+                    <!-- MVP Dilimi Satırı -->
+                    <div class="usm-layer usm-layer-mvp">
+                        <strong>MVP Dilimi (Release 1)</strong>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">İçerik izler.</div>
+                        <div class="usm-story-card">Kullanıcı doğrulanır.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Ortak izleme listesi oluşturur.</div>
+                        <div class="usm-story-card">Arkadaş davet eder.</div>
+                        <div class="usm-story-card">Liste ismi belirler.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Zaman damgalı paylaşım yapar.</div>
+                        <div class="usm-story-card">Dakika bilgisini oto-üretir.</div>
+                        <div class="usm-story-card">Link ile paylaşır.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">"Ne İzliyorum" kartını açar.</div>
+                        <div class="usm-story-card">İzlenen içerik oto-görünür.</div>
+                        <div class="usm-story-card">Arkadaşlar profili görür.</div>
+                    </div>
+                    
+                    <!-- MVP Release Satırı -->
+                    <div class="usm-layer usm-layer-improvement">
+                        <strong>MVP Release (İyileştirme)</strong>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">İzleme geçmişi dikkate alınır.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Liste sıralaması optimize edilir.</div>
+                        <div class="usm-story-card">Ortak listeye oy verilir.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Paylaşılan sahneye yorum yapılır.</div>
+                        <div class="usm-story-card">Bildirim gönderilir.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Profil üzerinden sohbet başlatılır.</div>
+                        <div class="usm-story-card">Kimler izliyor bilgisi görünür.</div>
+                    </div>
+                    
+                    <!-- Gelecek Sürümler Satırı -->
+                    <div class="usm-layer usm-layer-future">
+                        <strong>Gelecek Sürümler (Rel. 2-3)</strong>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Sosyal öneriler.</div>
+                        <div class="usm-story-card">Trend içerikler.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">AI destekli ortak öneri.</div>
+                        <div class="usm-story-card">Grup bazlı izleme planı.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Tepki (emoji) ile paylaşım.</div>
+                        <div class="usm-story-card">Paylaşılan sahneler akışı.</div>
+                    </div>
+                    <div class="usm-column">
+                        <div class="usm-story-card">Sosyal izleme geçmişi.</div>
+                        <div class="usm-story-card">Profil etkileşim istatistikleri.</div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- User Story Mapping Modal -->
-        <div id="userStoryMappingModal" class="persona-modal">
-            <div class="persona-modal-content">
-                <img 
-                    src="images/ChatGPT Image 22 Ara 2025 17_55_01.png" 
-                    alt="User Story Mapping (Yol Haritası) - Tam Ekran" 
-                    class="persona-modal-image"
-                >
-                <button id="userStoryMappingModalClose" class="persona-modal-close" aria-label="Kapat">
-                    <i class="fas fa-times"></i>
-                </button>
             </div>
         </div>
     </section>

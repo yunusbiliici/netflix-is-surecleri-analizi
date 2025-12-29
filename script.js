@@ -33,7 +33,48 @@ document.addEventListener('DOMContentLoaded', function() {
     initTOBEZoom();
     initPersonaModal();
     initHMWCards();
+    initBDDModal();
 });
+
+// BDD Modal Functionality
+function initBDDModal() {
+    const bddCards = document.querySelectorAll('.bdd-card[data-bdd-card]');
+    
+    bddCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const cardNumber = this.getAttribute('data-bdd-card');
+            const modal = document.getElementById(`bddModal${cardNumber}`);
+            
+            if (modal) {
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // Close modals
+    const closeButtons = document.querySelectorAll('.bdd-modal-close');
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modal = this.closest('.bdd-modal');
+            if (modal) {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    
+    // Close modal when clicking outside
+    const modals = document.querySelectorAll('.bdd-modal');
+    modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+}
 
 // BPMN Image Zoom Functionality
 function initBPMNZoom() {
@@ -291,10 +332,22 @@ function initPersonaModal() {
             closeBtnId: 'requirementsModalClose'
         },
         {
-            imageId: 'userStoriesImage',
-            openBtnId: 'userStoriesOpenBtn',
-            modalId: 'userStoriesModal',
-            closeBtnId: 'userStoriesModalClose'
+            imageId: 'userStoriesImage1',
+            openBtnId: 'userStoriesOpenBtn1',
+            modalId: 'userStoriesModal1',
+            closeBtnId: 'userStoriesModalClose1'
+        },
+        {
+            imageId: 'userStoriesImage2',
+            openBtnId: 'userStoriesOpenBtn2',
+            modalId: 'userStoriesModal2',
+            closeBtnId: 'userStoriesModalClose2'
+        },
+        {
+            imageId: 'userStoriesImage3',
+            openBtnId: 'userStoriesOpenBtn3',
+            modalId: 'userStoriesModal3',
+            closeBtnId: 'userStoriesModalClose3'
         },
         {
             imageId: 'useCaseImage',
@@ -326,12 +379,6 @@ function initPersonaModal() {
             modalId: 'warframeDemoModal',
             closeBtnId: 'warframeDemoModalClose'
         },
-        {
-            imageId: 'userStoryMappingImage',
-            openBtnId: 'userStoryMappingOpenBtn',
-            modalId: 'userStoryMappingModal',
-            closeBtnId: 'userStoryMappingModalClose'
-        }
     ];
 
     configs.forEach(cfg => {

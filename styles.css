@@ -6020,7 +6020,7 @@ section {
 
 /* Persona & Empati Haritası Section */
 .persona-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.96)), url('images/bg2.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/ChatGPT Image 29 Ara 2025 01_10_39.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -6433,18 +6433,33 @@ section {
 }
 
 .requirements-functional .requirements-subtitle {
-    color: #4ade80;
+    color: #22c55e;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
 }
 
 .requirements-nonfunctional .requirements-subtitle {
-    color: #60a5fa;
+    color: #3b82f6;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
 .requirements-subtitle span {
     font-size: 0.85rem;
     font-weight: var(--font-weight-regular);
-    color: rgba(209, 213, 219, 0.85);
+    color: rgba(148, 163, 184, 0.9);
     margin-left: 0.4rem;
+    font-style: italic;
+}
+
+.requirements-functional .requirements-subtitle span {
+    color: #86efac;
+}
+
+.requirements-nonfunctional .requirements-subtitle span {
+    color: #93c5fd;
 }
 
 .requirements-list {
@@ -6458,13 +6473,42 @@ section {
 }
 
 .requirements-list li {
-    color: var(--netflix-text-light);
+    color: rgba(226, 232, 240, 0.9);
     line-height: 1.7;
 }
 
-.requirements-list strong {
-    color: var(--netflix-white);
-    font-weight: var(--font-weight-semibold);
+.requirements-functional .requirements-list strong {
+    color: #4ade80;
+    font-weight: var(--font-weight-bold);
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.requirements-nonfunctional .requirements-list strong {
+    color: #60a5fa;
+    font-weight: var(--font-weight-bold);
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.requirements-list li::before {
+    content: "▸";
+    color: inherit;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.requirements-functional .requirements-list li::before {
+    color: #22c55e;
+}
+
+.requirements-nonfunctional .requirements-list li::before {
+    color: #3b82f6;
 }
 
 @media (max-width: 992px) {
@@ -6941,7 +6985,7 @@ section {
 }
 
 .invest-section .container {
-    max-width: 900px;
+    max-width: 1400px;
 }
 
 .invest-section .section-header {
@@ -6994,11 +7038,13 @@ section {
 }
 
 .invest-table td:first-child {
-    width: 26%;
+    width: 25%;
+    min-width: 200px;
 }
 
 .invest-table td:nth-child(2) {
-    width: 14%;
+    width: 12%;
+    min-width: 120px;
     text-align: center;
 }
 
@@ -7012,7 +7058,8 @@ section {
 }
 
 .invest-table td:last-child {
-    width: 60%;
+    width: 63%;
+    min-width: 400px;
 }
 
 @media (max-width: 768px) {
@@ -7158,9 +7205,117 @@ section {
     color: #fecaca;
 }
 
+/* BDD Modal */
+.bdd-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bdd-modal.open {
+    display: flex;
+    opacity: 1;
+}
+
+.bdd-modal-content {
+    position: relative;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: var(--spacing-xl);
+}
+
+.bdd-modal-card {
+    background: radial-gradient(circle at top, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.95));
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xxl);
+    border: 2px solid rgba(148, 163, 184, 0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.bdd-modal.open .bdd-modal-card {
+    transform: scale(1);
+}
+
+.bdd-modal-card .bdd-title {
+    font-size: 1.3rem;
+}
+
+.bdd-modal-card .bdd-subtitle {
+    font-size: 1rem;
+}
+
+.bdd-modal-card .bdd-steps {
+    font-size: 1rem;
+    gap: var(--spacing-sm);
+}
+
+.bdd-modal-card .bdd-steps li {
+    line-height: 1.8;
+}
+
+.bdd-modal-card .bdd-label {
+    min-width: 70px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+}
+
+.bdd-modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 45px;
+    height: 45px;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(229, 9, 20, 0.8);
+    color: var(--netflix-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.bdd-modal-close:hover {
+    background: rgba(229, 9, 20, 1);
+    transform: scale(1.1) rotate(90deg);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
 @media (max-width: 576px) {
     .bdd-section {
         padding: var(--spacing-xl) 0 var(--spacing-xl);
+    }
+    
+    .bdd-modal-content {
+        width: 95%;
+        padding: var(--spacing-lg);
+    }
+    
+    .bdd-modal-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .bdd-modal-card .bdd-title {
+        font-size: 1.1rem;
+    }
+    
+    .bdd-modal-card .bdd-steps {
+        font-size: 0.9rem;
     }
 }
 
@@ -7794,6 +7949,10 @@ section {
     border-radius: var(--radius-xl);
     overflow: hidden;
     border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.invest-table {
+    min-width: 1200px;
 }
 
 .matrix-table thead {
@@ -8526,6 +8685,151 @@ section {
     }
 }
 
+/* User Story Mapping Section */
+.user-story-mapping-section {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('images/bg2.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.user-story-mapping-section .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+}
+
+.user-story-mapping-wrapper {
+    margin-top: var(--spacing-sm);
+}
+
+.user-story-mapping-section .section-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.user-story-mapping-grid {
+    display: grid;
+    grid-template-columns: 180px repeat(4, 1fr);
+    gap: var(--spacing-md);
+    max-width: 100%;
+    background: rgba(248, 250, 252, 0.03);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Başlıklar */
+.usm-header {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: #ffffff;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    font-size: 0.9rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    box-shadow: 0 2px 8px rgba(30, 58, 138, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    min-height: 70px;
+    transition: all 0.2s ease;
+}
+
+.usm-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+}
+
+.usm-header-icon {
+    font-size: 1.3rem;
+    display: block;
+}
+
+.usm-header-layer {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    font-weight: var(--font-weight-bold);
+    font-size: 0.95rem;
+}
+
+/* Katman Sütunu */
+.usm-layer {
+    background: rgba(15, 23, 42, 0.9);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--netflix-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    min-height: 60px;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.usm-layer:hover {
+    transform: translateX(2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.usm-layer-core {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.usm-layer-mvp {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.usm-layer-improvement {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+.usm-layer-future {
+    background: rgba(245, 158, 11, 0.2);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* Sütunlar - Her sütun içinde birden fazla kart olabilir */
+.usm-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: stretch;
+}
+
+/* Her madde ayrı bir kart */
+.usm-story-card {
+    background: #ffffff;
+    border: 1.5px solid #d4af37;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-shadow: 0 1px 3px rgba(212, 175, 55, 0.1);
+    transition: all 0.2s ease;
+    color: #1e293b;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    font-weight: var(--font-weight-regular);
+    cursor: pointer;
+}
+
+.usm-story-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(212, 175, 55, 0.2);
+    border-color: #f4d03f;
+}
+
 /* Warframe Demo Section */
 .warframe-demo-section {
     background: 
@@ -8642,7 +8946,104 @@ section {
     transform: scale(1);
 }
 
+@media (max-width: 1400px) {
+    .user-story-mapping-grid {
+        grid-template-columns: 160px repeat(4, 1fr);
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 1200px) {
+    .user-story-mapping-grid {
+        grid-template-columns: 150px repeat(4, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .usm-header {
+        font-size: 0.85rem;
+        padding: var(--spacing-sm);
+        min-height: 60px;
+    }
+    
+    .usm-header-icon {
+        font-size: 1.1rem;
+    }
+    
+    .usm-layer {
+        font-size: 0.8rem;
+        padding: var(--spacing-sm);
+        min-height: 50px;
+    }
+    
+    .usm-story-card {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+@media (max-width: 992px) {
+    .user-story-mapping-section .container {
+        max-width: 100%;
+    }
+    
+    .user-story-mapping-grid {
+        grid-template-columns: 140px repeat(4, 1fr);
+        gap: var(--spacing-xs);
+        padding: var(--spacing-sm);
+    }
+    
+    .usm-header {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs);
+        min-height: 55px;
+    }
+    
+    .usm-header-icon {
+        font-size: 1rem;
+    }
+    
+    .usm-layer {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs);
+        min-height: 45px;
+    }
+    
+    .usm-story-card {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .user-story-mapping-section {
+        padding: var(--spacing-xl) 0 var(--spacing-xl);
+    }
+    
+    .user-story-mapping-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+    }
+    
+    .usm-header {
+        grid-column: 1 / -1;
+    }
+    
+    .usm-layer {
+        grid-column: 1 / -1;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .usm-column {
+        grid-column: 1 / -1;
+    }
+    
+    .usm-story-card {
+        font-size: 0.9rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
     .warframe-demo-section {
         padding: var(--spacing-xl) 0 var(--spacing-xl);
     }
